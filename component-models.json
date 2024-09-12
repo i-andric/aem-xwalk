@@ -190,28 +190,56 @@
     "fields": [
       {
         "component": "reference",
-         "valueType": "string",
-         "name": "image",
-         "label": "Image",
-         "multi": false
+        "valueType": "string",
+        "name": "background_image",
+        "label": "Image",
+        "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "pretitle",
+        "name": "background_imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "foreground_pretitle",
         "label": "Pretitle",
         "value": ""
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "title",
+        "name": "foreground_title",
         "label": "Title",
         "value": ""
       },
       {
+        "component": "select",
+        "valueType": "string",
+        "name": "foreground_titleType",
+        "label": "Title Type",
+        "value": "h2",
+        "options": [
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          }
+        ]
+      },
+      {
         "component": "richtext",
-        "name": "description",
+        "name": "foreground_description",
         "value": "",
         "label": "Description",
         "valueType": "string"
