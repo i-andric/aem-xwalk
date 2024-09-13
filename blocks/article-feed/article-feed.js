@@ -36,6 +36,6 @@ export default async function decorate(block) {
       block.replaceChildren(container);
     });
   } catch (error) {
-    console.error('Error fetching articles:', error);
+    // Nothing to do here
   }
 }
