@@ -15,9 +15,13 @@
       "hero",
       "cards",
       "columns",
-      "fragment",
-      "teaser",
-      "articlefeed"
+      "fragment"
+    ]
+  },
+  {
+    "id": "articlefeed",
+    "components": [
+      "article"
     ]
   },
   {
@@ -39,12 +43,6 @@
       "image",
       "button",
       "title"
-    ]
-  },
-  {
-    "id": "articlefeed",
-    "components": [
-      "article"
     ]
   }
 ]
