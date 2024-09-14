@@ -36,10 +36,10 @@
         "id": "title",
         "fields": [
           {
-            "component": "richtext",
+            "component": "text",
             "name": "title",
             "value": "",
-            "label": "Text",
+            "label": "Title",
             "valueType": "string"
           }
         ]
