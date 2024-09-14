@@ -33,18 +33,11 @@
     ],
     "models": [
       {
-        "id": "article",
+        "id": "title",
         "fields": [
           {
-            "component": "reference",
-            "valueType": "string",
-            "name": "image",
-            "label": "Image",
-            "multi": false
-          },
-          {
             "component": "richtext",
-            "name": "text",
+            "name": "title",
             "value": "",
             "label": "Text",
             "valueType": "string"
@@ -56,7 +49,7 @@
       {
         "id": "articlefeed",
         "components": [
-          "article"
+          "title"
         ]
       }
     ]
