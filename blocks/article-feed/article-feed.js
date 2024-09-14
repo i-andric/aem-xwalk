@@ -1,24 +1,21 @@
-// import { createOptimizedPicture } from "../../scripts/aem.js";
-// import { moveInstrumentation } from "../../scripts/scripts.js";
-
 export default async function decorate(block) {
   try {
     const response = await fetch('/query-index.json');
     const articles = await response.json();
 
     const container = document.createElement('div');
-    container.classList.add('articles-container');
+    container.classList.add('article-container');
 
     const blogArticles = articles.data.filter((article) => article.path.includes('/blog/'));
     blogArticles.forEach((article) => {
+      const articleLink = document.createElement('a');
+      articleLink.href = article.path;
       const articleElement = document.createElement('article');
       articleElement.classList.add('article');
+      articleLink.appendChild(articleElement);
 
       const title = document.createElement('h2');
-      const titleLink = document.createElement('a');
-      titleLink.href = article.path;
-      titleLink.textContent = article.title;
-      title.appendChild(titleLink);
+      title.textContent = article.title;
       articleElement.appendChild(title);
 
       if (article.image) {
@@ -32,7 +29,7 @@ export default async function decorate(block) {
       description.textContent = article.description;
       articleElement.appendChild(description);
 
-      container.appendChild(articleElement);
+      container.appendChild(articleLink);
       block.replaceChildren(container);
     });
   } catch (error) {
