@@ -11,7 +11,9 @@
     "build:json:models": "merge-json-cli -i 'models/_component-models.json' -o 'component-models.json'",
     "build:json:definitions": "merge-json-cli -i 'models/_component-definition.json' -o 'component-definition.json'",
     "build:json:filters": "merge-json-cli -i 'models/_component-filters.json' -o 'component-filters.json'",
-    "prepare": "husky"
+    "prepare": "husky",
+    "aem": "aem up --no-open",
+    "dev": "npm-run-all --parallel aem"
   },
   "repository": {
     "type": "git",
@@ -33,10 +35,9 @@
     "husky": "9.1.1",
     "merge-json-cli": "1.0.4",
     "npm-run-all": "4.1.5",
+    "sass": "^1.78.0",
     "stylelint": "16.8.2",
-    "stylelint-config-standard": "36.0.1"
-  },
-  "dependencies": {
+    "stylelint-config-standard": "36.0.1",
     "tailwind": "^4.0.0"
   }
 }

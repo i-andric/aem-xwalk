@@ -2,7 +2,7 @@
     background: lightgray;
 }
 
-.articles-container {
+.article-container {
     display: grid;
     gap: 12px;
     margin-top: 20px;
@@ -13,6 +13,11 @@
     border: 1px solid #ddd;
     padding: 15px;
     margin-bottom: 20px;
+    text-decoration: unset;
+}
+
+.article h2 {
+    text-decoration: unset;
 }
 
 .article img {
