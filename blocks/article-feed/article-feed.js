@@ -1,11 +1,16 @@
+import {
+  getCurrentCountryLanguage,
+} from '../helpers.js';
+
 export default async function decorate(block) {
+  const [currentCountry, currentLanguage] = getCurrentCountryLanguage();
   const response = await fetch('/query-index.json');
   const articles = await response.json();
 
   const container = document.createElement('div');
   container.classList.add('article-container');
 
-  const blogArticles = articles.data.filter((article) => article.path.includes('/blog/'));
+  const blogArticles = articles.data.filter((article) => article.path.includes(`/${currentCountry}-${currentLanguage}/blog/`));
   blogArticles.forEach((article) => {
     const articleLink = document.createElement('a');
     articleLink.href = article.path;
