@@ -209,7 +209,6 @@
       },
       {
         "component": "button",
-        "valueType": "string",
         "name": "background_imageAlt_gpt",
         "label": "Chat GPT Alt",
         "value": ""

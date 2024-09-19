@@ -40,6 +40,12 @@
           "value": "",
           "label": "Text",
           "valueType": "string"
+        },
+        {
+          "component": "button",
+          "name": "background_imageAlt_gpt",
+          "label": "Chat GPT Alt",
+          "value": ""
         }
       ]
     }
