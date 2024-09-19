@@ -208,6 +208,13 @@
         "value": ""
       },
       {
+        "component": "button",
+        "valueType": "string",
+        "name": "background_imageAlt_gpt",
+        "label": "Chat GPT Alt",
+        "value": ""
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "foreground_pretitle",
