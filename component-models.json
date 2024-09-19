@@ -12,6 +12,16 @@
         "component": "text",
         "name": "imageAlt",
         "label": "Alt Text"
+      },
+      {
+        "component":  "text",
+        "name":  "imageCaption",
+        "label":  "Image Caption"
+      },
+      {
+        "component": "button",
+        "name":   "imageButton",
+        "label": "Chat GPT Alt"
       }
     ]
   },
