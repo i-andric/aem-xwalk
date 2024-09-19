@@ -19,7 +19,7 @@
         "label":  "Image Caption"
       },
       {
-        "component": "button",
+        "component": "boolean",
         "name":   "imageButton",
         "label": "Chat GPT Alt"
       }
