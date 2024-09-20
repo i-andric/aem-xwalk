@@ -268,7 +268,7 @@
     ]
   },
   {
-    "id": "conditionally-revealed-component",
+    "id": "conditionallyrevealedcomponent",
     "fields": [
       {
         "component": "boolean",
