@@ -43,6 +43,18 @@
           }
         },
         {
+          "title": "Hello world",
+          "id": "helloworld",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/button/v1/button",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
           "title": "Button",
           "id": "button",
           "plugins": {

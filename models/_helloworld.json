@@ -1,0 +1,18 @@
+[
+    {
+      "id": "helloworld",
+      "fields": [
+        {
+          "component": "button",
+          "name": "helloButton",
+          "label": "Say Hello",
+          "description": "Click this button to prompt 'Hello World'",
+          "valueType": "string",
+          "raw": {
+            "buttonText": "Click Me",
+            "onClickMessage": "Hello World!"
+          }
+        }
+      ]
+    }
+  ]

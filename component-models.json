@@ -14,14 +14,15 @@
         "label": "Alt Text"
       },
       {
-        "component":  "text",
-        "name":  "imageCaption",
-        "label":  "Image Caption"
-      },
-      {
-        "component": "boolean",
-        "name":   "imageButton",
-        "label": "Chat GPT Alt"
+        "component": "button",
+        "name": "helloButton",
+        "label": "Say Hello",
+        "description": "Click this button to prompt 'Hello World'",
+        "valueType": "string",
+        "raw": {
+          "buttonText": "Click Me",
+          "onClickMessage": "Hello World!"
+        }
       }
     ]
   },
@@ -281,8 +282,24 @@
         "label": "Hidden text field",
         "name": "hidden-text",
         "valueType": "string",
-        "condition": { "===": [{"var" : "reveal"}, true] }
+        "condition": { "===": [{ "var": "reveal" }, true] }
       }
     ]
- }
+  },
+  {
+    "id": "helloworld",
+    "fields": [
+      {
+        "component": "button",
+        "name": "helloButton",
+        "label": "Say Hello",
+        "description": "Click this button to prompt 'Hello World'",
+        "valueType": "string",
+        "raw": {
+          "buttonText": "Click Me",
+          "onClickMessage": "Hello World!"
+        }
+      }
+    ]
+  }
 ]
