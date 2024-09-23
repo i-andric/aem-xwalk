@@ -15,14 +15,8 @@
       "hero",
       "cards",
       "columns",
-      "fragment",
-      "articlefeed",
-      "teaser",
-      "conditionallyrevealedcomponent"
+      "fragment"
     ]
-  },
-  {
-    "id": "articlefeed"
   },
   {
     "id": "cards",
