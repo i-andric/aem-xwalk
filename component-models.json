@@ -83,7 +83,7 @@
       {
         "component": "text",
         "name": "linkTitle",
-        "label": "Title"
+        "label": "Link Label"
       },
       {
         "component": "select",
@@ -219,12 +219,6 @@
         "value": ""
       },
       {
-        "component": "button",
-        "name": "background_imageAlt_gpt",
-        "label": "Chat GPT Alt",
-        "value": ""
-      },
-      {
         "component": "text",
         "valueType": "string",
         "name": "foreground_pretitle",
@@ -235,7 +229,7 @@
         "component": "text",
         "valueType": "string",
         "name": "foreground_title",
-        "label": "Title",
+        "label": "Foreground Title",
         "value": ""
       },
       {
@@ -283,22 +277,6 @@
         "name": "hidden-text",
         "valueType": "string",
         "condition": { "===": [{ "var": "reveal" }, true] }
-      }
-    ]
-  },
-  {
-    "id": "helloworld",
-    "fields": [
-      {
-        "component": "button",
-        "name": "helloButton",
-        "label": "Say Hello",
-        "description": "Click this button to prompt 'Hello World'",
-        "valueType": "string",
-        "raw": {
-          "buttonText": "Click Me",
-          "onClickMessage": "Hello World!"
-        }
       }
     ]
   }

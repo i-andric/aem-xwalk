@@ -18,15 +18,11 @@
       "fragment",
       "articlefeed",
       "teaser",
-      "conditionallyrevealedcomponent",
-      "helloworld"
+      "conditionallyrevealedcomponent"
     ]
   },
   {
-    "id": "articlefeed",
-    "components": [
-      "title"
-    ]
+    "id": "articlefeed"
   },
   {
     "id": "cards",
