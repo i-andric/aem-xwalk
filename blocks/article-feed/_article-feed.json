@@ -31,26 +31,9 @@
         }
       }
     ],
-    "models": [
-      {
-        "id": "title",
-        "fields": [
-          {
-            "component": "text",
-            "name": "title",
-            "value": "",
-            "label": "Title",
-            "valueType": "string"
-          }
-        ]
-      }
-    ],
     "filters": [
       {
-        "id": "articlefeed",
-        "components": [
-          "title"
-        ]
+        "id": "articlefeed"
       }
     ]
   }
