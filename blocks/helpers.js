@@ -6,7 +6,7 @@
  */
 
 export function getCurrentCountryLanguage() {
-  const match = window.location.pathname.match(/(?:^|\/)([a-z]{2})-([a-z]{2})(?:\/|$)/i);
+  const match = window.location.pathname.match(/(?:^|\/)([a-z]{2})-([a-z]{2})(?:\.html|\/|$)/i);
   return match ? match.slice(1, 3) : ['', ''];
 }
 
