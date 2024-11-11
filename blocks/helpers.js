@@ -6,8 +6,8 @@
  */
 
 export function getCurrentCountryLanguage() {
-  const match = window.location.pathname.match('([a-z]{2})-([a-z]{2})');
-  return match ? match[0].split('-') : ['', ''];
+  const match = window.location.pathname.match(/([a-z]{2})-([a-z]{2})/i);
+  return match ? match.slice(1, 3) : ['', ''];
 }
 
 /** @param {string[]} classes */
