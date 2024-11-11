@@ -12,6 +12,17 @@
         "component": "text",
         "name": "imageAlt",
         "label": "Alt Text"
+      },
+      {
+        "component": "button",
+        "name": "helloButton",
+        "label": "Say Hello",
+        "description": "Click this button to prompt 'Hello World'",
+        "valueType": "string",
+        "raw": {
+          "buttonText": "Click Me",
+          "onClickMessage": "Hello World!"
+        }
       }
     ]
   },
@@ -72,7 +83,7 @@
       {
         "component": "text",
         "name": "linkTitle",
-        "label": "Title"
+        "label": "Link Label"
       },
       {
         "component": "select",
@@ -127,6 +138,11 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
       }
     ]
   },
@@ -182,6 +198,85 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "teaser",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "background_image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "background_imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "foreground_pretitle",
+        "label": "Pretitle",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "foreground_title",
+        "label": "Foreground Title",
+        "value": ""
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "foreground_titleType",
+        "label": "Title Type",
+        "value": "h2",
+        "options": [
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "foreground_description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "conditionallyrevealedcomponent",
+    "fields": [
+      {
+        "component": "boolean",
+        "label": "Shall the text field be revealed?",
+        "name": "reveal",
+        "valueType": "boolean"
+      },
+      {
+        "component": "text-input",
+        "label": "Hidden text field",
+        "name": "hidden-text",
+        "valueType": "string",
+        "condition": { "===": [{ "var": "reveal" }, true] }
       }
     ]
   }
