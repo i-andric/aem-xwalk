@@ -7,15 +7,30 @@
   position: relative;
   padding: 40px 24px;
   min-height: 300px;
+  width: 100%;
+}
+
+.hero > div {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  position: absolute;
+  max-width: 28.625rem;
 }
 
 .hero h1, .hero p {
-  position: absolute;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   color: var(--background-color);
   z-index: 10;
+  font-weight: normal;
+}
+
+.hero p:first-child {
+  color: #f91351;
+  font-weight: bold;
 }
 
 .hero picture {
