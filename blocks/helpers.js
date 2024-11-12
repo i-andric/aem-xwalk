@@ -21,8 +21,7 @@ export async function getDictionary() {
   const lang = document.documentElement.lang.toLowerCase() || 'en-us';
   if (dictionaryPromise === null) {
     dictionaryPromise = fetch('/api/dictionary.json')
-      .then((res) => res.json())
-      .catch((e) => console.error('Failed to fetch dictionary', e));
+      .then((res) => res.json());
   }
 
   /** @type Array<{ key:string} & Record<string, string>> */

@@ -6,11 +6,9 @@ export default async function decorate(block) {
   const [currentCountry, currentLanguage] = getCurrentCountryLanguage();
   const response = await fetch('/query-index.json');
   const articles = await response.json();
-  console.log('articles', articles);
 
   const container = document.createElement('div');
   container.classList.add('article-container');
-  console.log(currentCountry, currentLanguage);
   const blogArticles = articles.data.filter((article) => article.path.includes(`/${currentCountry}-${currentLanguage}/blog/`));
   blogArticles.forEach((article) => {
     const articleLink = document.createElement('a');
