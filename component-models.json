@@ -198,6 +198,27 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "hero_style",
+        "label": "Style",
+        "value": "primary",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+           {
+             "name":  "Tertiary",
+             "value":  "tertiary"
+           }
+        ]
       }
     ]
   },
