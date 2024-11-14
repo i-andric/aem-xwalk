@@ -12,6 +12,7 @@ import {
   loadSection,
   loadSections,
   loadCSS,
+  addGTM,
 } from './aem.js';
 
 /**
@@ -103,6 +104,8 @@ async function loadEager(doc) {
   }
 
   sampleRUM.enhance();
+
+  setTimeout(() => addGTM(), 0);
 
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */

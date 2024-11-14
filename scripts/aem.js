@@ -138,6 +138,25 @@ function setup() {
   }
 }
 
+function addGTM() {
+  const gtmContainerId = 'GTM-WJFTM96J';
+
+  // Create the <noscript> element to add GTM to the body
+  const noscript = document.createElement('noscript');
+  const iframe = document.createElement('iframe');
+  iframe.src = `https://www.googletagmanager.com/ns.html?id=${gtmContainerId}`;
+  iframe.height = '0';
+  iframe.width = '0';
+  iframe.style.display = 'none';
+  iframe.style.visibility = 'hidden';
+
+  // Append the iframe to the <noscript> tag
+  noscript.appendChild(iframe);
+
+  // Insert the <noscript> tag at the end of the body
+  document.body.prepend(noscript);
+}
+
 /**
  * Auto initializiation.
  */
@@ -731,4 +750,5 @@ export {
   toClassName,
   waitForFirstImage,
   wrapTextNodes,
+  addGTM,
 };
