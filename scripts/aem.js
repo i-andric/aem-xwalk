@@ -153,7 +153,7 @@ function addGTM() {
   // Append the iframe to the <noscript> tag
   noscript.appendChild(iframe);
 
-  // Insert the <noscript> tag at the end of the body
+  // Insert the <noscript> tag at the beginning of the <body>
   document.body.prepend(noscript);
 }
 
