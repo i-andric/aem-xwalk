@@ -103,7 +103,7 @@ async function loadEager(doc) {
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
 
-  addGTM();
+  setTimeout(() => addGTM(), 0);
   sampleRUM.enhance();
 
   try {
