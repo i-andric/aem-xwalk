@@ -13,7 +13,6 @@ import {
   loadSections,
   loadCSS,
   addGTM,
-  loadScript,
 } from './aem.js';
 
 /**
@@ -46,9 +45,7 @@ export function moveInstrumentation(from, to) {
     to,
     [...from.attributes]
       .map(({ nodeName }) => nodeName)
-      .filter(
-        (attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-'),
-      ),
+      .filter((attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-')),
   );
 }
 
@@ -106,6 +103,7 @@ async function loadEager(doc) {
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
 
+  addGTM();
   sampleRUM.enhance();
 
   try {
@@ -151,18 +149,6 @@ function loadDelayed() {
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-
-  // Dynamically load the GTM script
-  (function loadGTM() {
-    const gtmID = 'GTM-WJFTM96J';
-    const src = `https://www.googletagmanager.com/gtm.js?id=${gtmID}`;
-    loadScript(src, { async: 'true' })
-      .then(() => console.log('GTM loaded successfully'))
-      .catch((err) => console.error('Failed to load GTM:', err));
-  }());
-  addGTM();
   loadDelayed();
 }
 
