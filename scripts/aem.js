@@ -164,7 +164,6 @@ function addGTM() {
 function init() {
   setup();
   sampleRUM();
-  addGTM();
 }
 
 /**
