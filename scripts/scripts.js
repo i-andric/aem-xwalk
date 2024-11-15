@@ -1,5 +1,4 @@
 import {
-  sampleRUM,
   loadHeader,
   loadFooter,
   decorateButtons,
@@ -104,7 +103,6 @@ async function loadEager(doc) {
   }
 
   setTimeout(() => addGTM(), 0);
-  sampleRUM.enhance();
 
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
