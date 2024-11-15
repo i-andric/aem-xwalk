@@ -12,6 +12,7 @@ import {
   loadSection,
   loadSections,
   loadCSS,
+  addGTM,
 } from './aem.js';
 
 /**
@@ -44,9 +45,7 @@ export function moveInstrumentation(from, to) {
     to,
     [...from.attributes]
       .map(({ nodeName }) => nodeName)
-      .filter(
-        (attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-'),
-      ),
+      .filter((attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-')),
   );
 }
 
@@ -56,9 +55,7 @@ export function moveInstrumentation(from, to) {
 async function loadFonts() {
   await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
   try {
-    if (!window.location.hostname.includes('localhost')) {
-      sessionStorage.setItem('fonts-loaded', 'true');
-    }
+    if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
   } catch (e) {
     // do nothing
   }
@@ -106,6 +103,7 @@ async function loadEager(doc) {
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
 
+  addGTM();
   sampleRUM.enhance();
 
   try {
