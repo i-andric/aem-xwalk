@@ -1,8 +1,10 @@
 // // eslint-disable-next-line import/no-cycle
-// import { loadScript } from './aem.js';
+import { addGTM, loadScript } from './aem.js';
 
-// const gtmSrc = 'https://www.googletagmanager.com/gtm.js?id=GTM-WJFTM96J';
+const gtmSrc = 'https://www.googletagmanager.com/gtm.js?id=GTM-WJFTM96J';
 
-// await loadScript(gtmSrc, {
-//   async: 'true',
-// });
+await loadScript(gtmSrc, {
+  async: 'true',
+});
+
+addGTM();
