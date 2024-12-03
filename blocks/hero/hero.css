@@ -11,6 +11,10 @@
   height: calc(100vH - 100px);
 }
 
+.main.Canvas .hero {
+  height: 100%;
+}
+
 .hero > div {
   max-width: 1200px;
   margin: 0 auto;
