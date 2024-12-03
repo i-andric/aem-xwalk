@@ -13,9 +13,3 @@
     }
   }
 }
-
-@media (min-width: 1024px) {
-  .search {
-    --top-posts-card-base-width: 390px;
-  }
-}
