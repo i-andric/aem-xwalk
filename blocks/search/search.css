@@ -1,0 +1,21 @@
+.search {
+  --top-posts-card-base-width: 250px;
+
+  .search-top-posts-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 32px;
+
+    /* post link wrapper */
+    & > a {
+      flex-basis: var(--top-posts-card-base-width);
+      flex-grow: 1;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .search {
+    --top-posts-card-base-width: 390px;
+  }
+}
