@@ -110,7 +110,27 @@
     "id": "section",
     "fields": [
       {
-        "component": "multiselect",
+        "component": "select",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Light",
+            "value": "light"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cards",
+    "fields": [
+      {
+        "component": "select",
         "name": "style",
         "label": "Style",
         "options": [
