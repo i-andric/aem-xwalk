@@ -1,0 +1,22 @@
+@use '../../styles/_media-queries' as *;
+@use '../../styles/_mixins' as *;
+
+footer {
+  background-color: rgba(var(--color-light-gray));
+  font-size: var(--body-size-xs);
+  .footer {
+    > div {
+      margin: auto;
+      max-width: remUnit(1200px);
+      padding: remUnit(40px) remUnit(24px) remUnit(24px);
+    }
+    p {
+      margin: 0;
+    }
+  }
+  @include l {
+    .footer > div {
+      padding: remUnit(40px) remUnit(32px) remUnit(24px);
+    }
+  }
+}

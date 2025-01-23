@@ -2,8 +2,11 @@
   "name": "@adobe/aem-boilerplate",
   "private": true,
   "version": "1.3.0",
-  "description": "Starter project for Adobe Helix",
+  "description": "Aem XWalk",
+  "type": "module",
   "scripts": {
+    "test": "wtr \"./test/**/*.test.js\" --node-resolve --port=2000 --coverage",
+    "test:watch": "npm test --watch",
     "lint:js": "eslint . --ext .json,.js,.mjs",
     "lint:css": "stylelint blocks/**/*.css styles/*.css",
     "lint": "npm run lint:js && npm run lint:css",
@@ -13,7 +16,8 @@
     "build:json:filters": "merge-json-cli -i 'models/_component-filters.json' -o 'component-filters.json'",
     "prepare": "husky",
     "aem": "aem up --no-open",
-    "dev": "npm-run-all --parallel aem"
+    "up": "aem up & node sass-compile.js",
+    "dev": "npm-run-all --parallel up"
   },
   "repository": {
     "type": "git",

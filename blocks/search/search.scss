@@ -1,0 +1,15 @@
+@use '../../styles/_media-queries' as *;
+@use '../../styles/_mixins' as *;
+
+.search {
+  --top-posts-card-base-width: 250px;
+
+  &-top-posts-container {
+    @include flex-container(row, flex-start, center, wrap, 32px);
+
+    & > a {
+      flex-basis: var(--top-posts-card-base-width);
+      flex-grow: 1;
+    }
+  }
+}

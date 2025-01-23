@@ -1,20 +1,17 @@
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: rgba(var(--color-light-gray));
+  font-size: var(--body-size-xs);
 }
-
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  max-width: 75rem;
+  padding: 2.5rem 1.5rem 1.5rem;
 }
-
 footer .footer p {
   margin: 0;
 }
-
-@media (width >= 900px) {
+@media screen and (min-width: 54.13rem) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 2.5rem 2rem 1.5rem;
   }
 }

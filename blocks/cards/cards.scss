@@ -1,0 +1,34 @@
+@use '../../styles/_media-queries' as *;
+@use '../../styles/_mixins' as *;
+
+.cards {
+  > ul {
+    @include grid-container(repeat(auto-fill, minmax(257px, 1fr)), null, 24px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    > li {
+        @include border(var(--color-darker-gray));
+        @include bg-color(var(--background-color));
+    }
+  }
+  &-card-body {
+    margin: remUnit(16px);
+  }
+  &-card-image {
+    line-height: 0;
+  }
+  ul li {
+    img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+  }
+  a {
+    @include border(var(--color-darker-gray));
+    @include bg-color(var(--background-color));
+    text-decoration: none;
+    color: unset;
+  }
+}

@@ -1,26 +1,24 @@
-.articlefeed {
-    background: lightgray;
-}
-
-.article-container {
-    display: grid;
-    gap: 12px;
-    margin-top: 20px;
-    grid-template-columns: repeat(3, 1fr);
-}
-
 .article {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 20px;
-    text-decoration: unset;
+  border: 1px solid rgba(var(--color-darker-gray), 1);
+  padding: 0.9375rem;
+  margin-bottom: 1.25rem;
+  text-decoration: unset;
 }
-
+.articlefeed {
+  background: var(--color-light-gray);
+}
+.article-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  justify-items: stretch;
+  align-items: stretch;
+  margin-top: 1.25rem;
+}
 .article h2 {
-    text-decoration: unset;
+  text-decoration: unset;
 }
-
 .article img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }

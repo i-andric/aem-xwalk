@@ -1,0 +1,28 @@
+@use '../../styles/_media-queries' as *;
+@use '../../styles/_mixins' as *;
+
+.columns {
+  > div {
+    @include flex-container(column, center, center, nowrap, 24px);
+    > div {
+      order: 1;
+    }
+    @include l {
+      @include flex-container(row, center, center, nowrap, 24px);
+
+      > div {
+        flex: 1;
+        order: unset;
+      }
+    }
+    > .columns-img-col {
+      order: 0;
+    }
+    > .columns-img-col img {
+      display: block;
+    }
+  }
+  img {
+    width: 100%;
+  }
+}
