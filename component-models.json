@@ -308,7 +308,55 @@
     ]
   },
   {
-    "id": "carousel"
+    "id": "carousel",
+    "fields": [
+      {
+        "component": "group",
+        "name": "slides",
+        "label": "Carousel Slides",
+        "multi": true,
+        "fields": [
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "image",
+            "label": "Image",
+            "multi": false
+          },
+          {
+            "component": "richtext",
+            "name": "text",
+            "value": "",
+            "label": "Text",
+            "valueType": "string"
+          },
+          {
+            "component": "aem-content",
+            "name": "link",
+            "label": "Link"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "contentAlign",
+        "label": "Content Alignment",
+        "options": [
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "carouselitem",
