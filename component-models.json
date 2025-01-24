@@ -350,13 +350,6 @@
             "value": "justify"
           }
         ]
-      },
-      {
-        "component": "boolean",
-        "name": "autoplay",
-        "label": "Enable Autoplay",
-        "valueType": "boolean",
-        "value": false
       }
     ]
   },
