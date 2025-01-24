@@ -40,6 +40,8 @@
   /* font weight */
   --font-bold: 700;
   --font-regular: 400;
+
+  --header-height: 100vH;
 }
 body {
   font-size: var(--body-font-size-m);
