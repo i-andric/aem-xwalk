@@ -14,6 +14,7 @@ const compileAndSave = async (sassFile) => {
 
   try {
     const result = sass.compile(sassFile);
+    
     fs.writeFile(dest, result.css, (err) => {
       if (err) console.log(err);
       console.log(`Compiled ${sassFile} to ${dest}`);

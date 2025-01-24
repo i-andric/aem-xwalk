@@ -10,7 +10,7 @@ footer .footer > div {
 footer .footer p {
   margin: 0;
 }
-@media screen and (min-width: 54.13rem) {
+@media screen and (width >= 54.13rem) {
   footer .footer > div {
     padding: 2.5rem 2rem 1.5rem;
   }

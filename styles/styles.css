@@ -129,9 +129,6 @@ pre {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
   overflow: scroll;
-  font-family: var(--fixed-font-family);
-  font-size: var(--body-font-size-s);
-  overflow: scroll;
 }
 
 blockquote {
@@ -150,15 +147,9 @@ code {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
   padding: 0.125em;
-  font-family: var(--fixed-font-family);
-  font-size: var(--body-font-size-s);
-  padding: 0.125em;
 }
 
 samp {
-  font-family: var(--fixed-font-family);
-  font-size: var(--body-font-size-s);
-  padding: 0.125em;
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
   padding: 0.125em;
@@ -213,51 +204,6 @@ main .section.highlight {
   background-color: var(--highlight-background-color);
 }
 
-a:any-link {
-  color: var(--link-color);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-  color: var(--link-hover-color);
-}
-a button:focus {
-  background-color: var(--link-hover-color);
-  cursor: pointer;
-}
-a button:hover {
-  background-color: var(--link-hover-color);
-  cursor: pointer;
-}
-
-a.button:any-link {
-  font-family: var(--body-font-family);
-  display: inline-block;
-  box-sizing: border-box;
-  text-decoration: none;
-  border: 2px solid transparent;
-  padding: 5px 30px;
-  text-align: center;
-  font-style: normal;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--background-color);
-  background-color: var(--link-color);
-  margin: 16px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: 30px;
-}
-a.button:focus {
-  background-color: var(--link-hover-color);
-  cursor: pointer;
-}
-a.button:hover {
-  background-color: var(--link-hover-color);
-  cursor: pointer;
-}
-
 button {
   font-family: var(--body-font-family);
   display: inline-block;
@@ -286,6 +232,38 @@ button:hover {
   cursor: unset;
 }
 
+a button:focus {
+  background-color: var(--link-hover-color);
+  cursor: pointer;
+}
+a button:hover {
+  background-color: var(--link-hover-color);
+  cursor: pointer;
+}
+a:any-link {
+  font-family: var(--body-font-family);
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 2px solid transparent;
+  padding: 5px 30px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--background-color);
+  background-color: var(--link-color);
+  margin: 16px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 30px;
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--link-hover-color);
+}
+
 a.button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
@@ -308,7 +286,7 @@ button.secondary {
   width: 100%;
 }
 
-@media (min-width: 900px) {
+@media screen and (width >= 54.13rem) {
   :root {
     --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
@@ -322,7 +300,7 @@ button.secondary {
     margin: auto;
   }
 }
-@media screen and (max-width: calc(20rem - 1px)) {
+@media screen and (width <= calc(20rem - 1px)) {
   main .section {
     padding: 64px 32px;
   }

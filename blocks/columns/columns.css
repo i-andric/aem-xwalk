@@ -1,21 +1,22 @@
+.columns img {
+  width: 100%;
+}
 .columns > div {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-flow: column nowrap;
   gap: 24px;
 }
 .columns > div > div {
   order: 1;
 }
-@media screen and (min-width: 54.13rem) {
+@media screen and (width >= 54.13rem) {
   .columns > div {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
     gap: 24px;
   }
   .columns > div > div {
@@ -28,7 +29,4 @@
 }
 .columns > div > .columns-img-col img {
   display: block;
-}
-.columns img {
-  width: 100%;
 }

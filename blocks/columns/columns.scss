@@ -2,12 +2,17 @@
 @use '../../styles/_mixins' as *;
 
 .columns {
+  img {
+    width: 100%;
+  }
+  
   > div {
     @include flex-container(column, center, center, nowrap, 24px);
     > div {
       order: 1;
     }
     @include l {
+
       @include flex-container(row, center, center, nowrap, 24px);
 
       > div {
@@ -21,8 +26,5 @@
     > .columns-img-col img {
       display: block;
     }
-  }
-  img {
-    width: 100%;
   }
 }
