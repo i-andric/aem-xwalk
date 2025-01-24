@@ -46,16 +46,7 @@
   {
     "id": "carousel",
     "components": [
-      "carousel-slide"
-    ]
-  },
-  {
-    "id": "carousel-slide",
-    "components": [
-      "image",
-      "text",
-      "title",
-      "button"
+      "carouselitem"
     ]
   }
 ]

@@ -330,77 +330,42 @@
     "fields": [
       {
         "component": "select",
-        "name": "contentAlign",
-        "label": "Content Alignment",
+        "name": "style",
+        "label": "Style",
         "options": [
           {
-            "name": "Left",
-            "value": "left"
+            "name": "Light",
+            "value": "light"
           },
           {
-            "name": "Center",
-            "value": "center"
-          },
-          {
-            "name": "Right",
-            "value": "right"
-          },
-          {
-            "name": "Justify",
-            "value": "justify"
+            "name": "Dark",
+            "value": "dark"
           }
         ]
       }
     ]
   },
   {
-    "id": "carousel-slide",
+    "id": "carouselitem",
     "fields": [
       {
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Slide Image",
+        "label": "Image",
         "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt Text",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Slide Title",
-        "valueType": "string"
-      },
-      {
-        "component": "select",
-        "name": "titleType",
-        "label": "Title Type",
-        "options": [
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          }
-        ]
       },
       {
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Slide Content",
+        "label": "Text",
         "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
       }
     ]
   }
