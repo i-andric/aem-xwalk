@@ -357,14 +357,6 @@
         "label": "Enable Autoplay",
         "valueType": "boolean",
         "value": false
-      },
-      {
-        "component": "number",
-        "name": "autoplayInterval",
-        "label": "Autoplay Interval (ms)",
-        "valueType": "number",
-        "value": 5000,
-        "condition": { "===": [{ "var": "autoplay" }, true] }
       }
     ]
   },
