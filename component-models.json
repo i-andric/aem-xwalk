@@ -308,42 +308,7 @@
     ]
   },
   {
-    "id": "conditionallyrevealedcomponent",
-    "fields": [
-      {
-        "component": "boolean",
-        "label": "Shall the text field be revealed?",
-        "name": "reveal",
-        "valueType": "boolean"
-      },
-      {
-        "component": "text-input",
-        "label": "Hidden text field",
-        "name": "hidden-text",
-        "valueType": "string",
-        "condition": { "===": [{ "var": "reveal" }, true] }
-      }
-    ]
-  },
-  {
-    "id": "carousel",
-    "fields": [
-      {
-        "component": "select",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          {
-            "name": "Light",
-            "value": "light"
-          },
-          {
-            "name": "Dark",
-            "value": "dark"
-          }
-        ]
-      }
-    ]
+    "id": "carousel"
   },
   {
     "id": "carouselitem",
@@ -366,6 +331,24 @@
         "component": "aem-content",
         "name": "link",
         "label": "Link"
+      }
+    ]
+  },
+  {
+    "id": "conditionallyrevealedcomponent",
+    "fields": [
+      {
+        "component": "boolean",
+        "label": "Shall the text field be revealed?",
+        "name": "reveal",
+        "valueType": "boolean"
+      },
+      {
+        "component": "text-input",
+        "label": "Hidden text field",
+        "name": "hidden-text",
+        "valueType": "string",
+        "condition": { "===": [{ "var": "reveal" }, true] }
       }
     ]
   }
