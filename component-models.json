@@ -238,10 +238,10 @@
             "name": "Secondary",
             "value": "secondary"
           },
-           {
-             "name":  "Tertiary",
-             "value":  "tertiary"
-           }
+          {
+            "name": "Tertiary",
+            "value": "tertiary"
+          }
         ]
       }
     ]
@@ -311,48 +311,17 @@
     "id": "carousel",
     "fields": [
       {
-        "component": "group",
-        "name": "slides",
-        "label": "Carousel Slides",
-        "multi": true,
-        "fields": [
-          {
-            "component": "reference",
-            "valueType": "string",
-            "name": "image",
-            "label": "Image",
-            "multi": false
-          },
-          {
-            "component": "richtext",
-            "name": "text",
-            "value": "",
-            "label": "Text",
-            "valueType": "string"
-          },
-          {
-            "component": "aem-content",
-            "name": "link",
-            "label": "Link"
-          }
-        ]
-      },
-      {
         "component": "select",
-        "name": "contentAlign",
-        "label": "Content Alignment",
+        "name": "style",
+        "label": "Style",
         "options": [
           {
-            "name": "Left",
-            "value": "left"
+            "name": "Light",
+            "value": "light"
           },
           {
-            "name": "Center",
-            "value": "center"
-          },
-          {
-            "name": "Right",
-            "value": "right"
+            "name": "Dark",
+            "value": "dark"
           }
         ]
       }
@@ -384,7 +353,14 @@
         "label": "Hidden text field",
         "name": "hidden-text",
         "valueType": "string",
-        "condition": { "===": [{ "var": "reveal" }, true] }
+        "condition": {
+          "===": [
+            {
+              "var": "reveal"
+            },
+            true
+          ]
+        }
       }
     ]
   }
