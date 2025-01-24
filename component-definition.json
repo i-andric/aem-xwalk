@@ -219,14 +219,14 @@
           }
         },
         {
-          "title": "Carousel Item",
+          "title": "Carouselitem",
           "id": "carouselitem",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "Carousel Item",
+                  "name": "Carouselitem",
                   "model": "carouselitem"
                 }
               }
