@@ -401,39 +401,6 @@
         "value": "",
         "label": "Slide Content",
         "valueType": "string"
-      },
-      {
-        "component": "group",
-        "name": "buttons",
-        "label": "Slide Buttons",
-        "multi": true,
-        "fields": [
-          {
-            "component": "aem-content",
-            "name": "link",
-            "label": "Button Link"
-          },
-          {
-            "component": "text",
-            "name": "text",
-            "label": "Button Text"
-          },
-          {
-            "component": "select",
-            "name": "style",
-            "label": "Button Style",
-            "options": [
-              {
-                "name": "Primary",
-                "value": "primary"
-              },
-              {
-                "name": "Secondary",
-                "value": "secondary"
-              }
-            ]
-          }
-        ]
       }
     ]
   }
