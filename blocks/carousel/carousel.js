@@ -76,31 +76,14 @@ function createSlide(row, slideIndex, carouselId) {
   slide.setAttribute('id', `carousel-${carouselId}-slide-${slideIndex}`);
   slide.classList.add('carousel-slide');
 
-  // Create image container
-  const imageContainer = document.createElement('div');
-  imageContainer.classList.add('carousel-slide-image');
-  const image = row.querySelector('img');
-  if (image) {
-    imageContainer.appendChild(image);
-  }
-  slide.appendChild(imageContainer);
+  row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
+    column.classList.add(`carousel-slide-${colIdx === 0 ? 'image' : 'content'}`);
+    slide.append(column);
+  });
 
-  // Create content container
-  const contentContainer = document.createElement('div');
-  contentContainer.classList.add('carousel-slide-content');
-  
-  const title = row.querySelector('h1, h2, h3, h4, h5, h6');
-  const text = row.querySelector('p');
-  const link = row.querySelector('a');
-
-  if (title) contentContainer.appendChild(title);
-  if (text) contentContainer.appendChild(text);
-  if (link) contentContainer.appendChild(link);
-  
-  slide.appendChild(contentContainer);
-
-  if (title) {
-    slide.setAttribute('aria-labelledby', title.getAttribute('id'));
+  const labeledBy = slide.querySelector('h1, h2, h3, h4, h5, h6');
+  if (labeledBy) {
+    slide.setAttribute('aria-labelledby', labeledBy.getAttribute('id'));
   }
 
   return slide;
@@ -110,13 +93,6 @@ let carouselId = 0;
 export default async function decorate(block) {
   carouselId += 1;
   block.setAttribute('id', `carousel-${carouselId}`);
-  
-  // Add style class if specified
-  const style = block.dataset.style;
-  if (style) {
-    block.classList.add(`carousel-${style}`);
-  }
-
   const rows = block.querySelectorAll(':scope > div');
   const isSingleSlide = rows.length < 2;
 
@@ -170,16 +146,5 @@ export default async function decorate(block) {
 
   if (!isSingleSlide) {
     bindEvents(block);
-  }
-
-  // Add autoplay if enabled
-  const autoplay = block.dataset.autoplay === 'true';
-  const autoplayInterval = parseInt(block.dataset.autoplayInterval, 10) || 5000;
-  
-  if (autoplay) {
-    setInterval(() => {
-      const currentSlide = parseInt(block.dataset.activeSlide, 10);
-      showSlide(block, currentSlide + 1);
-    }, autoplayInterval);
   }
 }
