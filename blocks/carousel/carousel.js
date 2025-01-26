@@ -77,6 +77,9 @@ function createSlide(row, slideIndex, carouselId) {
   slide.setAttribute('id', `carousel-${carouselId}-slide-${slideIndex}`);
   slide.classList.add('carousel-slide');
 
+  // Move instrumentation before processing
+  moveInstrumentation(row, slide);
+
   let slideLink = null;
   const firstLink = row.querySelector('a');
   if (firstLink) {
@@ -84,17 +87,33 @@ function createSlide(row, slideIndex, carouselId) {
     slideLink.href = firstLink.href;
   }
 
-  while (row.firstElementChild) slide.append(row.firstElementChild);
-
-  [...slide.children].forEach((div) => {
-    if (div.children.length === 1 && div.querySelector('picture')) {
-      div.className = 'carousel-slide-image';
+  // Process each div in the row
+  [...row.children].forEach((div) => {
+    const divClone = div.cloneNode(true);
+    if (divClone.children.length === 1 && divClone.querySelector('picture')) {
+      divClone.className = 'carousel-slide-image';
     } else {
-      div.className = 'carousel-slide-content';
+      divClone.className = 'carousel-slide-content';
     }
-    if (div.querySelector('a')) {
-      div.remove();
+    if (divClone.querySelector('a')) {
+      const link = divClone.querySelector('a');
+      link.remove();
     }
+    slide.append(divClone);
+  });
+
+  // Handle carit items
+  const caritItems = row.querySelectorAll('.carit');
+  caritItems.forEach((carit) => {
+    const caritClone = carit.cloneNode(true);
+    slide.append(caritClone);
+  });
+
+  // Handle card items
+  const cardItems = row.querySelectorAll('.card');
+  cardItems.forEach((card) => {
+    const cardClone = card.cloneNode(true);
+    slide.append(cardClone);
   });
 
   if (slideLink) {
@@ -142,6 +161,7 @@ export default async function decorate(block) {
     container.append(slideNavButtons);
   }
 
+  // Process each row into a slide
   rows.forEach((row, idx) => {
     const slide = createSlide(row, idx, carouselId);
     slidesWrapper.append(slide);
@@ -153,7 +173,6 @@ export default async function decorate(block) {
       indicator.innerHTML = `<button type="button" aria-label="${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}"></button>`;
       slideIndicators.append(indicator);
     }
-    row.remove();
   });
 
   // Optimize images
@@ -162,6 +181,9 @@ export default async function decorate(block) {
     moveInstrumentation(img, optimizedPic.querySelector('img'));
     img.closest('picture').replaceWith(optimizedPic);
   });
+
+  // Clean up original rows
+  rows.forEach((row) => row.remove());
 
   container.append(slidesWrapper);
   block.prepend(container);
