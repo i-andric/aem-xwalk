@@ -55,6 +55,8 @@
       padding: remUnit(20px);
       @include text-color(var(--color-pure-white));
       @include bg-color(var(--color-pure-black), 0.7);
+      padding: 20px;
+      box-shadow: inset 0 0 200px #000;
       bottom: remUnit(75px);
       z-index: 5;
       gap: remUnit(16px);

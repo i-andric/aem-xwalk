@@ -43,7 +43,7 @@
 }
 .carousel-slide-image img {
   width: 100%;
-  height: 100vH;
+  height: 100vh;
   object-fit: cover;
 }
 .carousel-slide-content {
@@ -57,6 +57,8 @@
   padding: 1.25rem;
   color: rgba(var(--color-pure-white), 1);
   background: rgba(var(--color-pure-black), 0.7);
+  padding: 20px;
+  box-shadow: inset 0 0 200px #000;
   bottom: 4.6875rem;
   z-index: 5;
   gap: 1rem;
@@ -166,6 +168,10 @@
 }
 .carousel.carousel-dark .carousel-slide-indicators button {
   background-color: var(--background-color);
+}
+
+.adobe-ue-edit .carousel-slide-image img {
+  height: 37.5rem;
 }
 
 @media screen and (width >= 54.13rem) {

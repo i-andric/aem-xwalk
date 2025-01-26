@@ -5,7 +5,15 @@
   position: relative;
   min-height: remUnit(300px);
   width: 100%;
-  height: calc(100vh - remUnit(100px));
+  height: 100vh;
+
+  @include media-m {
+    height: remUnit(800px);
+  }
+
+  @include media-l {
+    height: remUnit(900px);
+  }
 
   &-container {
     .hero-wrapper {
@@ -59,6 +67,6 @@
 
 .adobe-ue-edit {
   .hero {
-    height: 100%;
+    height: remUnit(600px);
   }
 }
