@@ -30,7 +30,8 @@
   {
     "id": "carousel",
     "components": [
-      "carit"
+      "carit",
+      "card"
     ]
   },
   {
