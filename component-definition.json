@@ -219,15 +219,15 @@
           }
         },
         {
-          "title": "Carit",
-          "id": "carit",
+          "title": "Carousel Item",
+          "id": "carouselitem",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "Carit",
-                  "model": "carit"
+                  "name": "Carousel Item",
+                  "model": "carouselitem"
                 }
               }
             }

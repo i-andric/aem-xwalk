@@ -343,7 +343,7 @@
     ]
   },
   {
-    "id": "carit",
+    "id": "carouselitem",
     "fields": [
       {
         "component": "reference",
