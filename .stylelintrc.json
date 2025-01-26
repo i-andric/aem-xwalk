@@ -6,6 +6,7 @@
     "declaration-empty-line-before": null,
     "rule-empty-line-before": null,
     "selector-attribute-quotes": null,
-    "color-function-notation": ["modern", { "ignore": ["with-var-inside"] }]
+    "color-function-notation": ["modern", { "ignore": ["with-var-inside"] }],
+    "no-descending-specificity": null
   }
 }

@@ -14,7 +14,7 @@ footer {
       margin: 0;
     }
   }
-  @include l {
+  @include media-l {
     .footer > div {
       padding: remUnit(40px) remUnit(32px) remUnit(24px);
     }

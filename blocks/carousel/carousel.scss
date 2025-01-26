@@ -1,156 +1,199 @@
 @use '../../styles/_media-queries' as *;
 @use '../../styles/_mixins' as *;
 
-.carousel .carousel-slides-container {
+.carousel {
+  $carousel: &;
+  position: relative;
+  margin: 0 auto;
+  max-width: var(--content-width);
+
+  &-slides-container {
     position: relative;
+    margin: 0 auto;
+    overflow: hidden;
   }
-  
-  .carousel .carousel-slides,
-  .carousel .carousel-slide-indicators {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .carousel .carousel-slides {
-    display: flex;
-    scroll-behavior: smooth;
+
+  &-slides {
+    @include flex-container;
     scroll-snap-type: x mandatory;
-    overflow: scroll clip;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
-  
-  .carousel .carousel-slides::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .carousel .carousel-slide {
-    flex: 0 0 100%;
+
+  &-slide {
+    @include flex-item(0, 0, 100%);
     scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
     position: relative;
-    width: 100%;
-    min-height: min(50vw, calc(100dvh - var(--header-height)));
+    gap: remUnit(32px);
+
+    &[aria-hidden='true'] {
+      visibility: hidden;
+    }
+
+    &-image {
+      width: 100%;
+      @include flex-item(1);
+      
+      img {
+        width: 100%;
+        height: 100vH;
+        object-fit: cover;
+      }
+    }
+
+    &-content {
+      position: absolute;
+      @include flex-column-start;
+      max-width: 100%;
+      padding: remUnit(20px);
+      @include text-color(var(--color-pure-white));
+      @include bg-color(var(--color-pure-black), 0.7);
+      bottom: remUnit(75px);
+      z-index: 5;
+      gap: remUnit(16px);
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0;
+      }
+    }
   }
-  
-  .carousel .carousel-slide:has(.carousel-slide-content[data-align='center']) {
-    align-items: center;
-  }
-  
-  .carousel .carousel-slide:has(.carousel-slide-content[data-align='right']) {
-    align-items: flex-end;
-  }
-  
-  .carousel .carousel-slide .carousel-slide-image picture {
-    position: absolute;
-    inset: 0;
-  }
-  
-  .carousel .carousel-slide .carousel-slide-image picture > img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  .carousel .carousel-slide .carousel-slide-content {
-    z-index: 1;
-    margin: 68px;
-    padding: 16px;
-    @include text-color(var(--color-pure-white));
-    @include bg-color(var(--color-pure-black), 0.7);
-    position: relative;
-    width: var(--slide-content-width, auto);
-  }
-  
-  .carousel .carousel-slide-indicators {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 6px 12px;
-    padding: 12px;
-    @include bg-color(var(--light-color));
-    line-height: 0;
-  }
-  
-  .carousel .carousel-slide-indicator button {
-    width: 24px;
-    height: 24px;
-    margin: 0;
-    padding: 0;
-    border-radius: 50%;
-    @include bg-color(var(--color-light-gray));
-    transition: background-color 0.2s;
-  }
-  
-  .carousel .carousel-slide-indicator button:disabled,
-  .carousel .carousel-slide-indicator button:hover,
-  .carousel .carousel-slide-indicator button:focus-visible {
-    @include bg-color(var(--text-color), 0.8);
-  }
-  
-  .carousel .carousel-navigation-buttons {
+
+  &-navigation-buttons {
     position: absolute;
     top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 1;
     transform: translateY(-50%);
-    left: 12px;
-    right: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1;
+    @include flex-container(row, space-between);
+    padding: 0 remUnit(16px);
+    pointer-events: none;
+
+    button {
+      width: remUnit(48px);
+      height: remUnit(48px);
+      border: 0;
+      border-radius: 50%;
+      background-color: var(--overlay-background-color);
+      cursor: pointer;
+      pointer-events: all;
+      position: relative;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: var(--overlay-background-hover-color);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: remUnit(12px);
+        height: remUnit(12px);
+        border-style: solid;
+        border-width: remUnit(3px) remUnit(3px) 0 0;
+        border-color: var(--background-color);
+      }
+
+      &.slide-prev::before {
+        transform: translate(-25%, -50%) rotate(-135deg);
+      }
+
+      &.slide-next::before {
+        transform: translate(-75%, -50%) rotate(45deg);
+      }
+    }
   }
-  
-  /* stylelint-disable-next-line no-descending-specificity */
-  .carousel .carousel-navigation-buttons button {
-    position: relative;
-    width: 44px;
-    height: 44px;
-    margin: 0;
-    border-radius: 50%;
-    padding: 0;
-    @include bg-color(var(--color-darker-gray));
-    transition: background-color 0.2s;
-  }
-  
-  .carousel .carousel-navigation-buttons button:hover,
-  .carousel .carousel-navigation-buttons button:focus-visible {
-    @include bg-color(var(--color-darker-gray));
-  }
-  
-  .carousel .carousel-navigation-buttons button::after {
-    display: block;
-    content: '';
-    border: 2px solid;
-    border-bottom: 0;
-    border-left: 0;
-    height: 12px;
-    width: 12px;
+
+  &-slide-indicators {
     position: absolute;
-    top: 50%;
-    left: calc(50% + 2px);
-    transform: translate(-50%, -50%) rotate(-135deg);
-  }
-  
-  .carousel .carousel-navigation-buttons button.slide-next::after {
-    transform: translate(-50%, -50%) rotate(45deg);
-    left: calc(50% - 2px);
-  }
-  
-  @media (width >= 600px) {
-    .carousel .carousel-navigation-buttons {
-      left: 24px;
-      right: 24px;
+    @include flex-container(row, center, center, nowrap, remUnit(8px));
+    z-index: 3;
+    bottom: remUnit(15px);
+    margin: remUnit(16px) 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+
+    button {
+      width: remUnit(16px);
+      height: remUnit(16px);
+      border: 0;
+      border-radius: 50%;
+      padding: 0;
+      @include bg-color(var(--color-pure-white), 0.3);
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &[disabled] {
+        opacity: 1;
+        cursor: default;
+      }
     }
-  
-    .carousel .carousel-slide .carousel-slide-content {
-      --slide-content-width: calc((100% - 184px) / 2);
-  
-      margin: 92px;
+  }
+
+  // Style variants
+  &.carousel-light {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  &.carousel-dark {
+    background-color: var(--overlay-background-color);
+    color: var(--background-color);
+
+    #{$carousel}-navigation-buttons button {
+      background-color: var(--background-color);
+
+      &::before {
+        border-color: var(--text-color);
+      }
+
+      &:hover {
+        background-color: var(--overlay-background-hover-color);
+      }
     }
-  
-    .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
-      --slide-content-width: auto;
+
+    #{$carousel}-slide-indicators button {
+      background-color: var(--background-color);
     }
   }
+}
+
+@include media-l {
+  .carousel {
+    &-slide {
+      @include flex-column-start;
+
+      &-image,
+      &-content {
+        @include flex-item(1);
+      }
+    }
+
+    &-navigation-buttons {
+      button {
+        width: remUnit(40px);
+        height: remUnit(40px);
+      }
+    }
+  }
+}

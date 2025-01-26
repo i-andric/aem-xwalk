@@ -50,9 +50,15 @@
             "value": ""
           },
           {
-            "component": "text",
-            "name": "title",
+            "component": "richtext",
+            "name": "slide_title",
             "label": "Slide Title",
+            "valueType": "string"
+          },
+          {
+            "component": "button",
+            "name": "slide_button",
+            "label": "Slide Button",
             "valueType": "string"
           }
         ]

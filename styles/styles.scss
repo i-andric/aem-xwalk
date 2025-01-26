@@ -193,9 +193,6 @@ main {
     width: auto;
     height: auto;
   }
-  .section {
-    padding: 64px 16px;
-  }
   .section.highlight {
     background-color: var(--highlight-background-color);
   }
@@ -281,7 +278,7 @@ button.secondary {
     width: 100%;
   }
 }
-@include l {
+@include media-l {
   :root {
     --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
@@ -292,13 +289,12 @@ button.secondary {
   }
   .section {
     > div {
-      max-width: 1200px;
       margin: auto;
     }
   }
 }
 
-@include max-s {
+@include media-max-s {
   main {
     .section {
       padding: 64px 32px;

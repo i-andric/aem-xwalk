@@ -1,9 +1,8 @@
 .hero {
   position: relative;
-  padding: 2.5rem 1.5rem;
   min-height: 18.75rem;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 6.25rem);
 }
 .hero-container .hero-wrapper {
   max-width: unset;
@@ -26,12 +25,12 @@
 .hero h3 {
   margin-left: auto;
   margin-right: auto;
-  color: rgba(var(--color-pure-white));
+  color: rgba(var(--color-pure-white), 1);
   z-index: 10;
   font-weight: normal;
 }
 .hero p:first-child {
-  color: rgba(var(--color-team-red));
+  color: rgba(var(--color-team-red), 1);
   font-weight: bold;
 }
 .hero picture {
@@ -48,10 +47,4 @@
 
 .adobe-ue-edit .hero {
   height: 100%;
-}
-
-@media (width >= 900px) {
-  .hero {
-    padding: 2.5rem 2rem;
-  }
 }
