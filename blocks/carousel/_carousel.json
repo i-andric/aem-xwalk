@@ -17,14 +17,14 @@
       },
       {
         "title": "Carousel Item",
-        "id": "carouselitem",
+        "id": "arit",
         "plugins": {
           "xwalk": {
             "page": {
               "resourceType": "core/franklin/components/block/v1/block/item",
               "template": {
-                "name": "Carousel Item",
-                "model": "carouselitem"
+                "name": "Carit",
+                "model": "carit"
               }
             }
           }
@@ -33,7 +33,7 @@
     ],
     "models": [
       {
-        "id": "carouselitem",
+        "id": "carit",
         "fields": [
           {
             "component": "reference",
@@ -62,7 +62,7 @@
       {
         "id": "carousel",
         "components": [
-          "carouselitem"
+          "carit"
         ]
       }
     ]
