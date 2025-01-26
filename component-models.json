@@ -364,18 +364,6 @@
         "name": "title",
         "label": "Slide Title",
         "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Slide Content",
-        "valueType": "string"
-      },
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link"
       }
     ]
   },

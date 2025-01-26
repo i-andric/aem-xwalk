@@ -16,11 +16,10 @@
       "cards",
       "columns",
       "fragment",
-      "carousel"
+      "carousel",
+      "teaser",
+      "articlefeed"
     ]
-  },
-  {
-    "id": "articlefeed"
   },
   {
     "id": "cards",
