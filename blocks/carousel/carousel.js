@@ -7,7 +7,6 @@ function updateActiveSlide(slide) {
   block.dataset.activeSlide = slideIndex;
 
   const slides = block.querySelectorAll('.carousel-slide');
-
   slides.forEach((aSlide, idx) => {
     aSlide.setAttribute('aria-hidden', idx !== slideIndex);
     aSlide.querySelectorAll('a').forEach((link) => {
@@ -72,6 +71,37 @@ function bindEvents(block) {
 }
 
 function createSlide(row, slideIndex, carouselId) {
+  // Check if there's an image in the row
+  const hasImage = row.querySelector('picture') !== null;
+  if (!hasImage) {
+    // If no image, just return the content directly
+    const content = document.createElement('div');
+    content.classList.add('carousel-content');
+    moveInstrumentation(row, content);
+
+    [...row.children].forEach((div) => {
+      const divClone = div.cloneNode(true);
+      content.append(divClone);
+    });
+
+    // Handle carit items
+    const caritItems = row.querySelectorAll('.carit');
+    caritItems.forEach((carit) => {
+      const caritClone = carit.cloneNode(true);
+      content.append(caritClone);
+    });
+
+    // Handle card items
+    const cardItems = row.querySelectorAll('.card');
+    cardItems.forEach((card) => {
+      const cardClone = card.cloneNode(true);
+      content.append(cardClone);
+    });
+
+    return content;
+  }
+
+  // If there is an image, create a carousel slide
   const slide = document.createElement('li');
   slide.dataset.slideIndex = slideIndex;
   slide.setAttribute('id', `carousel-${carouselId}-slide-${slideIndex}`);
@@ -128,7 +158,9 @@ export default async function decorate(block) {
   carouselId += 1;
   block.setAttribute('id', `carousel-${carouselId}`);
   const rows = block.querySelectorAll(':scope > div');
-  const isSingleSlide = rows.length < 2;
+  // Count slides with images
+  const slidesWithImages = [...rows].filter((row) => row.querySelector('picture'));
+  const isSingleSlide = slidesWithImages.length < 2;
 
   const placeholders = await fetchPlaceholders();
 
@@ -143,6 +175,7 @@ export default async function decorate(block) {
   block.prepend(slidesWrapper);
 
   let slideIndicators;
+  let slideIndex = 0;
   if (!isSingleSlide) {
     const slideIndicatorsNav = document.createElement('nav');
     slideIndicatorsNav.setAttribute('aria-label', placeholders.carouselSlideControls || 'Carousel Slide Controls');
@@ -161,22 +194,28 @@ export default async function decorate(block) {
     container.append(slideNavButtons);
   }
 
-  // Process each row into a slide
-  rows.forEach((row, idx) => {
-    const slide = createSlide(row, idx, carouselId);
-    slidesWrapper.append(slide);
-
-    if (slideIndicators) {
-      const indicator = document.createElement('li');
-      indicator.classList.add('carousel-slide-indicator');
-      indicator.dataset.targetSlide = idx;
-      indicator.innerHTML = `<button type="button" aria-label="${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}"></button>`;
-      slideIndicators.append(indicator);
+  // Process each row
+  rows.forEach((row) => {
+    const element = createSlide(row, slideIndex, carouselId);
+    if (element.classList.contains('carousel-slide')) {
+      // If it's a slide, add it to the slides wrapper
+      slidesWrapper.append(element);
+      if (slideIndicators) {
+        const indicator = document.createElement('li');
+        indicator.classList.add('carousel-slide-indicator');
+        indicator.dataset.targetSlide = slideIndex;
+        indicator.innerHTML = `<button type="button" aria-label="${placeholders.showSlide || 'Show Slide'} ${slideIndex + 1} ${placeholders.of || 'of'} ${slidesWithImages.length}"></button>`;
+        slideIndicators.append(indicator);
+      }
+      slideIndex += 1;
+    } else {
+      // If it's not a slide, add it directly to the block
+      block.append(element);
     }
   });
 
   // Optimize images
-  slidesWrapper.querySelectorAll('picture > img').forEach((img) => {
+  block.querySelectorAll('picture > img').forEach((img) => {
     const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
     moveInstrumentation(img, optimizedPic.querySelector('img'));
     img.closest('picture').replaceWith(optimizedPic);
