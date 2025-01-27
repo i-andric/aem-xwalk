@@ -83,53 +83,20 @@ function createSlide(row, slideIndex, carouselId) {
 
   [...row.children].forEach((div) => {
     const divClone = div.cloneNode(true);
+    // Create a single carousel-slide-content container if it doesn't exist
+    let contentContainer = slide.querySelector('.carousel-slide-content');
+    if (!contentContainer) {
+      contentContainer = document.createElement('div');
+      contentContainer.className = 'carousel-slide-content';
+      slide.append(contentContainer);
+    }
+
     if (divClone.children.length === 1 && divClone.querySelector('picture')) {
       divClone.className = 'carousel-slide-image';
+      slide.append(divClone);
     } else {
-      divClone.className = 'carousel-slide-content';
-
-      // Add buttons if they exist
-      const primaryButtonText = div.querySelector('[data-aue-prop="primary_button_text"]');
-      const primaryButtonLink = div.querySelector('[data-aue-prop="primary_button_link"]');
-      const secondaryButtonText = div.querySelector('[data-aue-prop="secondary_button_text"]');
-      const secondaryButtonLink = div.querySelector('[data-aue-prop="secondary_button_link"]');
-
-      if ((primaryButtonText && primaryButtonLink)
-        || (secondaryButtonText && secondaryButtonLink)) {
-        const buttonsContainer = document.createElement('div');
-        buttonsContainer.className = 'carousel-buttons';
-
-        if (primaryButtonText && primaryButtonLink) {
-          const primaryButton = document.createElement('a');
-          primaryButton.href = primaryButtonLink.textContent.trim();
-          primaryButton.textContent = primaryButtonText.textContent.trim();
-          primaryButton.className = 'button primary';
-          buttonsContainer.appendChild(primaryButton);
-          // Remove the original elements
-          primaryButtonText.parentElement.remove();
-          primaryButtonLink.parentElement.remove();
-        }
-
-        if (secondaryButtonText && secondaryButtonLink) {
-          const secondaryButton = document.createElement('a');
-          secondaryButton.href = secondaryButtonLink.textContent.trim();
-          secondaryButton.textContent = secondaryButtonText.textContent.trim();
-          secondaryButton.className = 'button secondary';
-          buttonsContainer.appendChild(secondaryButton);
-          // Remove the original elements
-          secondaryButtonText.parentElement.remove();
-          secondaryButtonLink.parentElement.remove();
-        }
-
-        divClone.appendChild(buttonsContainer);
-      }
-
-      // Hide any remaining button-related elements
-      divClone.querySelectorAll('[data-aue-prop*="button"]').forEach((el) => {
-        el.closest('.carousel-slide-content').style.display = 'none';
-      });
+      contentContainer.appendChild(divClone);
     }
-    slide.append(divClone);
   });
 
   return slide;
@@ -179,6 +146,10 @@ export default async function decorate(block) {
   // Process each row
   rows.forEach((row) => {
     const element = createSlide(row, slideIndex, carouselId);
+    // Remove the slide if it doesn't contain a carousel-slide-image
+    if (element && !element.querySelector('.carousel-slide-image')) {
+      return; // Skip adding this slide
+    }
     if (element && element.classList.contains('carousel-slide')) {
       // Only add to slides wrapper if it's a valid slide
       slidesWrapper.append(element);
@@ -192,14 +163,12 @@ export default async function decorate(block) {
       slideIndex += 1;
     }
   });
-
   // Optimize images
   block.querySelectorAll('picture > img').forEach((img) => {
     const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
     moveInstrumentation(img, optimizedPic.querySelector('img'));
     img.closest('picture').replaceWith(optimizedPic);
   });
-
   // Clean up original rows
   rows.forEach((row) => row.remove());
 
