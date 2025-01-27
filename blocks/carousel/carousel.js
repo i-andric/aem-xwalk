@@ -83,20 +83,13 @@ function createSlide(row, slideIndex, carouselId) {
 
   [...row.children].forEach((div) => {
     const divClone = div.cloneNode(true);
-    
-    // Preserve AEM editor attributes
-    const aueProps = div.querySelectorAll('[data-aue-prop]');
-    aueProps.forEach((prop) => {
-      const clonedProp = divClone.querySelector(`[data-aue-prop="${prop.dataset.aueProp}"]`);
-      if (clonedProp) {
-        // Copy all data-aue-* attributes
-        Object.entries(prop.dataset).forEach(([key, value]) => {
-          if (key.startsWith('aue')) {
-            clonedProp.dataset[key] = value;
-          }
-        });
-      }
-    });
+    // Create a single carousel-slide-content container if it doesn't exist
+    let contentContainer = slide.querySelector('.carousel-slide-content');
+    if (!contentContainer) {
+      contentContainer = document.createElement('div');
+      contentContainer.className = 'carousel-slide-content';
+      slide.append(contentContainer);
+    }
 
     if (divClone.children.length === 1 && divClone.querySelector('picture')) {
       divClone.className = 'carousel-slide-image';
