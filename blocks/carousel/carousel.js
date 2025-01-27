@@ -71,64 +71,28 @@ function bindEvents(block) {
 }
 
 function createSlide(row, slideIndex, carouselId) {
-  // Check if there's an image in the row
-  const hasImage = row.querySelector('picture') !== null;
-  if (!hasImage) {
-    // If no image, just return the content directly
-    const content = document.createElement('div');
-    content.classList.add('carousel-content');
-    moveInstrumentation(row, content);
-
-    [...row.children].forEach((div) => {
-      const divClone = div.cloneNode(true);
-      content.append(divClone);
-    });
-
-    // Handle carit items
-    const caritItems = row.querySelectorAll('.carit');
-    caritItems.forEach((carit) => {
-      const caritClone = carit.cloneNode(true);
-      content.append(caritClone);
-    });
-
-    // Handle card items
-    const cardItems = row.querySelectorAll('.card');
-    cardItems.forEach((card) => {
-      const cardClone = card.cloneNode(true);
-      content.append(cardClone);
-    });
-
-    return content;
+  // Skip if row contains carousel configuration
+  if (row.querySelector('[data-aue-prop="style"], [data-aue-prop="autoplay"], [data-aue-prop="autoplayInterval"]')) {
+    return null;
   }
 
-  // If there is an image, create a carousel slide
   const slide = document.createElement('li');
+  slide.className = 'carousel-slide';
   slide.dataset.slideIndex = slideIndex;
-  slide.setAttribute('id', `carousel-${carouselId}-slide-${slideIndex}`);
-  slide.classList.add('carousel-slide');
+  slide.id = `${carouselId}-slide-${slideIndex}`;
 
-  // Move instrumentation before processing
-  moveInstrumentation(row, slide);
-
-  let slideLink = null;
-  const firstLink = row.querySelector('a');
-  if (firstLink) {
-    slideLink = document.createElement('a');
-    slideLink.href = firstLink.href;
-  }
-
-  // Process each div in the row
   [...row.children].forEach((div) => {
     const divClone = div.cloneNode(true);
     if (divClone.children.length === 1 && divClone.querySelector('picture')) {
       divClone.className = 'carousel-slide-image';
     } else {
       divClone.className = 'carousel-slide-content';
+
       // Add buttons if they exist
-      const primaryButtonText = row.querySelector('.primary_button_text');
-      const primaryButtonLink = row.querySelector('.primary_button_link');
-      const secondaryButtonText = row.querySelector('.secondary_button_text');
-      const secondaryButtonLink = row.querySelector('.secondary_button_link');
+      const primaryButtonText = div.querySelector('[data-aue-prop="primary_button_text"]');
+      const primaryButtonLink = div.querySelector('[data-aue-prop="primary_button_link"]');
+      const secondaryButtonText = div.querySelector('[data-aue-prop="secondary_button_text"]');
+      const secondaryButtonLink = div.querySelector('[data-aue-prop="secondary_button_link"]');
 
       if ((primaryButtonText && primaryButtonLink)
         || (secondaryButtonText && secondaryButtonLink)) {
@@ -137,48 +101,37 @@ function createSlide(row, slideIndex, carouselId) {
 
         if (primaryButtonText && primaryButtonLink) {
           const primaryButton = document.createElement('a');
-          primaryButton.href = primaryButtonLink.textContent;
-          primaryButton.textContent = primaryButtonText.textContent;
+          primaryButton.href = primaryButtonLink.textContent.trim();
+          primaryButton.textContent = primaryButtonText.textContent.trim();
           primaryButton.className = 'button primary';
           buttonsContainer.appendChild(primaryButton);
+          // Remove the original elements
+          primaryButtonText.parentElement.remove();
+          primaryButtonLink.parentElement.remove();
         }
 
         if (secondaryButtonText && secondaryButtonLink) {
           const secondaryButton = document.createElement('a');
-          secondaryButton.href = secondaryButtonLink.textContent;
-          secondaryButton.textContent = secondaryButtonText.textContent;
+          secondaryButton.href = secondaryButtonLink.textContent.trim();
+          secondaryButton.textContent = secondaryButtonText.textContent.trim();
           secondaryButton.className = 'button secondary';
           buttonsContainer.appendChild(secondaryButton);
+          // Remove the original elements
+          secondaryButtonText.parentElement.remove();
+          secondaryButtonLink.parentElement.remove();
         }
 
         divClone.appendChild(buttonsContainer);
       }
-    }
-    if (divClone.querySelector('a')) {
-      const link = divClone.querySelector('a');
-      link.remove();
+
+      // Hide any remaining button-related elements
+      divClone.querySelectorAll('[data-aue-prop*="button"]').forEach((el) => {
+        el.closest('.carousel-slide-content').style.display = 'none';
+      });
     }
     slide.append(divClone);
   });
 
-  // Handle carit items
-  const caritItems = row.querySelectorAll('.carit');
-  caritItems.forEach((carit) => {
-    const caritClone = carit.cloneNode(true);
-    slide.append(caritClone);
-  });
-
-  // Handle card items
-  const cardItems = row.querySelectorAll('.card');
-  cardItems.forEach((card) => {
-    const cardClone = card.cloneNode(true);
-    slide.append(cardClone);
-  });
-
-  if (slideLink) {
-    slideLink.append(slide);
-    return slideLink;
-  }
   return slide;
 }
 
@@ -226,8 +179,8 @@ export default async function decorate(block) {
   // Process each row
   rows.forEach((row) => {
     const element = createSlide(row, slideIndex, carouselId);
-    if (element.classList.contains('carousel-slide')) {
-      // If it's a slide, add it to the slides wrapper
+    if (element && element.classList.contains('carousel-slide')) {
+      // Only add to slides wrapper if it's a valid slide
       slidesWrapper.append(element);
       if (slideIndicators) {
         const indicator = document.createElement('li');
@@ -237,9 +190,6 @@ export default async function decorate(block) {
         slideIndicators.append(indicator);
       }
       slideIndex += 1;
-    } else {
-      // If it's not a slide, add it directly to the block
-      block.append(element);
     }
   });
 
