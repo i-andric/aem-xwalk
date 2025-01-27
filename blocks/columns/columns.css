@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
-  gap: 24px;
+  gap: 1.5rem;
 }
 .columns > div > div {
   order: 1;
@@ -17,7 +17,7 @@
     justify-content: center;
     align-items: center;
     flex-flow: row nowrap;
-    gap: 24px;
+    gap: 1.5rem;
   }
   .columns > div > div {
     flex: 1;

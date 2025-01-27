@@ -233,6 +233,7 @@ header {
         .default-content-wrapper > ul > li {
           flex: 0 1 auto;
           position: relative;
+          @include flex-row-center;
 
           > ul {
             display: none;

@@ -152,7 +152,7 @@ main {
   pre {
     background-color: var(--overlay-background-color);
     padding: 1em;
-    border-radius: 0.25em;
+    border-radius: remUnit(4px);
     overflow-x: auto;
     white-space: pre;
   }
@@ -161,9 +161,9 @@ main {
     width: 100%;
     max-width: 50rem;
     display: block;
-    margin-bottom: 1rem;
-    padding: 0.75rem 0.6rem;
-    border-radius: 0.25rem;
+    margin-bottom: remUnit(16px);
+    padding: remUnit(12px) remUnit(10px);
+    border-radius: remUnit(4px);
     box-sizing: border-box;
     border: 1px solid var(--text-color);
     color: var(--text-color);
@@ -174,7 +174,7 @@ main {
   }
   blockquote {
     font-style: italic;
-    margin: 3rem;
+    margin: remUnit(48px);
     text-indent: -1rem;
     hanging-punctuation: first;
     p {
@@ -203,18 +203,18 @@ button {
   box-sizing: border-box;
   text-decoration: none;
   border: 2px solid transparent;
-  padding: 5px 30px;
+  padding: remUnit(5px) remUnit(30px);
   text-align: center;
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
   background-color: var(--link-color);
-  margin: 16px 0;
+  margin: remUnit(16px) 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: remUnit(30px);
   &:disabled {
     background-color: var(--overlay-background-color);
     cursor: unset;
@@ -241,18 +241,18 @@ a {
     box-sizing: border-box;
     text-decoration: none;
     border: 2px solid transparent;
-    padding: 5px 30px;
+    padding: remUnit(5px) remUnit(30px);
     text-align: center;
     font-style: normal;
     font-weight: 600;
     cursor: pointer;
     color: var(--background-color);
     background-color: var(--link-color);
-    margin: 16px 0;
+    margin: remUnit(16px) 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    border-radius: 30px;
+    border-radius: remUnit(30px);
   }
   &:hover {
     text-decoration: underline;
@@ -271,8 +271,8 @@ button.secondary {
 }
 .icon {
   display: inline-block;
-  height: 24px;
-  width: 24px;
+  height: remUnit(24px);
+  width: remUnit(24px);
   svg {
     height: 100%;
     width: 100%;
@@ -288,7 +288,8 @@ button.secondary {
     --heading-font-size-xs: 22px;
   }
   .section {
-    > div {
+    > div:not(.carousel-wrapper, .hero-wrapper) {
+      max-width: 1200px;
       margin: auto;
     }
   }
@@ -297,7 +298,7 @@ button.secondary {
 @include media-max-s {
   main {
     .section {
-      padding: 64px 32px;
+      padding: remUnit(64px) remUnit(32px);
     }
   }
 }

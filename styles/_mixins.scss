@@ -15,9 +15,7 @@
 }
 
 @mixin flex-item($grow: 0, $shrink: 1, $basis: auto) {
-  flex-grow: $grow;
-  flex-shrink: $shrink;
-  flex-basis: $basis;
+  flex: $grow $shrink $basis;
 }
 
 @mixin flex-row-center {
@@ -66,10 +64,7 @@
   $row-start: auto,
   $row-end: auto
 ) {
-  grid-column-start: $column-start;
-  grid-column-end: $column-end;
-  grid-row-start: $row-start;
-  grid-row-end: $row-end;
+  grid-column: $column-start / $column-end;
 }
 
 @mixin grid-center {

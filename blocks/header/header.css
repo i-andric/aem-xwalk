@@ -189,6 +189,11 @@ header nav .nav-tools {
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+    gap: 0;
   }
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
     display: none;

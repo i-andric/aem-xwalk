@@ -159,7 +159,7 @@ samp {
 main pre {
   background-color: var(--overlay-background-color);
   padding: 1em;
-  border-radius: 0.25em;
+  border-radius: 0.25rem;
   overflow-x: auto;
   white-space: pre;
 }
@@ -169,7 +169,7 @@ main input {
   max-width: 50rem;
   display: block;
   margin-bottom: 1rem;
-  padding: 0.75rem 0.6rem;
+  padding: 0.75rem 0.625rem;
   border-radius: 0.25rem;
   box-sizing: border-box;
   border: 1px solid var(--text-color);
@@ -208,18 +208,18 @@ button {
   box-sizing: border-box;
   text-decoration: none;
   border: 2px solid transparent;
-  padding: 5px 30px;
+  padding: 0.3125rem 1.875rem;
   text-align: center;
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
   background-color: var(--link-color);
-  margin: 16px 0;
+  margin: 1rem 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 1.875rem;
 }
 button:disabled {
   background-color: var(--overlay-background-color);
@@ -244,18 +244,18 @@ a:any-link {
   box-sizing: border-box;
   text-decoration: none;
   border: 2px solid transparent;
-  padding: 5px 30px;
+  padding: 0.3125rem 1.875rem;
   text-align: center;
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
   background-color: var(--link-color);
-  margin: 16px 0;
+  margin: 1rem 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 1.875rem;
 }
 a:hover {
   text-decoration: underline;
@@ -276,8 +276,8 @@ button.secondary {
 
 .icon {
   display: inline-block;
-  height: 24px;
-  width: 24px;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 .icon svg {
   height: 100%;
@@ -293,12 +293,13 @@ button.secondary {
     --heading-font-size-s: 24px;
     --heading-font-size-xs: 22px;
   }
-  .section > div {
+  .section > div:not(.carousel-wrapper, .hero-wrapper) {
+    max-width: 1200px;
     margin: auto;
   }
 }
 @media screen and (width <= calc(20rem - 1px)) {
   main .section {
-    padding: 64px 32px;
+    padding: 4rem 2rem;
   }
 }

@@ -7,13 +7,12 @@
   }
   
   > div {
-    @include flex-container(column, center, center, nowrap, 24px);
+    @include flex-container(column, center, center, nowrap, remUnit(24px));
     > div {
       order: 1;
     }
     @include media-l {
-
-      @include flex-container(row, center, center, nowrap, 24px);
+      @include flex-container(row, center, center, nowrap, remUnit(24px));
 
       > div {
         flex: 1;
