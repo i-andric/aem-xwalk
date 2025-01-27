@@ -24,7 +24,17 @@
               "resourceType": "core/franklin/components/block/v1/block/item",
               "template": {
                 "name": "Carousel Item",
-                "model": "carouselitem"
+                "model": "carouselitem",
+                "data": {
+                  "attributes": {
+                    "slide_title": "data-aue-prop",
+                    "imageAlt": "data-aue-prop",
+                    "primary_button_text": "data-aue-prop",
+                    "primary_button_link": "data-aue-prop",
+                    "secondary_button_text": "data-aue-prop",
+                    "secondary_button_link": "data-aue-prop"
+                  }
+                }
               }
             }
           }
