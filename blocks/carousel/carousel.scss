@@ -68,6 +68,26 @@
       p {
         margin: 0;
       }
+
+      .carousel-buttons {
+        @include flex-container(row, flex-start, center, nowrap, remUnit(16px));
+        margin-top: remUnit(24px);
+
+        a {
+          text-decoration: none;
+          margin: 0;
+
+          &.secondary {
+            @include bg-color(transparent);
+            @include border(var(--color-pure-white));
+            @include text-color(var(--color-pure-white));
+
+            &:hover {
+              @include bg-color(var(--color-pure-white), 0.2);
+            }
+          }
+        }
+      }
     }
   }
 

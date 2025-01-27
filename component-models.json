@@ -366,10 +366,26 @@
         "valueType": "string"
       },
       {
-        "component": "button",
-        "name": "slide_button",
-        "label": "Slide Button",
+        "component": "text",
+        "name": "primary_button_text",
+        "label": "Primary Button Text",
         "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "primary_button_link",
+        "label": "Primary Button Link"
+      },
+      {
+        "component": "text",
+        "name": "secondary_button_text",
+        "label": "Secondary Button Text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "secondary_button_link",
+        "label": "Secondary Button Link"
       }
     ]
   },

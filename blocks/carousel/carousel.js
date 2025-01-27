@@ -124,6 +124,35 @@ function createSlide(row, slideIndex, carouselId) {
       divClone.className = 'carousel-slide-image';
     } else {
       divClone.className = 'carousel-slide-content';
+      // Add buttons if they exist
+      const primaryButtonText = row.querySelector('.primary_button_text');
+      const primaryButtonLink = row.querySelector('.primary_button_link');
+      const secondaryButtonText = row.querySelector('.secondary_button_text');
+      const secondaryButtonLink = row.querySelector('.secondary_button_link');
+
+      if ((primaryButtonText && primaryButtonLink)
+        || (secondaryButtonText && secondaryButtonLink)) {
+        const buttonsContainer = document.createElement('div');
+        buttonsContainer.className = 'carousel-buttons';
+
+        if (primaryButtonText && primaryButtonLink) {
+          const primaryButton = document.createElement('a');
+          primaryButton.href = primaryButtonLink.textContent;
+          primaryButton.textContent = primaryButtonText.textContent;
+          primaryButton.className = 'button primary';
+          buttonsContainer.appendChild(primaryButton);
+        }
+
+        if (secondaryButtonText && secondaryButtonLink) {
+          const secondaryButton = document.createElement('a');
+          secondaryButton.href = secondaryButtonLink.textContent;
+          secondaryButton.textContent = secondaryButtonText.textContent;
+          secondaryButton.className = 'button secondary';
+          buttonsContainer.appendChild(secondaryButton);
+        }
+
+        divClone.appendChild(buttonsContainer);
+      }
     }
     if (divClone.querySelector('a')) {
       const link = divClone.querySelector('a');

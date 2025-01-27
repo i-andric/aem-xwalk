@@ -66,6 +66,26 @@
 .carousel-slide-content p {
   margin: 0;
 }
+.carousel-slide-content .carousel-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.carousel-slide-content .carousel-buttons a {
+  text-decoration: none;
+  margin: 0;
+}
+.carousel-slide-content .carousel-buttons a.secondary {
+  background: black;
+  border: 1px solid rgb(var(--color-pure-white));
+  color: rgba(var(--color-pure-white), 1);
+}
+.carousel-slide-content .carousel-buttons a.secondary:hover {
+  background: rgba(var(--color-pure-white), 0.2);
+}
 .carousel-navigation-buttons {
   position: absolute;
   top: 50%;
