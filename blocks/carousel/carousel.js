@@ -147,7 +147,7 @@ export default async function decorate(block) {
     const element = createSlide(row, slideIndex, carouselId);
     // Only hide slides without images if we're in the editor
     const isInEditor = !block.hasAttribute('data-aue-model');
-    if (isInEditor) {
+    if (isInEditor && element && !element.querySelector('.carousel-slide-image')) {
       return; // Skip adding this slide
     }
 
@@ -164,11 +164,11 @@ export default async function decorate(block) {
     }
   });
   // Optimize images
-  block.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    moveInstrumentation(img, optimizedPic.querySelector('img'));
-    img.closest('picture').replaceWith(optimizedPic);
-  });
+  // block.querySelectorAll('picture > img').forEach((img) => {
+  //   const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+  //   moveInstrumentation(img, optimizedPic.querySelector('img'));
+  //   img.closest('picture').replaceWith(optimizedPic);
+  // });
   // Clean up original rows
   rows.forEach((row) => row.remove());
 
