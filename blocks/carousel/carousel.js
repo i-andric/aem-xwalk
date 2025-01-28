@@ -71,34 +71,114 @@ function bindEvents(block) {
 }
 
 function createSlide(row, slideIndex, carouselId) {
-  // Skip if row contains carousel configuration
-  if (row.querySelector('[data-aue-prop="style"], [data-aue-prop="autoplay"], [data-aue-prop="autoplayInterval"]')) {
-    return null;
+  // Check if there's an image in the row
+  const hasImage = row.querySelector('picture') !== null;
+  if (!hasImage) {
+    // If no image, just return the content directly
+    const content = document.createElement('div');
+    content.classList.add('carousel-content');
+    moveInstrumentation(row, content);
+
+    [...row.children].forEach((div) => {
+      const divClone = div.cloneNode(true);
+      content.append(divClone);
+    });
+
+    // Handle carit items
+    const caritItems = row.querySelectorAll('.carit');
+    caritItems.forEach((carit) => {
+      const caritClone = carit.cloneNode(true);
+      content.append(caritClone);
+    });
+
+    // Handle card items
+    const cardItems = row.querySelectorAll('.card');
+    cardItems.forEach((card) => {
+      const cardClone = card.cloneNode(true);
+      content.append(cardClone);
+    });
+
+    return content;
   }
 
+  // If there is an image, create a carousel slide
   const slide = document.createElement('li');
-  slide.className = 'carousel-slide';
   slide.dataset.slideIndex = slideIndex;
-  slide.id = `${carouselId}-slide-${slideIndex}`;
+  slide.setAttribute('id', `carousel-${carouselId}-slide-${slideIndex}`);
+  slide.classList.add('carousel-slide');
 
+  // Move instrumentation before processing
+  moveInstrumentation(row, slide);
+
+  let slideLink = null;
+  const firstLink = row.querySelector('a');
+  if (firstLink) {
+    slideLink = document.createElement('a');
+    slideLink.href = firstLink.href;
+  }
+
+  // Process each div in the row
   [...row.children].forEach((div) => {
     const divClone = div.cloneNode(true);
-    // Create a single carousel-slide-content container if it doesn't exist
-    let contentContainer = slide.querySelector('.carousel-slide-content');
-    if (!contentContainer) {
-      contentContainer = document.createElement('div');
-      contentContainer.className = 'carousel-slide-content';
-      slide.append(contentContainer);
-    }
-
     if (divClone.children.length === 1 && divClone.querySelector('picture')) {
       divClone.className = 'carousel-slide-image';
-      slide.append(divClone);
     } else {
-      contentContainer.appendChild(divClone);
+      divClone.className = 'carousel-slide-content';
+      // Add buttons if they exist
+      const primaryButtonText = row.querySelector('.primary_button_text');
+      const primaryButtonLink = row.querySelector('.primary_button_link');
+      const secondaryButtonText = row.querySelector('.secondary_button_text');
+      const secondaryButtonLink = row.querySelector('.secondary_button_link');
+
+      if ((primaryButtonText && primaryButtonLink)
+        || (secondaryButtonText && secondaryButtonLink)) {
+        const buttonsContainer = document.createElement('div');
+        buttonsContainer.className = 'carousel-buttons';
+
+        if (primaryButtonText && primaryButtonLink) {
+          const primaryButton = document.createElement('a');
+          primaryButton.href = primaryButtonLink.textContent;
+          primaryButton.textContent = primaryButtonText.textContent;
+          primaryButton.className = 'button primary';
+          buttonsContainer.appendChild(primaryButton);
+        }
+
+        if (secondaryButtonText && secondaryButtonLink) {
+          const secondaryButton = document.createElement('a');
+          secondaryButton.href = secondaryButtonLink.textContent;
+          secondaryButton.textContent = secondaryButtonText.textContent;
+          secondaryButton.className = 'button secondary';
+          buttonsContainer.appendChild(secondaryButton);
+        }
+
+        divClone.appendChild(buttonsContainer);
+      }
     }
+    if (divClone.querySelector('a')) {
+      const link = divClone.querySelector('a');
+      link.remove();
+    }
+    slide.append(divClone);
   });
 
+  // Handle carit items
+  const caritItems = row.querySelectorAll('.carit');
+  caritItems.forEach((carit) => {
+    const caritClone = carit.cloneNode(true);
+    slide.append(caritClone);
+  });
+
+  // Handle card items
+  const cardItems = row.querySelectorAll('.card');
+  cardItems.forEach((card) => {
+    const cardClone = card.cloneNode(true);
+    slide.append(cardClone);
+  });
+
+  if (slideLink) {
+    slideLink.append(slide);
+    return slideLink;
+  }
   return slide;
 }
 
@@ -107,6 +187,7 @@ export default async function decorate(block) {
   carouselId += 1;
   block.setAttribute('id', `carousel-${carouselId}`);
   const rows = block.querySelectorAll(':scope > div');
+  // Count slides with images
   const slidesWithImages = [...rows].filter((row) => row.querySelector('picture'));
   const isSingleSlide = slidesWithImages.length < 2;
 
@@ -145,13 +226,8 @@ export default async function decorate(block) {
   // Process each row
   rows.forEach((row) => {
     const element = createSlide(row, slideIndex, carouselId);
-    // Only hide slides without images if we're in the editor
-    const isInEditor = !block.hasAttribute('data-aue-model');
-    if (isInEditor && element && !element.querySelector('.carousel-slide-image')) {
-      return; // Skip adding this slide
-    }
-
-    if (element && element.classList.contains('carousel-slide')) {
+    if (element.classList.contains('carousel-slide')) {
+      // If it's a slide, add it to the slides wrapper
       slidesWrapper.append(element);
       if (slideIndicators) {
         const indicator = document.createElement('li');
@@ -161,14 +237,19 @@ export default async function decorate(block) {
         slideIndicators.append(indicator);
       }
       slideIndex += 1;
+    } else {
+      // If it's not a slide, add it directly to the block
+      block.append(element);
     }
   });
+
   // Optimize images
-  // block.querySelectorAll('picture > img').forEach((img) => {
-  //   const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-  //   moveInstrumentation(img, optimizedPic.querySelector('img'));
-  //   img.closest('picture').replaceWith(optimizedPic);
-  // });
+  block.querySelectorAll('picture > img').forEach((img) => {
+    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+    moveInstrumentation(img, optimizedPic.querySelector('img'));
+    img.closest('picture').replaceWith(optimizedPic);
+  });
+
   // Clean up original rows
   rows.forEach((row) => row.remove());
 
