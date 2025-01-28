@@ -343,6 +343,14 @@
     ]
   },
   {
+    "id": "featuredarticles",
+    "name": "Featured Articles",
+    "model": "spreadsheet-input",
+    "key-value": true,
+    "source": "/content/aem-xwalk/api/authors.json",
+    "limit": 4
+  },
+  {
     "id": "carouselitem",
     "fields": [
       {
