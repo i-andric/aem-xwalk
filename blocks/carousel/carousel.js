@@ -107,7 +107,6 @@ export default async function decorate(block) {
   carouselId += 1;
   block.setAttribute('id', `carousel-${carouselId}`);
   const rows = block.querySelectorAll(':scope > div');
-  // Count slides with images
   const slidesWithImages = [...rows].filter((row) => row.querySelector('picture'));
   const isSingleSlide = slidesWithImages.length < 2;
 
@@ -146,12 +145,13 @@ export default async function decorate(block) {
   // Process each row
   rows.forEach((row) => {
     const element = createSlide(row, slideIndex, carouselId);
-    // Remove the slide if it doesn't contain a carousel-slide-image
-    if (element && !element.querySelector('.carousel-slide-image')) {
+    // Only hide slides without images if we're in the editor
+    const isInEditor = !block.hasAttribute('data-aue-model');
+    if (isInEditor && element && !element.querySelector('.carousel-slide-image')) {
       return; // Skip adding this slide
     }
+
     if (element && element.classList.contains('carousel-slide')) {
-      // Only add to slides wrapper if it's a valid slide
       slidesWrapper.append(element);
       if (slideIndicators) {
         const indicator = document.createElement('li');

@@ -40,3 +40,13 @@ npm run lint
 
 ### Presentations and Recordings
 - [Getting started with AEM Authoring and Edge Delivery Services](https://experienceleague.adobe.com/en/docs/events/experience-manager-gems-recordings/gems2024/aem-authoring-and-edge-delivery)
+
+
+## Indexing of the pages
+- In order to test helix-query.yaml file with your existing pages you can add in terminal:
+
+```sh
+aem up --print-index
+```
+
+Important note: indexing config is only used from main branch.
