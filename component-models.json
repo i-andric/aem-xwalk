@@ -312,8 +312,11 @@
     "fields": [
       {
         "component": "select",
-        "name": "style",
+        "name": "carouselStyle",
         "label": "Style",
+        "value": "light",
+        "description": "Select the style of the carousel",
+        "valueType": "string",
         "options": [
           {
             "name": "Light",
@@ -341,14 +344,6 @@
         "condition": { "===": [{ "var": "autoplay" }, true] }
       }
     ]
-  },
-  {
-    "id": "featuredarticles",
-    "name": "Featured Articles",
-    "model": "spreadsheet-input",
-    "key-value": true,
-    "source": "/content/aem-xwalk/api/authors.json",
-    "limit": 4
   },
   {
     "id": "carouselitem",
