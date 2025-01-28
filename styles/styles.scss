@@ -2,6 +2,39 @@
 @use '_mixins' as *;
 
 :root {
+  /* Colors */
+  --background: 255, 255, 255; // #fff
+  --onBackground: 0, 0, 0; // #000
+  --onBackgroundSecondary: 0, 0, 0; // #000
+  --surface: 0, 0, 0; // #000
+  --onSurface: 255, 255, 255; // #fff
+  --highlight: 229, 0, 67; // #e50043
+  --onHighlight: 255, 255, 255; // #fff
+  --secondarySurface: 255, 255, 255; // #fff
+  --onSecondarySurface: 0, 0, 0; // #000
+  --input: 255, 255, 255; // #fff
+  --onInput: 0, 0, 0; // #000
+  --inputBorder: 0, 0, 0; // #000
+  --inputDisabled: 136, 136, 136; // #888
+  --inputSolid: 245, 245, 247; // #f5f5f7
+  --onInputSolid: 0, 0, 0; // #000
+  --inputSolidSecondary: 255, 255, 255; // #fff
+  --inputError: 229, 0, 67; // #e50043
+  --inputSuccess: 0, 142, 79; // #008e4f
+  --error-color: 190, 0, 0; // #be0000
+  --warning-color: 255, 150, 0; // #ff9600
+  --success-color: 0, 142, 79; // #008e4f
+
+  /* Buttons */
+  --buttonPrimary: 229, 0, 67; // #e50043
+  --onButtonPrimary: 255, 255, 255; // #fff
+  --buttonPrimaryHover: 165, 0, 48; // #a50030
+  --buttonSecondary: 0, 0, 0; // #000
+  --onButtonSecondary: 255, 255, 255; // #fff
+  --buttonSecondaryHover: 51, 51, 51; // #333333
+  --buttonSecondaryOption: 245, 245, 247; // #f5f5f7
+  --onButtonSecondaryOption: 0, 0, 0; // #000
+  --buttonSecondaryOptionHover: 223, 223, 223; // #dfdfdf
   --color-team-red: 229, 0, 67; // #e50043
   --color-pure-black: 0, 0, 0; // #000
   --color-pure-white: 255, 255, 255; // #fff
@@ -198,49 +231,37 @@ main {
   }
 }
 button {
-  font-family: var(--body-font-family);
-  display: inline-block;
-  box-sizing: border-box;
-  text-decoration: none;
-  border: 2px solid transparent;
-  padding: remUnit(5px) remUnit(30px);
-  text-align: center;
-  font-style: normal;
-  font-weight: 600;
+  margin: 0;
+  border: 0;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: none;
+  // @include bg-color(var(--highlight));
+  @include text-color(var(--highlight));
   cursor: pointer;
-  color: var(--background-color);
-  background-color: var(--link-color);
-  margin: remUnit(16px) 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: remUnit(30px);
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  transition: background-color .3s, color .3s;
+  -webkit-appearance: none;
+  border-radius: 4px;
   &:disabled {
     background-color: var(--overlay-background-color);
     cursor: unset;
   }
   &:hover {
-    background-color: var(--overlay-background-color);
+    // background-color: var(--buttonSecondaryOptionHover);
     cursor: unset;
   }
 }
 a {
-  button {
-    &:focus {
-      background-color: var(--link-hover-color);
-      cursor: pointer;
-    }
-    &:hover {
-      background-color: var(--link-hover-color);
-      cursor: pointer;
-    }
-  }
   &:any-link {
     font-family: var(--body-font-family);
     display: inline-block;
     box-sizing: border-box;
     text-decoration: none;
-    border: 2px solid transparent;
     padding: remUnit(5px) remUnit(30px);
     text-align: center;
     font-style: normal;
@@ -252,22 +273,30 @@ a {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    border-radius: remUnit(30px);
+    border-radius: remUnit(4px);
   }
-  &:hover {
-    text-decoration: underline;
-    color: var(--link-hover-color);
-  }
+  // &:hover {
+  //   @include bg-color(var(--buttonPrimaryHover));
+  // }
 }
-a.button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+a.button {
+  @include text-color(var(--highlight));
 }
+a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  @include bg-color(var(--buttonSecondaryOption));
+  @include text-color(var(--onButtonSecondaryOption));
+  &:hover {
+    @include bg-color(var(--buttonSecondaryOptionHover));
+  }
+}
+a.button.primary,
+button.primary {
+  @include bg-color(var(--buttonPrimary));
+  @include text-color(var(--onButtonPrimary));
+  &:hover {
+    @include bg-color(var(--buttonPrimaryHover));
+  }
 }
 .icon {
   display: inline-block;

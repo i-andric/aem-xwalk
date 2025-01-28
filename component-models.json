@@ -343,6 +343,14 @@
     ]
   },
   {
+    "name": "Featured Articles",
+    "model": "spreadsheet-input",
+    "key-value": true,
+    "source": "/content/aem-xwalk/api/authors.json",
+    "keywords": ['Developer','Courses'],
+    "limit": 4
+  },
+  {
     "id": "carouselitem",
     "fields": [
       {
