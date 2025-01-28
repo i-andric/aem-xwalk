@@ -147,7 +147,7 @@ export default async function decorate(block) {
     const element = createSlide(row, slideIndex, carouselId);
     // Only hide slides without images if we're in the editor
     const isInEditor = !block.hasAttribute('data-aue-model');
-    if (isInEditor && element && !element.querySelector('.carousel-slide-image')) {
+    if (isInEditor) {
       return; // Skip adding this slide
     }
 
