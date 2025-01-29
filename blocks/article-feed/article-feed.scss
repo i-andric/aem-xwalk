@@ -1,12 +1,10 @@
-@use '../../styles/_media-queries' as *;
-@use '../../styles/_mixins' as *;
+@use '../../styles/_all-helpers' as *;
 
 .article {
   @include border(var(--color-darker-gray));
   padding: remUnit(15px);
   margin-bottom: remUnit(20px);
   text-decoration: unset;
-
   
   &feed {
     background: var(--color-light-gray);

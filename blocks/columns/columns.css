@@ -11,7 +11,7 @@
 .columns > div > div {
   order: 1;
 }
-@media screen and (width >= 54.13rem) {
+@media (width >= 54.13rem) {
   .columns > div {
     display: flex;
     justify-content: center;

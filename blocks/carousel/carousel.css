@@ -188,7 +188,7 @@
   height: 37.5rem;
 }
 
-@media screen and (width >= 54.13rem) {
+@media (width >= 54.13rem) {
   .carousel-slide {
     display: flex;
     justify-content: flex-start;

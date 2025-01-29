@@ -1,53 +1,32 @@
-$s: 20rem;  // 375px
-$m: 46.6rem; // 768px
-$l: 54.13rem; // 1024px
-$xl: 90rem;  // 1440px
-$xxl: 120rem; // 1920px
+// Define breakpoints
+$s: 20rem;  // 320px - Small screens (mobile)
+$m: 46.6rem; // 768px - Tablets
+$l: 54.13rem; // 1024px - Small desktops
+$xl: 90rem;  // 1440px - Large desktops
+$xxl: 120rem; // 1920px - Extra-large screens
 
-@mixin media-s {
-    @media screen and (width >= $s) {
-        @content;
-    }
-}
-
+// Mobile-First Approach: Start with default styles, then add media queries for larger screens
 @mixin media-m {
-    @media screen and (width >= $m) {
+    @media (width >= $m) {
         @content;
     }
 }
 
 @mixin media-l {
-    @media screen and (width >= $l) {
+    @media (width >= $l) {
         @content;
     }
 }
 
 @mixin media-xl {
-  @media screen and (width >= $xl) {
-      @content;
-  }
-}
-
-@mixin media-max-s {
-    @media screen and (width <= calc(#{$s} - 1px)) {
+    @media (width >= $xl) {
         @content;
     }
 }
 
-@mixin media-max-m {
-    @media screen and (width <= calc(#{$m} - 1px)) {
+@mixin media-xxl {
+    @media (width >= $xxl) {
         @content;
     }
 }
 
-@mixin media-max-l {
-    @media screen and (width <= calc(#{$l} - 1px)) {
-        @content;
-    }
-}
-
-@mixin media-max-xl {
-  @media screen and (width <= calc(#{$xl} - 1px)) {
-      @content;
-  }
-}

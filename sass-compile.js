@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Specify the files you want to ignore
-const ignoredFiles = ['_media-queries.scss', '_mixins.scss'];
+const ignoredFiles = ['_media-queries.scss', '_mixins.scss', '_all-helpers.scss'];
 
 const compileAndSave = async (sassFile) => {
   const dest = sassFile.replace(path.extname(sassFile), '.css');
