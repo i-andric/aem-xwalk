@@ -263,7 +263,6 @@ a:any-link {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  padding: 0.3125rem 1.875rem;
   text-align: center;
   font-style: normal;
   font-weight: 600;
@@ -279,24 +278,27 @@ a:any-link {
 
 a.button {
   color: rgba(var(--highlight), 1);
+  padding: 0.3125rem 1.875rem;
 }
 
-a.button.secondary,
+a.secondary,
 button.secondary {
   background: rgba(var(--button-secondary-option), 1);
   color: rgba(var(--on-button-secondary-option), 1);
+  padding: 0.3125rem 1.875rem;
 }
-a.button.secondary:hover,
+a.secondary:hover,
 button.secondary:hover {
   background: rgba(var(--button-secondary-option-hover), 1);
 }
 
-a.button.primary,
+a.primary,
 button.primary {
   background: rgba(var(--button-primary), 1);
   color: rgba(var(--on-button-primary), 1);
+  padding: 0.3125rem 1.875rem;
 }
-a.button.primary:hover,
+a.primary:hover,
 button.primary:hover {
   background: rgba(var(--button-primary-hover), 1);
 }
@@ -311,7 +313,7 @@ button.primary:hover {
   width: 100%;
 }
 
-@media screen and (width >= 54.13rem) {
+@media (width >= 54.13rem) {
   :root {
     --heading-font-size-xxl: 60px;
     --heading-font-size-xl: 48px;
@@ -323,10 +325,5 @@ button.primary:hover {
   .section > div:not(.carousel-wrapper, .hero-wrapper) {
     max-width: 1200px;
     margin: auto;
-  }
-}
-@media screen and (width <= calc(20rem - 1px)) {
-  main .section {
-    padding: 4rem 2rem;
   }
 }

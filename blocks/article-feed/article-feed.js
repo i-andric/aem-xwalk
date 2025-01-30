@@ -17,10 +17,6 @@ export default async function decorate(block) {
     articleElement.classList.add('article');
     articleLink.appendChild(articleElement);
 
-    const title = document.createElement('h2');
-    title.textContent = article.title;
-    articleElement.appendChild(title);
-
     if (article.image) {
       const image = document.createElement('img');
       image.src = article.image;
@@ -28,9 +24,27 @@ export default async function decorate(block) {
       articleElement.appendChild(image);
     }
 
-    const description = document.createElement('p');
-    description.textContent = article.description;
-    articleElement.appendChild(description);
+    const articleBody = document.createElement('div');
+    articleBody.classList.add('article-body');
+    articleElement.appendChild(articleBody);
+
+    const title = document.createElement('p');
+    title.classList.add('article-title');
+    title.textContent = article.title;
+    articleBody.appendChild(title);
+
+    if (article.content) {
+      const content = document.createElement('p');
+      content.classList.add('description');
+      content.textContent = article.content;
+      articleBody.appendChild(content);
+    }
+
+    const readMoreButton = document.createElement('a');
+    readMoreButton.classList.add('button', 'primary');
+    readMoreButton.textContent = 'Read more';
+    readMoreButton.href = article.path;
+    articleBody.appendChild(readMoreButton);
 
     container.appendChild(articleLink);
     block.replaceChildren(container);

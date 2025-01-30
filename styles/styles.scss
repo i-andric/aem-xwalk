@@ -259,7 +259,6 @@ a {
     display: inline-block;
     box-sizing: border-box;
     text-decoration: none;
-    padding: remUnit(5px) remUnit(30px);
     text-align: center;
     font-style: normal;
     font-weight: 600;
@@ -278,19 +277,22 @@ a {
 }
 a.button {
   @include text-color(var(--highlight));
+  padding: remUnit(5px) remUnit(30px);
 }
-a.button.secondary,
+a.secondary,
 button.secondary {
   @include bg-color(var(--button-secondary-option));
   @include text-color(var(--on-button-secondary-option));
+  padding: remUnit(5px) remUnit(30px);
   &:hover {
     @include bg-color(var(--button-secondary-option-hover));
   }
 }
-a.button.primary,
+a.primary,
 button.primary {
   @include bg-color(var(--button-primary));
   @include text-color(var(--on-button-primary));
+  padding: remUnit(5px) remUnit(30px);
   &:hover {
     @include bg-color(var(--button-primary-hover));
   }
@@ -317,14 +319,6 @@ button.primary {
     > div:not(.carousel-wrapper, .hero-wrapper) {
       max-width: 1200px;
       margin: auto;
-    }
-  }
-}
-
-@include media-max-s {
-  main {
-    .section {
-      padding: remUnit(64px) remUnit(32px);
     }
   }
 }
