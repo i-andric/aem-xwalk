@@ -281,17 +281,6 @@ a.button {
   padding: 0.3125rem 1.875rem;
 }
 
-a.secondary,
-button.secondary {
-  background: rgba(var(--button-secondary-option), 1);
-  color: rgba(var(--on-button-secondary-option), 1);
-  padding: 0.3125rem 1.875rem;
-}
-a.secondary:hover,
-button.secondary:hover {
-  background: rgba(var(--button-secondary-option-hover), 1);
-}
-
 a.primary,
 button.primary {
   background: rgba(var(--button-primary), 1);
@@ -301,6 +290,28 @@ button.primary {
 a.primary:hover,
 button.primary:hover {
   background: rgba(var(--button-primary-hover), 1);
+}
+
+a.secondary,
+button.secondary {
+  background: rgba(var(--button-secondary), 1);
+  color: rgba(var(--on-button-secondary), 1);
+  padding: 0.3125rem 1.875rem;
+}
+a.secondary:hover,
+button.secondary:hover {
+  background: rgba(var(--button-secondary-hover), 1);
+}
+
+a.tertiary,
+button.tertiary {
+  background: rgba(var(--button-secondary-option), 1);
+  color: rgba(var(--on-button-secondary-option), 1);
+  padding: 0.3125rem 1.875rem;
+}
+a.tertiary:hover,
+button.tertiary:hover {
+  background: rgba(var(--button-secondary-option-hover), 1);
 }
 
 .icon {

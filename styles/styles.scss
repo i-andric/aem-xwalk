@@ -279,15 +279,6 @@ a.button {
   @include text-color(var(--highlight));
   padding: remUnit(5px) remUnit(30px);
 }
-a.secondary,
-button.secondary {
-  @include bg-color(var(--button-secondary-option));
-  @include text-color(var(--on-button-secondary-option));
-  padding: remUnit(5px) remUnit(30px);
-  &:hover {
-    @include bg-color(var(--button-secondary-option-hover));
-  }
-}
 a.primary,
 button.primary {
   @include bg-color(var(--button-primary));
@@ -295,6 +286,24 @@ button.primary {
   padding: remUnit(5px) remUnit(30px);
   &:hover {
     @include bg-color(var(--button-primary-hover));
+  }
+}
+a.secondary,
+button.secondary {
+  @include bg-color(var(--button-secondary));
+  @include text-color(var(--on-button-secondary));
+  padding: remUnit(5px) remUnit(30px);
+  &:hover {
+    @include bg-color(var(--button-secondary-hover));
+  }
+}
+a.tertiary,
+button.tertiary {
+  @include bg-color(var(--button-secondary-option));
+  @include text-color(var(--on-button-secondary-option));
+  padding: remUnit(5px) remUnit(30px);
+  &:hover {
+    @include bg-color(var(--button-secondary-option-hover));
   }
 }
 .icon {
