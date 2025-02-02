@@ -31,6 +31,7 @@
         }
       }
     ],
+    "models" : [],
     "filters": [
       {
         "id": "articlefeed"

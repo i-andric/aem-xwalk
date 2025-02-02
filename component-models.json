@@ -83,7 +83,7 @@
       {
         "component": "text",
         "name": "linkTitle",
-        "label": "Link Label"
+        "label": "Title"
       },
       {
         "component": "select",
@@ -114,37 +114,13 @@
     "id": "section",
     "fields": [
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "style",
         "label": "Style",
         "options": [
           {
-            "name": "Light",
-            "value": "light"
-          },
-          {
-            "name": "Dark",
-            "value": "dark"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "cards",
-    "fields": [
-      {
-        "component": "select",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          {
-            "name": "Light",
-            "value": "light"
-          },
-          {
-            "name": "Dark",
-            "value": "dark"
+            "name": "Highlight",
+            "value": "highlight"
           }
         ]
       }
@@ -166,11 +142,82 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "carousel",
+    "fields": [
+      {
+        "component": "select",
+        "name": "carouselStyle",
+        "label": "Style",
+        "value": "light",
+        "description": "Select the style of the carousel",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Light",
+            "value": "light"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          }
+        ]
       },
       {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link"
+        "component": "boolean",
+        "name": "autoplay",
+        "label": "Enable Autoplay",
+        "valueType": "boolean",
+        "value": false
+      },
+      {
+        "component": "number",
+        "name": "autoplayInterval",
+        "label": "Autoplay Interval (ms)",
+        "valueType": "number",
+        "value": 5000,
+        "condition": {
+          "===": [
+            {
+              "var": "autoplay"
+            },
+            true
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "carouselitem",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "slide_title",
+        "label": "Slide Title",
+        "valueType": "string"
+      },
+      {
+        "component": "button",
+        "name": "slide_button",
+        "label": "Slide Button",
+        "valueType": "string"
       }
     ]
   },
@@ -226,113 +273,38 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "hero_style",
-        "label": "Style",
-        "value": "primary",
-        "options": [
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "Tertiary",
-            "value": "tertiary"
-          }
-        ]
       }
     ]
   },
   {
-    "id": "teaser",
+    "id": "hero",
     "fields": [
       {
         "component": "reference",
         "valueType": "string",
-        "name": "background_image",
+        "name": "image",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "background_imageAlt",
+        "name": "imageAlt",
         "label": "Alt",
         "value": ""
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "foreground_pretitle",
-        "label": "Pretitle",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "foreground_title",
-        "label": "Foreground Title",
-        "value": ""
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "foreground_titleType",
-        "label": "Title Type",
-        "value": "h2",
-        "options": [
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          }
-        ]
-      },
-      {
         "component": "richtext",
-        "name": "foreground_description",
+        "name": "text",
         "value": "",
-        "label": "Description",
+        "label": "Text",
         "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "conditionallyrevealedcomponent",
-    "fields": [
-      {
-        "component": "boolean",
-        "label": "Shall the text field be revealed?",
-        "name": "reveal",
-        "valueType": "boolean"
       },
       {
-        "component": "text-input",
-        "label": "Hidden text field",
-        "name": "hidden-text",
-        "valueType": "string",
-        "condition": {
-          "===": [
-            {
-              "var": "reveal"
-            },
-            true
-          ]
-        }
+        "component": "button",
+        "name": "background_imageAlt_gpt",
+        "label": "Chat GPT Alt",
+        "value": ""
       }
     ]
   }
