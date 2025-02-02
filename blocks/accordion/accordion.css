@@ -1,0 +1,72 @@
+.accordion {
+  /* Show content when checked */
+}
+.accordion-item {
+  position: relative;
+  padding: 0.5rem 0;
+}
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+.accordion-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+  margin: 0;
+  margin-right: 3rem;
+}
+.accordion-panel {
+  display: grid;
+  font-size: 0.875rem;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+.accordion-answer {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  overflow: hidden;
+}
+.accordion-container {
+  border-top: 1px solid rgba(17, 24, 39, 0.1);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.1);
+}
+.accordion .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  right: 0;
+  fill: currentColor;
+  transition: transform 0.3s ease-in-out;
+}
+.accordion .icon-plus {
+  transform: rotate(0deg);
+}
+.accordion .icon-minus {
+  transform: rotate(0deg);
+  opacity: 0;
+}
+.accordion .hidden-input:checked ~ .accordion-panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  padding: 0.5rem 0;
+}
+.accordion .hidden-input:checked ~ .accordion-header .icon-minus {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+.accordion .hidden-input:checked ~ .accordion-header .icon-plus {
+  transform: rotate(45deg);
+  opacity: 0;
+}
+.accordion .hidden-input {
+  display: none;
+}
