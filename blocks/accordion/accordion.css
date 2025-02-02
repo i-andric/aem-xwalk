@@ -3,6 +3,7 @@
 }
 .accordion-item {
   position: relative;
+  border: 1px solid rgb(var(--color-pure-black));
   padding: 0.5rem 0;
 }
 .accordion-header {
@@ -43,15 +44,37 @@
   height: 1.5rem;
   position: absolute;
   right: 0;
-  fill: var(--color-pure-black);
-  transition: transform 0.3s ease-in-out;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
 }
 .accordion .icon-plus {
-  transform: rotate(0deg);
+  transform: translateY(-50%) rotate(0deg);
+  opacity: 1;
+}
+.accordion .icon-plus::before {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
 }
 .accordion .icon-minus {
-  transform: rotate(0deg);
+  transform: translateY(-50%) rotate(0deg);
   opacity: 0;
+}
+.accordion .icon-minus::before {
+  content: "-";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
 }
 .accordion .hidden-input:checked ~ .accordion-panel {
   grid-template-rows: 1fr;
