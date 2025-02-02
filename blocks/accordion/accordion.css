@@ -36,15 +36,14 @@
   overflow: hidden;
 }
 .accordion-container {
-  border-top: 1px solid rgba(17, 24, 39, 0.1);
-  border-bottom: 1px solid rgba(17, 24, 39, 0.1);
+  border: 1px solid rgb(var(--color-pure-black));
 }
 .accordion .icon {
   width: 1.5rem;
   height: 1.5rem;
   position: absolute;
   right: 0;
-  fill: currentColor;
+  fill: var(--color-pure-black);
   transition: transform 0.3s ease-in-out;
 }
 .accordion .icon-plus {
