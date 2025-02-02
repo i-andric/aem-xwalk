@@ -9,11 +9,9 @@
   flex-direction: column;
   text-align: left;
   height: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .article:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 .article-body {
   display: flex;
