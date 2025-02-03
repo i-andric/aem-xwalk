@@ -303,7 +303,7 @@
     ]
   },
   {
-    "id": "hero",
+    "id": "teaser",
     "fields": [
       {
         "component": "reference",

@@ -16,7 +16,10 @@
       "cards",
       "columns",
       "fragment",
-      "accordion"
+      "accordion",
+      "teaser",
+      "carousel",
+      "articlefeed"
     ]
   },
   {
