@@ -1,14 +1,16 @@
 {
   "definitions": [
     {
-    "id": "page-metadata",
-    "fields": [
-      {
-        "component": "text",
-        "name": "theme",
-        "label": "Theme"
+      "title": "Page Metadata",
+      "id": "page-metadata",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/image/v1/image",
+            "template": {}
+          }
+        }
       }
-    ]
     }
   ],
   "models": []
