@@ -48,7 +48,8 @@
         "accordion",
         "teaser",
         "carousel",
-        "articlefeed"
+        "articlefeed",
+        "metadata"
       ]
     }
   ]
