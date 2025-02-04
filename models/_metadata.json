@@ -1,4 +1,6 @@
 {
+  "definitions": [
+    {
     "id": "page-metadata",
     "fields": [
       {
@@ -7,4 +9,7 @@
         "label": "Theme"
       }
     ]
+    }
+  ],
+  "models": []
   }
