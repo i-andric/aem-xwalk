@@ -185,11 +185,9 @@
     "fields": [
       {
         "component": "select",
-        "name": "carouselStyle",
+        "name": "classes",
         "label": "Style",
         "value": "light",
-        "description": "Select the style of the carousel",
-        "valueType": "string",
         "options": [
           {
             "name": "Light",
@@ -253,44 +251,6 @@
         "name": "slide_button",
         "label": "Slide Button",
         "valueType": "string"
-      },
-      {
-        "component": "select",
-        "name": "classes",
-        "label": "Style",
-        "value": "light",
-        "options": [
-          {
-            "name": "Light",
-            "value": "light"
-          },
-          {
-            "name": "Dark",
-            "value": "dark"
-          }
-        ]
-      },
-      {
-        "component": "boolean",
-        "name": "autoplay",
-        "label": "Enable Autoplay",
-        "valueType": "boolean",
-        "value": false
-      },
-      {
-        "component": "number",
-        "name": "autoplayInterval",
-        "label": "Autoplay Interval (ms)",
-        "valueType": "number",
-        "value": 5000,
-        "condition": {
-          "===": [
-            {
-              "var": "autoplay"
-            },
-            true
-          ]
-        }
       }
     ]
   },
