@@ -234,7 +234,7 @@ main .section.highlight {
   background-color: var(--highlight-background-color);
 }
 
-button {
+button.text-primary {
   margin: 0;
   border: 0;
   font-family: inherit;
@@ -250,11 +250,11 @@ button {
   transition: background-color 0.3s, color 0.3s;
   border-radius: 4px;
 }
-button:disabled {
+button.text-primary:disabled {
   background-color: var(--overlay-background-color);
   cursor: unset;
 }
-button:hover {
+button.text-primary:hover {
   cursor: unset;
 }
 
