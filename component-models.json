@@ -92,7 +92,7 @@
         "options": [
           {
             "name": "default",
-            "value": ""
+            "value": "default"
           },
           {
             "name": "primary",
