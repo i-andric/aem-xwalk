@@ -184,18 +184,21 @@
     "id": "carousel",
     "fields": [
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "classes",
         "label": "Style",
-        "value": "",
         "options": [
           {
-            "name": "Light",
-            "value": "light"
+            "name": "Highlight",
+            "value": "highlight"
           },
           {
             "name": "Dark",
             "value": "dark"
+          },
+          {
+            "name": "Light",
+            "value": "light"
           }
         ]
       }
