@@ -35,13 +35,13 @@
           "label": "Title"
         },
         {
-          "component": "multiselect",
-          "name": "style",
-          "label": "Style",
+          "component": "select",
+          "name": "linkType",
+          "label": "Type",
           "options": [
             {
               "name": "default",
-              "value": "default"
+              "value": ""
             },
             {
               "name": "primary",
