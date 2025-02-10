@@ -86,7 +86,7 @@
         "label": "Title"
       },
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "style",
         "label": "Style",
         "options": [
