@@ -88,11 +88,12 @@
       {
         "component": "select",
         "name": "classes",
+        "value": "",
         "label": "Type",
         "options": [
           {
             "name": "default",
-            "value": ""
+            "value": "default"
           },
           {
             "name": "primary",
@@ -115,12 +116,20 @@
     "fields": [
       {
         "component": "multiselect",
-        "name": "style",
+        "name": "classes",
         "label": "Style",
         "options": [
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          },
+          {
+            "name": "Light",
+            "value": "light"
           }
         ]
       }

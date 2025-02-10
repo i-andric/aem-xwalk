@@ -37,11 +37,12 @@
         {
           "component": "select",
           "name": "classes",
+          "value": "",
           "label": "Type",
           "options": [
             {
               "name": "default",
-              "value": ""
+              "value": "default"
             },
             {
               "name": "primary",
