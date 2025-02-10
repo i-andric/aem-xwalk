@@ -68,6 +68,48 @@
     ]
   },
   {
+    "id": "section",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Highlight",
+            "value": "highlight"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "accordionitem",
+    "fields": [
+      {
+        "component": "text",
+        "name": "question",
+        "label": "Question",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "answer",
+        "label": "Answer",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "valueType": "string",
+        "multi": false
+      }
+    ]
+  },
+  {
     "id": "button",
     "fields": [
       {
@@ -107,48 +149,6 @@
             "value": "tertiary"
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "section",
-    "fields": [
-      {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          {
-            "name": "Highlight",
-            "value": "highlight"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "accordionitem",
-    "fields": [
-      {
-        "component": "text",
-        "name": "question",
-        "label": "Question",
-        "valueType": "string",
-        "value": ""
-      },
-      {
-        "component": "richtext",
-        "name": "answer",
-        "label": "Answer",
-        "valueType": "string",
-        "value": ""
-      },
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Image",
-        "valueType": "string",
-        "multi": false
       }
     ]
   },
