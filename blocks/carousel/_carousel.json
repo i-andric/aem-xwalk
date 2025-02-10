@@ -104,8 +104,6 @@
             "name": "classes",
             "label": "Style",
             "value": "light",
-            "description": "Select the style of the carousel",
-            "valueType": "string",
             "options": [
               {
                 "name": "Light",
