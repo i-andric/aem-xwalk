@@ -42,7 +42,7 @@
     &::after {
       content: '';
       position: absolute;
-      background-color: currentColor;
+      background-color: currentcolor;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -82,7 +82,7 @@
   }
 
   &-content {
-    padding: 0 0 remUnit(16px) 0;
+    padding: 0 0 remUnit(16px);
 
     picture {
       margin-bottom: remUnit(16px);

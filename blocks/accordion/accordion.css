@@ -38,7 +38,7 @@
 .accordion-icon::before, .accordion-icon::after {
   content: "";
   position: absolute;
-  background-color: currentColor;
+  background-color: currentcolor;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -70,7 +70,7 @@
   display: none;
 }
 .accordion-content {
-  padding: 0 0 1rem 0;
+  padding: 0 0 1rem;
 }
 .accordion-content picture {
   margin-bottom: 1rem;
