@@ -37,8 +37,7 @@
         {
           "component": "select",
           "name": "style",
-          "value": "",
-          "label": "Version",
+          "label": "Style",
           "options": [
             {
               "name": "default",
