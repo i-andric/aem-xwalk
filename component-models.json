@@ -395,7 +395,7 @@
       },
       {
         "component": "select",
-        "name": "style",
+        "name": "classes",
         "value": "",
         "label": "Background Color",
         "description": "The button background color",
