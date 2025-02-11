@@ -21,17 +21,17 @@
         "fields": [
           {
             "component": "aem-content",
-            "name": "link",
+            "name": "custombuttonLink",
             "label": "Link"
           },
           {
             "component": "text",
-            "name": "linkText",
+            "name": "custombuttonLinkText",
             "label": "Text"
           },
           {
             "component": "text",
-            "name": "linkTitle",
+            "name": "custombuttonLinkTitle",
             "label": "Title"
           },
           {
