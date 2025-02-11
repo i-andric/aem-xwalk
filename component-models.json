@@ -395,29 +395,6 @@
       },
       {
         "component": "select",
-        "name": "linkType",
-        "label": "Type",
-        "options": [
-          {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "tertiary",
-            "value": "tertiary"
-          }
-        ]
-      },
-      {
-        "component": "select",
         "name": "style",
         "value": "",
         "label": "Background Color",
