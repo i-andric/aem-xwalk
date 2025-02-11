@@ -58,21 +58,24 @@
           ]
         },
         {
-          "component": "multiselect",
+          "component": "select",
           "name": "classes",
-          "label": "Style",
+          "value": "",
+          "label": "Background Color",
+          "description": "The button background color",
+          "valueType": "string",
           "options": [
             {
-              "name": "Highlight",
-              "value": "highlight"
+              "name": "Red",
+              "value": "bg-red"
             },
             {
-              "name": "Dark",
-              "value": "dark"
+              "name": "Green",
+              "value": "bg-green"
             },
             {
-              "name": "Light",
-              "value": "light"
+              "name": "Blue",
+              "value": "bg-blue"
             }
           ]
         }
