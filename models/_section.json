@@ -57,7 +57,8 @@
         "teaser",
         "carousel",
         "articlefeed",
-        "metadata"
+        "metadata",
+        "custombutton"
       ]
     }
   ]

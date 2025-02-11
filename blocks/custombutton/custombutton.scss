@@ -1,0 +1,28 @@
+@use '../../styles/_all-helpers' as *;
+
+.custom-button {
+    .primary {
+        @include bg-color(var(--button-primary));
+        @include text-color(var(--on-button-primary));
+        padding: remUnit(5px) remUnit(30px);
+        &:hover {
+            @include bg-color(var(--button-primary-hover));
+        }
+    } 
+    .secondary {
+        @include bg-color(var(--button-secondary));
+        @include text-color(var(--on-button-secondary));
+        padding: remUnit(5px) remUnit(30px);
+        &:hover {
+          @include bg-color(var(--button-secondary-hover));
+        }
+    }
+    .tertiary {
+        @include bg-color(var(--button-secondary-option));
+        @include text-color(var(--on-button-secondary-option));
+        padding: remUnit(5px) remUnit(30px);
+        &:hover {
+          @include bg-color(var(--button-secondary-option-hover));
+        }
+    }
+}

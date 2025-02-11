@@ -1,0 +1,66 @@
+{
+    "definitions": [
+      {
+        "title": "Custom Button",
+        "id": "custombutton",
+        "plugins": {
+          "xwalk": {
+            "page": {
+              "resourceType": "core/franklin/components/button/v1/button",
+              "template": {
+                "model": "custombutton"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "models": [
+      {
+        "id": "custombutton",
+        "fields": [
+          {
+            "component": "aem-content",
+            "name": "link",
+            "label": "Link"
+          },
+          {
+            "component": "text",
+            "name": "linkText",
+            "label": "Text"
+          },
+          {
+            "component": "text",
+            "name": "linkTitle",
+            "label": "Title"
+          },
+          {
+            "component": "select",
+            "name": "classes",
+            "value": "",
+            "label": "Version",
+            "options": [
+              {
+                "name": "default",
+                "value": "default"
+              },
+              {
+                "name": "primary",
+                "value": "primary"
+              },
+              {
+                "name": "secondary",
+                "value": "secondary"
+              },
+              {
+                "name": "tertiary",
+                "value": "tertiary"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "filters": []
+  }
+  
