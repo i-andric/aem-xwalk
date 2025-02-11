@@ -646,7 +646,7 @@ function decorateBlock(block) {
     const section = block.closest('.section');
     if (section) section.classList.add(`${shortBlockName}-container`);
     // eslint-disable-next-line no-use-before-define
-    decorateButtons(block);
+    // decorateButtons(block);
   }
 }
 
