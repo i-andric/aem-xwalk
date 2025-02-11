@@ -1,5 +1,6 @@
 export default function decorate(block) {
   // Get the first div which contains the button configuration
+  console.log('block', block);
   const buttonContainer = block.firstElementChild;
   if (!buttonContainer) return;
 
