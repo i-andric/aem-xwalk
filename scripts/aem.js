@@ -416,40 +416,39 @@ function decorateButtons(element) {
     if (a.href !== a.textContent) {
       const up = a.parentElement;
       const twoup = a.parentElement.parentElement;
-      console.log('a', a);
-      // if (!a.querySelector('img')) {
-      //   if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
-      //     a.className = 'button'; // default
-      //     up.classList.add('button-container');
-      //   }
-      //   if (
-      //     up.childNodes.length === 1
-      //     && up.tagName === 'STRONG'
-      //     && twoup.childNodes.length === 1
-      //     && twoup.tagName === 'P'
-      //   ) {
-      //     a.className = 'button primary';
-      //     twoup.classList.add('button-container');
-      //   }
-      //   if (
-      //     up.childNodes.length === 1
-      //     && up.tagName === 'EM'
-      //     && twoup.childNodes.length === 1
-      //     && twoup.tagName === 'P'
-      //   ) {
-      //     a.className = 'button secondary';
-      //     twoup.classList.add('button-container');
-      //   }
-      //   if (
-      //     up.childNodes.length === 1
-      //     && up.tagName === 'I'
-      //     && twoup.childNodes.length === 1
-      //     && twoup.tagName === 'P'
-      //   ) {
-      //     a.className = 'button tertiary';
-      //     twoup.classList.add('button-container');
-      //   }
-      // }
+      if (!a.querySelector('img')) {
+        if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
+          a.className = 'button'; // default
+          up.classList.add('button-container');
+        }
+        if (
+          up.childNodes.length === 1
+          && up.tagName === 'STRONG'
+          && twoup.childNodes.length === 1
+          && twoup.tagName === 'P'
+        ) {
+          a.className = 'button primary';
+          twoup.classList.add('button-container');
+        }
+        if (
+          up.childNodes.length === 1
+          && up.tagName === 'EM'
+          && twoup.childNodes.length === 1
+          && twoup.tagName === 'P'
+        ) {
+          a.className = 'button secondary';
+          twoup.classList.add('button-container');
+        }
+        if (
+          up.childNodes.length === 1
+          && up.tagName === 'I'
+          && twoup.childNodes.length === 1
+          && twoup.tagName === 'P'
+        ) {
+          a.className = 'button tertiary';
+          twoup.classList.add('button-container');
+        }
+      }
     }
   });
 }
