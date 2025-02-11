@@ -218,6 +218,20 @@
           }
         },
         {
+          "title": "Custom Button",
+          "id": "custombutton",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/button/v1/button",
+                "template": {
+                  "model": "custombutton"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Fragment",
           "id": "fragment",
           "plugins": {

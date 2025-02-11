@@ -255,6 +255,50 @@
     ]
   },
   {
+    "id": "custombutton",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "linkText",
+        "label": "Text"
+      },
+      {
+        "component": "text",
+        "name": "linkTitle",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Version",
+        "options": [
+          {
+            "name": "default",
+            "value": "default"
+          },
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "tertiary",
+            "value": "tertiary"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
