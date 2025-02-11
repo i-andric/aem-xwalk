@@ -13,5 +13,17 @@
       }
     }
   ],
-  "models": []
+  "models": [
+    {
+      "id": "title",
+      "fields": [
+        {
+          "component": "text",
+          "name": "metatemplate",
+          "label": "Meta Template"
+        }
+      ]
+    }
+  ],
+  "filters": []
   }
