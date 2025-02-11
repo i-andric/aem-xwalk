@@ -48,7 +48,7 @@ async function applyChanges(event) {
       if (newBlock) {
         newBlock.style.display = 'none';
         block.insertAdjacentElement('afterend', newBlock);
-        // decorateButtons(newBlock);
+        decorateButtons(newBlock);
         decorateIcons(newBlock);
         decorateBlock(newBlock);
         decorateRichtext(newBlock);
@@ -66,7 +66,7 @@ async function applyChanges(event) {
           const [newSection] = newElements;
           newSection.style.display = 'none';
           element.insertAdjacentElement('afterend', newSection);
-          // decorateButtons(newSection);
+          decorateButtons(newSection);
           decorateIcons(newSection);
           decorateRichtext(newSection);
           decorateSections(parentElement);
@@ -76,7 +76,7 @@ async function applyChanges(event) {
           newSection.style.display = null;
         } else {
           element.replaceWith(...newElements);
-          // decorateButtons(parentElement);
+          decorateButtons(parentElement);
           decorateIcons(parentElement);
           decorateRichtext(parentElement);
         }
