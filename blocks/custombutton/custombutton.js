@@ -1,44 +1,37 @@
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
 export default function decorate(block) {
   // Get the first div which contains the button configuration
   console.log('block', block);
-  const buttonContainer = block.firstElementChild;
-  if (!buttonContainer) return;
 
-  // Create button/link element
-  const link = buttonContainer.querySelector('a');
-  const button = link || document.createElement('a');
+  const wrapper = document.createElement('div');
 
-  // Get text content if not using existing link
-  if (!link) {
-    const textDiv = buttonContainer.querySelector('div');
-    if (textDiv) {
-      button.textContent = textDiv.textContent.trim();
-      button.href = '#'; // Default href if none provided
+  [...block.children].forEach((row) => {
+    const innerDiv = document.createElement('div');
+    moveInstrumentation(row, innerDiv);
+
+    let button = null;
+
+    const link = row.querySelector('a');
+    if (link) {
+      button = document.createElement('a');
+      button.href = link.href;
     }
-  }
 
-  // Apply button classes from configuration
-  const classes = block.classList;
-  if (classes.contains('primary')) {
-    button.classList.add('button-primary');
-  } else if (classes.contains('secondary')) {
-    button.classList.add('button-secondary');
-  } else if (classes.contains('tertiary')) {
-    button.classList.add('button-tertiary');
-  } else {
-    button.classList.add('button-default');
-  }
+    while (row.firstElementChild) innerDiv.append(row.firstElementChild);
 
-  // Add base button class
-  button.classList.add('button');
+    if (button) {
+      button.append(innerDiv);
+      wrapper.append(button);
+    } else {
+      wrapper.append(innerDiv);
+    }
+  });
 
-  // Handle title attribute
-  const title = buttonContainer.querySelector('div:nth-child(2)');
-  if (title) {
-    button.title = title.textContent.trim();
-  }
+  wrapper.querySelectorAll('p').forEach((par) => {
+    par.innerHTML = par.innerText;
+  });
 
   // Clear the block and append the styled button
   block.textContent = '';
-  block.append(button);
 }
