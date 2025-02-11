@@ -36,12 +36,12 @@
         },
         {
           "component": "select",
-          "name": "style",
-          "label": "Style",
+          "name": "linkType",
+          "label": "Type",
           "options": [
             {
               "name": "default",
-              "value": "default"
+              "value": ""
             },
             {
               "name": "primary",

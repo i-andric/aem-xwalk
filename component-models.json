@@ -87,12 +87,12 @@
       },
       {
         "component": "select",
-        "name": "style",
-        "label": "Style",
+        "name": "linkType",
+        "label": "Type",
         "options": [
           {
             "name": "default",
-            "value": "default"
+            "value": ""
           },
           {
             "name": "primary",
@@ -260,50 +260,6 @@
         "name": "rows",
         "value": "",
         "label": "Rows"
-      }
-    ]
-  },
-  {
-    "id": "custombutton",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "custombuttonLink",
-        "label": "Link"
-      },
-      {
-        "component": "text",
-        "name": "custombuttonLinkText",
-        "label": "Text"
-      },
-      {
-        "component": "text",
-        "name": "custombuttonLinkTitle",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "",
-        "label": "Version",
-        "options": [
-          {
-            "name": "default",
-            "value": "default"
-          },
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          },
-          {
-            "name": "tertiary",
-            "value": "tertiary"
-          }
-        ]
       }
     ]
   },
