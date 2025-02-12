@@ -193,7 +193,15 @@
     ]
   },
   {
-    "id": "breadcrumbs"
+    "id": "breadcrumbs",
+    "fields": [
+      {
+        "component": "boolean",
+        "name": "showbreadcrumbs",
+        "value": "",
+        "label": "Show Breadcrumbs"
+      }
+    ]
   },
   {
     "id": "card",
