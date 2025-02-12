@@ -1,5 +1,5 @@
 header {
-  --nav-height: 65px;
+  --nav-height: remUnit(65px);
 }
 header .nav-wrapper {
   background: rgba(var(--color-light-gray), 1);
@@ -12,11 +12,11 @@ header nav {
   display: grid;
   grid-template: "hamburger brand tools" var(--nav-height) "sections sections sections" 1fr/auto 1fr auto;
   align-items: center;
-  gap: 0 24px;
+  gap: 0 1.5rem;
   margin: auto;
-  max-width: 1248px;
+  max-width: 78rem;
   height: var(--nav-height);
-  padding: 0 24px;
+  padding: 0 1.5rem;
   font-family: var(--body-font-family);
 }
 header nav[aria-expanded=true] {

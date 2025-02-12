@@ -326,15 +326,15 @@ button.tertiary:hover {
 
 @media (width >= 54.13rem) {
   :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;
+    --heading-font-size-xxl: remUnit(60px);
+    --heading-font-size-xl: remUnit(48px);
+    --heading-font-size-l: remUnit(36px);
+    --heading-font-size-m: remUnit(30px);
+    --heading-font-size-s: remUnit(24px);
+    --heading-font-size-xs: remUnit(22px);
   }
   .section > div:not(.carousel-wrapper, .hero-wrapper) {
-    max-width: 1200px;
+    max-width: 75rem;
     margin: auto;
   }
 }

@@ -1,7 +1,7 @@
 @use '../../styles/_all-helpers' as *;
 
 .article {
-  @include border(var(--color-darker-gray));
+  @include border(rgba(var(--input-border), 1));
   @include bg-color(var(--color-pure-black));
   @include text-color(var(--color-pure-white));
   margin-bottom: remUnit(20px);
@@ -36,7 +36,7 @@
   } 
   img {
     max-width: 100%;
-    height: 200px;
+    height: remUnit(200px);
     object-fit: cover;
     margin-bottom: remUnit(15px);
   }
@@ -51,7 +51,7 @@
 }
 
 .articlefeed {
-  background: var(--color-light-gray);
+  background: rgba(var(--input-solid), 1);
   padding: remUnit(40px) 0;
 }
 

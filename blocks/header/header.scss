@@ -1,7 +1,7 @@
 @use '../../styles/_all-helpers' as *;
 
 header {
-  --nav-height: 65px;
+  --nav-height: remUnit(65px);
 
   .nav-wrapper {
     @include bg-color(var(--color-light-gray));
@@ -17,14 +17,14 @@ header {
       'hamburger brand tools' var(--nav-height)
       'sections sections sections' 1fr / auto 1fr auto;
     align-items: center;
-    gap: 0 24px;
+    gap: 0 remUnit(24px);
     margin: auto;
-    max-width: 1248px;
+    max-width: remUnit(1248px);
     height: var(--nav-height);
-    padding: 0 24px;
+    padding: 0 remUnit(24px);
     font-family: var(--body-font-family);
 
-    &[aria-expanded="true"] {
+    &[aria-expanded='true'] {
       grid-template:
         'hamburger brand' var(--nav-height)
         'sections sections' 1fr
