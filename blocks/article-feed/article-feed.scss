@@ -1,7 +1,7 @@
 @use '../../styles/_all-helpers' as *;
 
 .article {
-  @include border(rgba(var(--input-border), 1));
+  @include border(var(--color-darker-gray));
   @include bg-color(var(--color-pure-black));
   @include text-color(var(--color-pure-white));
   margin-bottom: remUnit(20px);
@@ -51,7 +51,7 @@
 }
 
 .articlefeed {
-  background: rgba(var(--input-solid), 1);
+  background: var(--color-light-gray);
   padding: remUnit(40px) 0;
 }
 

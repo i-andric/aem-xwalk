@@ -320,7 +320,7 @@
         "label": "Download Button Label"
       },
       {
-        "component": "aem-content",
+        "component": "reference",
         "name": "downloadfile",
         "label": "Asset"
       }
