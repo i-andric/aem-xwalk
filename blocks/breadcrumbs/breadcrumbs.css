@@ -23,10 +23,9 @@
   text-decoration: none;
   font-size: 0.875rem;
   border-radius: unset;
-  box-shadow: 0 2px rgb(229, 0, 67);
 }
 .breadcrumbs a:hover {
-  text-decoration: underline;
+  box-shadow: 0 2px rgb(229, 0, 67);
   cursor: pointer;
 }
 .breadcrumbs a[aria-current=page] {
