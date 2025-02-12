@@ -38,9 +38,14 @@
             "label": "Download Button Label"
           },
           {
-            "component": "reference",
+            "component": "aem-content",
             "name": "downloadfile",
-            "label": "Asset"
+            "label": "Asset",
+            "value": "",
+            "valueType": "string",
+            "validation": {
+                  "rootPath": "/content/dam/aem-xwalk"
+              }
           }
         ]
       }
