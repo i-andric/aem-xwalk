@@ -309,7 +309,6 @@
       {
         "component": "aem-content",
         "name": "downloadfile",
-        "value": "",
         "label": "Asset"
       }
     ]
