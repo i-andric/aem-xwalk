@@ -18,15 +18,7 @@
     ],
     "models": [
       {
-        "id": "breadcrumbs",
-        "fields": [
-          {
-            "component": "boolean",
-            "name": "showbreadcrumbs",
-            "value": "",
-            "label": "Show Breadcrumbs"
-          }
-        ]
+        "id": "breadcrumbs"
       }
     ],
     "filters": []

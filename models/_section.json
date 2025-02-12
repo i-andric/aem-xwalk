@@ -58,7 +58,9 @@
         "carousel",
         "articlefeed",
         "metadata",
-        "quote"
+        "breadcrumbs",
+        "quote",
+        "download"
       ]
     }
   ]

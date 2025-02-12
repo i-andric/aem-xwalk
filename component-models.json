@@ -193,15 +193,7 @@
     ]
   },
   {
-    "id": "breadcrumbs",
-    "fields": [
-      {
-        "component": "boolean",
-        "name": "showbreadcrumbs",
-        "value": "",
-        "label": "Show Breadcrumbs"
-      }
-    ]
+    "id": "breadcrumbs"
   },
   {
     "id": "card",
@@ -300,6 +292,29 @@
     ]
   },
   {
+    "id": "download",
+    "fields": [
+      {
+        "component": "text",
+        "name": "downloadtitle",
+        "value": "",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "downloaddescription",
+        "value": "",
+        "label": "Description"
+      },
+      {
+        "component": "aem-content",
+        "name": "downloadfile",
+        "value": "",
+        "label": "Asset"
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
@@ -336,6 +351,25 @@
     ]
   },
   {
+    "id": "quote",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "quote",
+        "value": "",
+        "label": "Quote",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "author",
+        "label": "Author",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "teaser",
     "fields": [
       {
@@ -366,76 +400,5 @@
         "value": ""
       }
     ]
-  },
-  {
-    "id": "quote",
-    "fields": [
-       {
-         "component": "richtext",
-         "name": "quote",
-         "value": "",
-         "label": "Quote",
-         "valueType": "string"
-       },
-       {
-         "component": "text",
-         "valueType": "string",
-         "name": "author",
-         "label": "Author",
-         "value": ""
-       }
-     ]
-  },
-  {
-    "id": "custombutton",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link"
-      },
-      {
-        "component": "text",
-        "name": "linkText",
-        "label": "Text"
-      },
-      {
-        "component": "text",
-        "name": "linkTitle",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "",
-        "label": "Background Color",
-        "description": "The button background color",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Red",
-            "value": "bg-red"
-          },
-          {
-            "name": "Green",
-            "value": "bg-green"
-          },
-          {
-            "name": "Blue",
-            "value": "bg-blue"
-          }
-        ]
-      },
-      {
-        "id": "page-metadata",
-        "fields": [
-          {
-            "component": "text",
-            "name": "theme",
-            "label": "Theme"
-          }
-        ]
-      }      
-     ]
-  }  
+  }
 ]
