@@ -33,6 +33,11 @@
             "label": "Description"
           },
           {
+            "component": "text",
+            "name": "downloadbuttonlabel",
+            "label": "Download Button Label"
+          },
+          {
             "component": "aem-content",
             "name": "downloadfile",
             "label": "Asset"
