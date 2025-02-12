@@ -1,3 +1,5 @@
+@use '../../styles/_all-helpers' as *;
+
 .breadcrumbs {
   nav {
     padding: 1rem 0;
@@ -32,7 +34,7 @@
     border-radius: unset;
 
     &:hover {
-      box-shadow: 0 2px rgb(229, 0, 67);
+      @include box-shadow(var(--color-team-red), 2px);
       cursor: pointer;
     }
 
