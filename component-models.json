@@ -404,17 +404,130 @@
         "value": ""
       },
       {
-        "component": "richtext",
-        "name": "text",
+        "component": "text",
+        "name": "teaserText_subtitle",
         "value": "",
-        "label": "Text",
+        "label": "Teaser Subtitle",
         "valueType": "string"
       },
       {
-        "component": "button",
-        "name": "background_imageAlt_gpt",
-        "label": "Chat GPT Alt",
+        "component": "text",
+        "name": "teaserText_title",
+        "label": "Teaser Title",
         "value": ""
+      },
+      {
+        "component": "select",
+        "name": "teaserText_titleType",
+        "label": "Title Type",
+        "options": [
+          {
+            "name": "h1",
+            "value": "h1"
+          },
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          },
+          {
+            "name": "h5",
+            "value": "h5"
+          },
+          {
+            "name": "h6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "teaserText_description",
+        "label": "Teaser Description",
+        "value": ""
+      },
+      {
+        "id": "button",
+        "fields": [
+          {
+            "component": "aem-content",
+            "name": "teaserText_cta1",
+            "label": "Link"
+          },
+          {
+            "component": "text",
+            "name": "teaserText_cta1Text",
+            "label": "Text"
+          },
+          {
+            "component": "select",
+            "name": "teaserText_cta1Type",
+            "label": "Type",
+            "options": [
+              {
+                "name": "default",
+                "value": ""
+              },
+              {
+                "name": "primary",
+                "value": "primary"
+              },
+              {
+                "name": "secondary",
+                "value": "secondary"
+              },
+              {
+                "name": "tertiary",
+                "value": "tertiary"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "button",
+        "fields": [
+          {
+            "component": "aem-content",
+            "name": "teaserText_cta2",
+            "label": "Link"
+          },
+          {
+            "component": "text",
+            "name": "teaserText_cta2Text",
+            "label": "Text"
+          },
+          {
+            "component": "select",
+            "name": "teaserText_cta2Type",
+            "label": "Type",
+            "options": [
+              {
+                "name": "default",
+                "value": ""
+              },
+              {
+                "name": "primary",
+                "value": "primary"
+              },
+              {
+                "name": "secondary",
+                "value": "secondary"
+              },
+              {
+                "name": "tertiary",
+                "value": "tertiary"
+              }
+            ]
+          }
+        ]
       }
     ]
   }
