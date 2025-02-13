@@ -454,79 +454,69 @@
         "value": ""
       },
       {
-        "id": "button",
-        "fields": [
+        "component": "aem-content",
+        "name": "teaserText_cta1",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "teaserText_cta1Text",
+        "label": "Text"
+      },
+      {
+        "component": "select",
+        "name": "teaserText_cta1Type",
+        "label": "Type",
+        "options": [
           {
-            "component": "aem-content",
-            "name": "teaserText_cta1",
-            "label": "Link"
+            "name": "default",
+            "value": ""
           },
           {
-            "component": "text",
-            "name": "teaserText_cta1Text",
-            "label": "Text"
+            "name": "primary",
+            "value": "primary"
           },
           {
-            "component": "select",
-            "name": "teaserText_cta1Type",
-            "label": "Type",
-            "options": [
-              {
-                "name": "default",
-                "value": ""
-              },
-              {
-                "name": "primary",
-                "value": "primary"
-              },
-              {
-                "name": "secondary",
-                "value": "secondary"
-              },
-              {
-                "name": "tertiary",
-                "value": "tertiary"
-              }
-            ]
+            "name": "secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "tertiary",
+            "value": "tertiary"
           }
         ]
       },
-      {
-        "id": "button",
-        "fields": [
-          {
-            "component": "aem-content",
-            "name": "teaserText_cta2",
-            "label": "Link"
-          },
-          {
-            "component": "text",
-            "name": "teaserText_cta2Text",
-            "label": "Text"
-          },
-          {
-            "component": "select",
-            "name": "teaserText_cta2Type",
-            "label": "Type",
-            "options": [
-              {
-                "name": "default",
-                "value": ""
-              },
-              {
-                "name": "primary",
-                "value": "primary"
-              },
-              {
-                "name": "secondary",
-                "value": "secondary"
-              },
-              {
-                "name": "tertiary",
-                "value": "tertiary"
-              }
-            ]
-          }
+    {
+      "component": "aem-content",
+      "name": "teaserText_cta2",
+      "label": "Link"
+    },
+    {
+      "component": "text",
+      "name": "teaserText_cta2Text",
+      "label": "Text"
+    },
+    {
+      "component": "select",
+      "name": "teaserText_cta2Type",
+      "label": "Type",
+      "options": [
+        {
+          "name": "default",
+          "value": ""
+        },
+        {
+          "name": "primary",
+          "value": "primary"
+        },
+        {
+          "name": "secondary",
+          "value": "secondary"
+        },
+        {
+          "name": "tertiary",
+          "value": "tertiary"
+        }
         ]
       }
     ]
