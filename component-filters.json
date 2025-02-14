@@ -59,7 +59,8 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "accordion"
     ]
   }
 ]

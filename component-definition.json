@@ -305,7 +305,7 @@
                 "template": {
                     "name": "Teaser",
                     "model": "teaser",
-                    "image": "/content/dam/teaser-background.png",
+                    "image": "/content/dam/aem-xwalk/1.jpg",
                     "imageAlt": "A group of people sitting on a stage",
                     "teaserText_subtitle": "Adobe Experience Cloud",
                     "teaserText_title": "Meet the Experts",
