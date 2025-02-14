@@ -1,12 +1,16 @@
-@use '../../styles/_all-helpers' as *;
+@use '../../styles/mixins/_all-helpers' as *;
 
 .download-wrapper {
   max-width: remUnit(800px);
   margin: remUnit(32px) auto;
-  padding: remUnit(32px);
-  background: var(--background-color, #ffffff);
-  border-radius: remUnit(8px);
-  box-shadow: 0 remUnit(2px) remUnit(4px) rgba(0, 0, 0, 0.1);
+
+  &-inner {
+    background: var(--background-color, #ffffff);
+    border-radius: remUnit(8px);
+    box-shadow: 0 remUnit(2px) remUnit(4px) rgba(0, 0, 0, 0.1);
+    padding: remUnit(32px);
+  }
+
 
   .download-title {
     font-size: var(--heading-font-size-m, remUnit(28px));

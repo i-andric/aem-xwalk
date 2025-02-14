@@ -151,6 +151,18 @@
           {
             "name": "Light",
             "value": "light"
+          },
+          {
+            "name": "Two columns",
+            "value": "grid-layout-two-columns"
+          },
+          {
+            "name": "Three columns",
+            "value": "grid-layout-three-columns"
+          },
+          {
+            "name": "Four columns",
+            "value": "grid-layout-four-columns"
           }
         ]
       }
@@ -486,37 +498,37 @@
           }
         ]
       },
-    {
-      "component": "aem-content",
-      "name": "teaserText_cta2",
-      "label": "Link"
-    },
-    {
-      "component": "text",
-      "name": "teaserText_cta2Text",
-      "label": "Text"
-    },
-    {
-      "component": "select",
-      "name": "teaserText_cta2Type",
-      "label": "Type",
-      "options": [
-        {
-          "name": "default",
-          "value": ""
-        },
-        {
-          "name": "primary",
-          "value": "primary"
-        },
-        {
-          "name": "secondary",
-          "value": "secondary"
-        },
-        {
-          "name": "tertiary",
-          "value": "tertiary"
-        }
+      {
+        "component": "aem-content",
+        "name": "teaserText_cta2",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "teaserText_cta2Text",
+        "label": "Text"
+      },
+      {
+        "component": "select",
+        "name": "teaserText_cta2Type",
+        "label": "Type",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "tertiary",
+            "value": "tertiary"
+          }
         ]
       }
     ]

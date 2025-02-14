@@ -1,0 +1,124 @@
+
+$base-button-properties: (
+    'bg',
+    'color',
+    'border',
+    'hover-bg',
+    'hover-color',
+    'hover-border',
+    'hover-underline',
+    'focus-bg',
+    'focus-color',
+    'focus-border',
+    'disabled-bg',
+    'disabled-color',
+    'disabled-border'
+);
+
+@function button-style-map($type) {
+    $style-map: ();
+    @each $prop in $base-button-properties {
+        $variable-name: --btn-#{$type}-#{$prop};
+        $style-map: map.merge(
+            $style-map,
+            (
+                $prop: var($variable-name),
+            )
+        );
+    }
+    @return $style-map;
+}
+
+@mixin button-variant($type) {
+    @each $key, $value in button-style-map($type) {
+        --btn-#{string.slice($key, 1)}: #{$value};
+    }
+    @include button;
+}
+
+@mixin button-padding() {
+    padding: var(--btn-padding-y, var(--btn-padding-top)) var(--btn-padding-x, var(--btn-padding-right))
+        var(--btn-padding-y, var(--btn-padding-bottom)) var(--btn-padding-x, var(--btn-padding-left));
+
+    @include screen.md {
+        padding: var(--btn-padding-md-y, var(--btn-padding-md-top)) var(--btn-padding-md-x, var(--btn-padding-md-right))
+            var(--btn-padding-md-y, var(--btn-padding-md-bottom)) var(--btn-padding-md-x, var(--btn-padding-md-left));
+    }
+
+    @include screen.lg {
+        padding: var(--btn-padding-lg-y, var(--btn-padding-lg-top)) var(--btn-padding-lg-x, var(--btn-padding-lg-right))
+            var(--btn-padding-lg-y, var(--btn-padding-lg-bottom)) var(--btn-padding-lg-x, var(--btn-padding-lg-left));
+    }
+}
+
+@mixin button-icon-right-padding() {
+    padding: var(--btn-icon-right-padding-y, var(--btn-icon-right-padding-top)) var(--btn-icon-right-padding-x, var(--btn-icon-right-padding-right))
+        var(--btn-icon-right-padding-y, var(--btn-icon-right-padding-bottom)) var(--btn-icon-right-padding-x, var(--btn-icon-right-padding-left));
+
+    @include screen.md {
+        padding: var(--btn-icon-right-padding-md-y, var(--btn-icon-right-padding-md-top))
+            var(--btn-icon-right-padding-md-x, var(--btn-icon-right-padding-md-right))
+            var(--btn-icon-right-padding-md-y, var(--btn-icon-right-padding-md-bottom))
+            var(--btn-icon-right-padding-md-x, var(--btn-icon-right-padding-md-left));
+    }
+
+    @include screen.lg {
+        padding: var(--btn-icon-right-padding-lg-y, var(--btn-icon-right-padding-lg-top))
+            var(--btn-icon-right-padding-lg-x, var(--btn-icon-right-padding-lg-right))
+            var(--btn-icon-right-padding-lg-y, var(--btn-icon-right-padding-lg-bottom))
+            var(--btn-icon-right-padding-lg-x, var(--btn-icon-right-padding-lg-left));
+    }
+}
+
+@mixin button-icon-left-padding() {
+    padding: var(--btn-icon-left-padding-y, var(--btn-icon-left-padding-top)) var(--btn-icon-left-padding-x, var(--btn-icon-left-padding-right))
+        var(--btn-icon-left-padding-y, var(--btn-icon-left-padding-bottom)) var(--btn-icon-left-padding-x, var(--btn-icon-left-padding-left));
+
+    @include screen.md {
+        padding: var(--btn-icon-left-padding-md-y, var(--btn-icon-left-padding-md-top))
+            var(--btn-icon-left-padding-md-x, var(--btn-icon-left-padding-md-right))
+            var(--btn-icon-left-padding-md-y, var(--btn-icon-left-padding-md-bottom))
+            var(--btn-icon-left-padding-md-x, var(--btn-icon-left-padding-md-left));
+    }
+
+    @include screen.lg {
+        padding: var(--btn-icon-left-padding-lg-y, var(--btn-icon-left-padding-lg-top))
+            var(--btn-icon-left-padding-lg-x, var(--btn-icon-left-padding-lg-right))
+            var(--btn-icon-left-padding-lg-y, var(--btn-icon-left-padding-lg-bottom))
+            var(--btn-icon-left-padding-lg-x, var(--btn-icon-left-padding-lg-left));
+    }
+}
+
+@mixin button {
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+    border-color: var(--btn-border);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--btn-hover-color, var(--btn-color));
+        background: var(--btn-hover-bg, var(--btn-bg));
+        border-color: var(--btn-hover-border, var(--btn-border));
+        text-decoration: var(--btn-hover-underline, unset);
+
+        .icon {
+            background: var(--btn-hover-color, var(--btn-color));
+        }
+    }
+
+    &:focus {
+        color: var(--btn-focus-color, var(--btn-color));
+        background: var(--btn-focus-bg, var(--btn-bg));
+        border-color: var(--btn-focus-border, var(--btn-border));
+    }
+
+    &:disabled {
+        color: var(--btn-disabled-color, var(--btn-color));
+        background: var(--btn-disabled-bg, var(--btn-bg));
+        border-color: var(--btn-disabled-border, var(--btn-border));
+    }
+
+    .icon {
+        background-color: var(--btn-color);
+    }
+}

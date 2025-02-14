@@ -35,6 +35,18 @@
             {
               "name": "Light",
               "value": "light"
+            },          
+            {
+              "name": "Two columns",
+              "value": "grid-layout-two-columns"
+            },
+            {
+              "name": "Three columns",
+              "value": "grid-layout-three-columns"
+            },
+            {
+              "name": "Four columns",
+              "value": "grid-layout-four-columns"
             }
           ]
         }

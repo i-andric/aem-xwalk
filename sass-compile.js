@@ -6,8 +6,8 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Specify the files you want to ignore
-const ignoredFiles = ['_media-queries.scss', '_mixins.scss', '_all-helpers.scss'];
+// Specify the directories you want to ignore
+const ignoredDirs = ['styles/mixins'];
 
 const compileAndSave = async (sassFile) => {
   const dest = sassFile.replace(path.extname(sassFile), '.css');
@@ -30,10 +30,13 @@ const processFiles = async (parent) => {
     if (file.isDirectory()) {
       await processFiles(path.join(parent, file.name));
     } else if (path.extname(file.name) === '.scss') {
-      if (!ignoredFiles.includes(file.name)) {
-        await compileAndSave(path.join(parent, file.name));
+      const fullPath = path.join(parent, file.name);
+      const relativePath = path.relative(__dirname, fullPath);
+      const isIgnored = ignoredDirs.some(dir => relativePath.startsWith(dir));
+      if (!isIgnored) {
+        await compileAndSave(fullPath);
       } else {
-        console.log(`${file.name} has been explicitly ignored for compilation`);
+        console.log(`${relativePath} has been explicitly ignored for compilation`);
       }
     }
   }
@@ -50,11 +53,12 @@ for (const folder of ['styles', 'blocks']) {
 
 fs.watch('.', { recursive: true }, (eventType, fileName) => {
   if (path.extname(fileName) === '.scss' && eventType === 'change') {
-    const baseName = path.basename(fileName);
-    if (!ignoredFiles.includes(baseName)) {
+    const relativePath = path.relative(__dirname, path.join(__dirname, fileName));
+    const isIgnored = ignoredDirs.some(dir => relativePath.startsWith(dir));
+    if (!isIgnored) {
       compileAndSave(path.join(__dirname, fileName)).catch(console.error);
     } else {
-      console.log(`${fileName} has been explicitly ignored for compilation`);
+      console.log(`${relativePath} has been explicitly ignored for compilation`);
     }
   }
 });
