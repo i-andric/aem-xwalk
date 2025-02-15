@@ -2,7 +2,7 @@
   "definitions": [
     {
       "title": "Page Metadata",
-      "id": "page-metadata",
+      "id": "metadata",
       "plugins": {
         "xwalk": {
           "page": {
