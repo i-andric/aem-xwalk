@@ -21,6 +21,11 @@ export default function extendRichTextEditor(container = document) {
         command: 'underline',
       },
       {
+        name: 'strikethrough',
+        icon: 'S',
+        command: 'strikethrough',
+      },
+      {
         name: 'link',
         icon: '🔗',
         command: 'createLink',
