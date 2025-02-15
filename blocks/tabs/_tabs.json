@@ -1,15 +1,15 @@
 {
     "definitions": [
         {
-            "title": "Tab",
-            "id": "tab",
+            "title": "Tabs",
+            "id": "tabs",
             "plugins": {
               "xwalk": {
                 "page": {
                   "resourceType": "core/franklin/components/section/v1/section",
                   "template": {
-                    "name": "Tab",
-                    "model": "tab",
+                    "name": "Tabs",
+                    "model": "tabs",
                     "filter": "section"
                   }
                 }
@@ -19,7 +19,7 @@
     ],
     "models": [
       {
-        "id": "tab",
+        "id": "tabs",
         "fields": []
       }
     ],
