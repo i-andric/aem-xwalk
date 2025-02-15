@@ -60,10 +60,7 @@
         {
           "component": "select",
           "name": "style",
-          "value": "",
-          "label": "Background Color",
-          "description": "The button background color",
-          "valueType": "string",
+          "label": "Style",
           "options": [
             {
               "name": "Red",
