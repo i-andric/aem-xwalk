@@ -460,6 +460,10 @@
     ]
   },
   {
+    "id": "tab",
+    "fields": []
+  },
+  {
     "id": "teaser",
     "fields": [
       {

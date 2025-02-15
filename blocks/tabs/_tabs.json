@@ -1,0 +1,28 @@
+{
+    "definitions": [
+        {
+            "title": "Tab",
+            "id": "tab",
+            "plugins": {
+              "xwalk": {
+                "page": {
+                  "resourceType": "core/franklin/components/section/v1/section",
+                  "template": {
+                    "name": "Tab",
+                    "model": "tab",
+                    "filter": "section"
+                  }
+                }
+              }
+            }
+          }          
+    ],
+    "models": [
+      {
+        "id": "tab",
+        "fields": []
+      }
+    ],
+    "filters": []
+  }
+  
