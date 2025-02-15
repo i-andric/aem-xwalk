@@ -361,14 +361,14 @@
         "value": ""
       },
       {
-        "component": "text",
+        "component": "date-time",
         "name": "begin",
         "label": "Begin",
         "valueType": "string",
         "value": ""
       },
       {
-        "component": "text",
+        "component": "date-time",
         "name": "end",
         "label": "End",
         "valueType": "string",
