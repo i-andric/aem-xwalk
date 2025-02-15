@@ -474,6 +474,35 @@
     ]
   },
   {
+    "id": "social-share",
+    "fields": [
+      {
+        "component": "text",
+        "name": "facebook",
+        "value": "",
+        "label": "Facebook URL",
+        "valueType": "string",
+        "description": "Enter Facebook page URL. If left empty, will enable sharing current page."
+      },
+      {
+        "component": "text",
+        "name": "twitter",
+        "value": "",
+        "label": "Twitter URL",
+        "valueType": "string",
+        "description": "Enter Twitter profile URL. If left empty, will enable sharing current page."
+      },
+      {
+        "component": "text",
+        "name": "linkedin",
+        "value": "",
+        "label": "LinkedIn URL",
+        "valueType": "string",
+        "description": "Enter LinkedIn profile URL. If left empty, will enable sharing current page."
+      }
+    ]
+  },
+  {
     "id": "tabs",
     "fields": []
   },
