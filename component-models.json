@@ -352,7 +352,8 @@
       },
       {
         "component": "custom-asset-namespace:custom-asset-mimetype",
-        "valueType": "string"
+        "valueType": "string",
+        "name": "imageMimeType"
       },
       {
         "component": "text",
