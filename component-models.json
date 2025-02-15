@@ -341,6 +341,28 @@
     ]
   },
   {
+    "id": "dynamic-media-asset",
+    "fields": [
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "name": "dm-image",
+        "label": "Dynamic Media Image",
+        "configUrl": "https://main--aem-xwalk--i-andric.aem.page/tools/assets-selector/image.config.json",
+        "valueType": "string"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "event",
     "fields": [
       {
