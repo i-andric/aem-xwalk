@@ -1,16 +1,36 @@
 @use '../../styles/mixins/_all-helpers' as *;
 
 footer {
-  background-color: rgba(var(--color-light-gray));
+  @include bg-color(var(--color-pure-black));
+  @include text-color(var(--color-pure-white));
   font-size: var(--body-size-xs);
   .footer {
     > div {
       margin: auto;
-      max-width: remUnit(1200px);
+      max-width: var(--max-width);
       padding: remUnit(40px) remUnit(24px) remUnit(24px);
+    }
+    .columns-4-cols div {
+      p:first-child {
+      border-bottom: 2px solid rgb(var(--color-pure-white));
+      padding-bottom: remUnit(20px);
+      font-size: var(--body-size-xs);
+      }
+      a {
+        margin: remUnit(10px) 0 0 0;
+        font-size: var(--body-size-xs);
+      }
     }
     p {
       margin: 0;
+    }
+    .icon {
+      @include bg-color(var(--color-pure-white));
+    }
+    .social-share-container {
+      p {
+        text-align: right;
+      }
     }
   }
   @include media-l {

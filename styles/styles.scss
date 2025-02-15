@@ -74,6 +74,9 @@
   --font-regular: 400;
 
   --header-height: 100vH;
+
+  /* sizes */
+  --max-width: 1400px;
 }
 body {
   font-size: var(--body-font-size-m);
@@ -258,7 +261,6 @@ a {
     display: inline-block;
     box-sizing: border-box;
     text-decoration: none;
-    text-align: center;
     font-style: normal;
     font-weight: 600;
     cursor: pointer;
@@ -323,64 +325,32 @@ button.tertiary {
     --heading-font-size-s: remUnit(24px);
     --heading-font-size-xs: remUnit(22px);
   }
-  .section {
+  .section:not(.grid-layout-two-columns) {
     > div:not(.carousel-wrapper, .hero-wrapper) {
-      max-width: remUnit(1200px);
+      max-width: var(--max-width);
       margin: auto;
     }
   }
+  main {
+    max-width: var(--max-width);
+    margin: auto;
+  }
 }
 
-.grid-layout-four-columns {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  display: grid;
-  gap: 2rem;
-}
-
-.grid-layout-three-columns {
-  grid-template-columns: 1fr 1fr 1fr;
-  display: grid;
-  gap: 2rem;
-}
-
-.grid-layout-two-columns {
-  grid-template-columns: 1fr 1fr;
-  display: grid;
-  gap: 2rem;
-}
-
-.grid-layout-two-columns-30-70 {
-  grid-template-columns: 3fr 7fr;
-  display: grid;
-  gap: 2rem;
-}
-
-.grid-layout-two-columns-70-30 {
-  grid-template-columns: 7fr 3fr;
-  display: grid;
-  gap: 2rem;
-}
-
-.grid-layout-two-columns-40-60 {
-  grid-template-columns: 4fr 6fr;
-  display: grid;
-  gap: 2rem;
-}
-
-.grid-layout-two-columns-60-40 {
-  grid-template-columns: 6fr 4fr;
-  display: grid;
-  gap: 2rem;
-}
-
-.grid-layout-two-columns-25-75 {
-  grid-template-columns: 1fr 3fr;
-  display: grid;
-  gap: 2rem;
-}
-
-.grid-layout-two-columns-75-25 {
-  grid-template-columns: 3fr 1fr;
-  display: grid;
-  gap: 2rem;
+.grid-layout {
+  &-four-columns {
+    @include grid-container(1fr 1fr 1fr 1fr, null, remUnit(32px), stretch, center);
+  }
+  &-three-columns {
+    @include grid-container(1fr 1fr 1fr, null, remUnit(32px), stretch, center);
+  }
+  &-two-columns {
+    @include grid-container(1fr 1fr, null, remUnit(32px), stretch, center);
+    &-30-70 {
+      @include grid-container(3fr 7fr, null, remUnit(32px), stretch, center);
+    }
+    &-70-30 {
+      @include grid-container(7fr 3fr, null, remUnit(32px), stretch, center);
+    }
+  }
 }

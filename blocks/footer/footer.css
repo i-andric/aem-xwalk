@@ -1,14 +1,30 @@
 footer {
-  background-color: rgba(var(--color-light-gray));
+  background: rgba(var(--color-pure-black), 1);
+  color: rgba(var(--color-pure-white), 1);
   font-size: var(--body-size-xs);
 }
 footer .footer > div {
   margin: auto;
-  max-width: 75rem;
+  max-width: var(--max-width);
   padding: 2.5rem 1.5rem 1.5rem;
+}
+footer .footer .columns-4-cols div p:first-child {
+  border-bottom: 2px solid rgb(var(--color-pure-white));
+  padding-bottom: 1.25rem;
+  font-size: var(--body-size-xs);
+}
+footer .footer .columns-4-cols div a {
+  margin: 0.625rem 0 0 0;
+  font-size: var(--body-size-xs);
 }
 footer .footer p {
   margin: 0;
+}
+footer .footer .icon {
+  background: rgba(var(--color-pure-white), 1);
+}
+footer .footer .social-share-container p {
+  text-align: right;
 }
 @media (width >= 54.13rem) {
   footer .footer > div {
