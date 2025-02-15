@@ -355,6 +355,13 @@
       },
       {
         "component": "text",
+        "name": "link",
+        "label": "Link",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
         "name": "city",
         "label": "City",
         "valueType": "string",
