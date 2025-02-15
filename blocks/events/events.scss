@@ -1,0 +1,55 @@
+@use '../../styles/mixins/_all-helpers' as *;
+
+.events {
+    &-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: remUnit(20px) 0;
+      
+        th,
+        td {
+          padding: remUnit(12px);
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+        }
+      
+        th {
+          @include bg-color(var(--input-solid));
+          position: relative;
+          cursor: pointer;
+      
+          &:hover .ricon-sort_default {
+            opacity: 0.8;
+          }
+        }
+    }
+    &-filters {
+        @include flex-container(row, flex-start, center, wrap, remUnit(16px));
+    }
+}
+
+%sort-icon-base {
+  display: inline-block;
+  width: remUnit(16px);
+  height: remUnit(16px);
+  vertical-align: middle;
+  margin-left: remUnit(5px);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.events-icon-sort {
+  @extend %sort-icon-base;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M8 4l4 4H4z M8 12l4-4H4z" fill="%23666"/></svg>');
+&-asc {
+    @extend %sort-icon-base;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M8 4l4 4H4z" fill="%23000"/></svg>');
+    opacity: 1;
+  }
+  &-desc {
+    @extend %sort-icon-base;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M8 12l4-4H4z" fill="%23000"/></svg>');
+    opacity: 1;
+  }
+}
