@@ -5,9 +5,9 @@
   margin: remUnit(32px) auto;
 
   &-inner {
-    background: var(--background-color, #ffffff);
+    @include bg-color(var(--background-color));
     border-radius: remUnit(8px);
-    box-shadow: 0 remUnit(2px) remUnit(4px) rgba(0, 0, 0, 0.1);
+    @include box-shadow(var(--color-pure-black), 2px);
     padding: remUnit(32px);
   }
 
@@ -16,14 +16,14 @@
     font-size: var(--heading-font-size-m, remUnit(28px));
     font-weight: 600;
     margin: 0 0 remUnit(16px);
-    color: var(--text-color, #2c2c2c);
+    @include text-color(var(--text-color));
   }
 
   .download-description {
     font-size: var(--body-font-size-m, remUnit(16px));
     line-height: 1.5;
     margin-bottom: remUnit(24px);
-    color: var(--text-color, #2c2c2c);
+    @include text-color(var(--text-color));
 
     p {
       margin: 0 0 remUnit(16px);
@@ -39,15 +39,15 @@
     align-items: center;
     gap: remUnit(8px);
     padding: remUnit(12px) remUnit(24px);
-    background-color: var(--link-color, #1473e6);
-    color: var(--background-color, #ffffff);
+    @include bg-color(var(--button-primary));
+    @include text-color(var(--color-pure-white));
     text-decoration: none;
     border-radius: remUnit(4px);
     font-weight: 500;
     transition: background-color 0.3s ease;
 
     &:hover, &:focus {
-      background-color: var(--link-hover-color, #0d66d0);
+      @include bg-color(var(--button-primary-hover));
       text-decoration: none;
     }
 
@@ -69,7 +69,7 @@
         transform: translateX(-50%);
         width: remUnit(2px);
         height: remUnit(12px);
-        background-color: currentColor;
+        background-color: currentcolor;
       }
 
       &::after {
@@ -77,29 +77,14 @@
         position: absolute;
         bottom: 2px;
         left: 50%;
-        transform: translateX(-50%);
         width: remUnit(10px);
         height: remUnit(10px);
-        border: remUnit(2px) solid currentColor;
+        border: remUnit(2px) solid currentcolor;
         border-top: 0;
         border-left: 0;
         transform-origin: center;
         transform: translateX(-50%) rotate(45deg);
       }
-    }
-  }
-
-  @media (max-width: 768px) {
-    margin: remUnit(16px);
-    padding: remUnit(24px);
-
-    .download-title {
-      font-size: var(--heading-font-size-s, 1.5rem);
-    }
-
-    .download-button {
-      width: 100%;
-      justify-content: center;
     }
   }
 }

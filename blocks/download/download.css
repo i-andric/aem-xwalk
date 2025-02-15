@@ -3,22 +3,22 @@
   margin: 2rem auto;
 }
 .download-wrapper-inner {
-  background: var(--background-color, #ffffff);
+  background: rgba(var(--background-color), 1);
   border-radius: 0.5rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px rgb(var(--color-pure-black));
   padding: 2rem;
 }
 .download-wrapper .download-title {
   font-size: var(--heading-font-size-m, 1.75rem);
   font-weight: 600;
   margin: 0 0 1rem;
-  color: var(--text-color, #2c2c2c);
+  color: rgba(var(--text-color), 1);
 }
 .download-wrapper .download-description {
   font-size: var(--body-font-size-m, 1rem);
   line-height: 1.5;
   margin-bottom: 1.5rem;
-  color: var(--text-color, #2c2c2c);
+  color: rgba(var(--text-color), 1);
 }
 .download-wrapper .download-description p {
   margin: 0 0 1rem;
@@ -31,15 +31,15 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background-color: var(--link-color, #1473e6);
-  color: var(--background-color, #ffffff);
+  background: rgba(var(--button-primary), 1);
+  color: rgba(var(--color-pure-white), 1);
   text-decoration: none;
   border-radius: 0.25rem;
   font-weight: 500;
   transition: background-color 0.3s ease;
 }
 .download-wrapper .download-button:hover, .download-wrapper .download-button:focus {
-  background-color: var(--link-hover-color, #0d66d0);
+  background: rgba(var(--button-primary-hover), 1);
   text-decoration: none;
 }
 .download-wrapper .download-button:focus {
@@ -59,32 +59,18 @@
   transform: translateX(-50%);
   width: 0.125rem;
   height: 0.75rem;
-  background-color: currentColor;
+  background-color: currentcolor;
 }
 .download-wrapper .download-button .download-icon::after {
   content: "";
   position: absolute;
   bottom: 2px;
   left: 50%;
-  transform: translateX(-50%);
   width: 0.625rem;
   height: 0.625rem;
-  border: 0.125rem solid currentColor;
+  border: 0.125rem solid currentcolor;
   border-top: 0;
   border-left: 0;
   transform-origin: center;
   transform: translateX(-50%) rotate(45deg);
-}
-@media (max-width: 768px) {
-  .download-wrapper {
-    margin: 1rem;
-    padding: 1.5rem;
-  }
-  .download-wrapper .download-title {
-    font-size: var(--heading-font-size-s, 1.5rem);
-  }
-  .download-wrapper .download-button {
-    width: 100%;
-    justify-content: center;
-  }
 }

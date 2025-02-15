@@ -20,7 +20,7 @@ function share(platform, url, title, description) {
       title,
       text: description,
       url,
-    }).catch(console.error);
+    });
   } else {
     const shareUrl = shareUrls[platform];
     if (shareUrl) {

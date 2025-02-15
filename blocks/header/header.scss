@@ -1,7 +1,7 @@
 @use '../../styles/mixins/_all-helpers' as *;
 
 header {
-  --nav-height: remUnit(65px);
+  --nav-height: 4.0625rem;
 
   .nav-wrapper {
     @include bg-color(var(--color-light-gray));
@@ -19,7 +19,7 @@ header {
     align-items: center;
     gap: 0 remUnit(24px);
     margin: auto;
-    max-width: remUnit(1248px);
+    max-width: var(--max-width);
     height: var(--nav-height);
     padding: 0 remUnit(24px);
     font-family: var(--body-font-family);

@@ -1,5 +1,5 @@
 header {
-  --nav-height: remUnit(65px);
+  --nav-height: 4.0625rem;
 }
 header .nav-wrapper {
   background: rgba(var(--color-light-gray), 1);
@@ -14,7 +14,7 @@ header nav {
   align-items: center;
   gap: 0 1.5rem;
   margin: auto;
-  max-width: 78rem;
+  max-width: var(--max-width);
   height: var(--nav-height);
   padding: 0 1.5rem;
   font-family: var(--body-font-family);

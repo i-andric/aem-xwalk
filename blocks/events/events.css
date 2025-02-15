@@ -14,7 +14,7 @@
   position: relative;
   cursor: pointer;
 }
-.events-table th:hover .ricon-sort_default {
+.events-table th:hover .events-icon-sort {
   opacity: 0.8;
 }
 .events-filters {

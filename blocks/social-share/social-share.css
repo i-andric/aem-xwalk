@@ -33,5 +33,5 @@
   background: rgba(var(--highlight), 1);
 }
 .social-share-button .icon svg path {
-  fill: currentColor;
+  fill: currentcolor;
 }
