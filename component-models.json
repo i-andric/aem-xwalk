@@ -166,7 +166,7 @@
     ]
   },
   {
-    "id": "title",
+    "id": "metadata",
     "fields": [
       {
         "component": "text",
