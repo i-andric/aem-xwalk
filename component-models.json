@@ -254,16 +254,6 @@
     ]
   },
   {
-    "id": "metadata",
-    "fields": [
-      {
-        "component": "text",
-        "name": "metatemplate",
-        "label": "Meta Template"
-      }
-    ]
-  },
-  {
     "id": "accordionitem",
     "fields": [
       {
