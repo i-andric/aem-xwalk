@@ -22,6 +22,8 @@
   --error-color: 190, 0, 0;
   --warning-color: 255, 150, 0;
   --success-color: 0, 142, 79;
+  --dark: 0, 0, 0;
+  --light: 255, 255, 255;
   /* Buttons */
   --button-primary: 229, 0, 67;
   --on-button-primary: 255, 255, 255;
@@ -32,6 +34,20 @@
   --button-secondary-option: 245, 245, 247;
   --on-button-secondary-option: 0, 0, 0;
   --button-secondary-option-hover: 223, 223, 223;
+  /* BTNS */
+  --btn-padding: 5px 30px;
+  --btn-primary-bg: rgb(229, 0, 67);
+  --btn-primary-color: rgb(255, 255, 255);
+  --btn-primary-hover-bg: rgb(165, 0, 48);
+  --btn-primary-hover-color: rgb(255, 255, 255);
+  --btn-secondary-bg: rgb(0, 0, 0);
+  --btn-secondary-color: rgb(255, 255, 255);
+  --btn-secondary-hover-bg: rgb(51, 51, 51);
+  --btn-secondary-hover-color: rgb(255, 255, 255);
+  --btn-tertiary-bg: rgb(245, 245, 247);
+  --btn-tertiary-color: rgb(0, 0, 0);
+  --btn-tertiary-hover-bg: rgb(223, 223, 223);
+  --btn-tertiary-hover-color: rgb(0, 0, 0);
   --color-team-red: 229, 0, 67;
   --color-pure-black: 0, 0, 0;
   --color-pure-white: 255, 255, 255;
@@ -284,35 +300,233 @@ a.button {
 
 a.primary,
 button.primary {
-  background: rgba(var(--button-primary), 1);
-  color: rgba(var(--on-button-primary), 1);
-  padding: 0.3125rem 1.875rem;
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border-color: var(--btn-border);
+  text-decoration: none;
+  text-align: center;
+  padding: var(--btn-padding);
+  cursor: pointer;
+  --btn-bg: var(--btn-primary-bg);
+  --btn-color: var(--btn-primary-color);
+  --btn-border: var(--btn-primary-border);
+  --btn-hover-bg: var(--btn-primary-hover-bg);
+  --btn-hover-color: var(--btn-primary-hover-color);
+  --btn-hover-border: var(--btn-primary-hover-border);
+  --btn-hover-underline: var(--btn-primary-hover-underline);
+  --btn-focus-bg: var(--btn-primary-focus-bg);
+  --btn-focus-color: var(--btn-primary-focus-color);
+  --btn-focus-border: var(--btn-primary-focus-border);
+  --btn-disabled-bg: var(--btn-primary-disabled-bg);
+  --btn-disabled-color: var(--btn-primary-disabled-color);
+  --btn-disabled-border: var(--btn-primary-disabled-border);
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border-color: var(--btn-border);
+  text-decoration: none;
+  text-align: center;
+  padding: var(--btn-padding);
+  cursor: pointer;
 }
 a.primary:hover,
 button.primary:hover {
-  background: rgba(var(--button-primary-hover), 1);
+  color: var(--btn-hover-color, var(--btn-color));
+  background: var(--btn-hover-bg, var(--btn-bg));
+  border-color: var(--btn-hover-border, var(--btn-border));
+  text-decoration: var(--btn-hover-underline, unset);
+}
+a.primary:hover .icon,
+button.primary:hover .icon {
+  background: var(--btn-hover-color, var(--btn-color));
+}
+a.primary:focus,
+button.primary:focus {
+  color: var(--btn-focus-color, var(--btn-color));
+  background: var(--btn-focus-bg, var(--btn-bg));
+  border-color: var(--btn-focus-border, var(--btn-border));
+}
+a.primary:disabled,
+button.primary:disabled {
+  color: var(--btn-disabled-color, var(--btn-color));
+  background: var(--btn-disabled-bg, var(--btn-bg));
+  border-color: var(--btn-disabled-border, var(--btn-border));
+}
+a.primary:hover,
+button.primary:hover {
+  color: var(--btn-hover-color, var(--btn-color));
+  background: var(--btn-hover-bg, var(--btn-bg));
+  border-color: var(--btn-hover-border, var(--btn-border));
+  text-decoration: var(--btn-hover-underline, unset);
+}
+a.primary:hover .icon,
+button.primary:hover .icon {
+  background: var(--btn-hover-color, var(--btn-color));
+}
+a.primary:focus,
+button.primary:focus {
+  color: var(--btn-focus-color, var(--btn-color));
+  background: var(--btn-focus-bg, var(--btn-bg));
+  border-color: var(--btn-focus-border, var(--btn-border));
+}
+a.primary:disabled,
+button.primary:disabled {
+  color: var(--btn-disabled-color, var(--btn-color));
+  background: var(--btn-disabled-bg, var(--btn-bg));
+  border-color: var(--btn-disabled-border, var(--btn-border));
 }
 
 a.secondary,
 button.secondary {
-  background: rgba(var(--button-secondary), 1);
-  color: rgba(var(--on-button-secondary), 1);
-  padding: 0.3125rem 1.875rem;
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border-color: var(--btn-border);
+  text-decoration: none;
+  text-align: center;
+  padding: var(--btn-padding);
+  cursor: pointer;
+  --btn-bg: var(--btn-secondary-bg);
+  --btn-color: var(--btn-secondary-color);
+  --btn-border: var(--btn-secondary-border);
+  --btn-hover-bg: var(--btn-secondary-hover-bg);
+  --btn-hover-color: var(--btn-secondary-hover-color);
+  --btn-hover-border: var(--btn-secondary-hover-border);
+  --btn-hover-underline: var(--btn-secondary-hover-underline);
+  --btn-focus-bg: var(--btn-secondary-focus-bg);
+  --btn-focus-color: var(--btn-secondary-focus-color);
+  --btn-focus-border: var(--btn-secondary-focus-border);
+  --btn-disabled-bg: var(--btn-secondary-disabled-bg);
+  --btn-disabled-color: var(--btn-secondary-disabled-color);
+  --btn-disabled-border: var(--btn-secondary-disabled-border);
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border-color: var(--btn-border);
+  text-decoration: none;
+  text-align: center;
+  padding: var(--btn-padding);
+  cursor: pointer;
 }
 a.secondary:hover,
 button.secondary:hover {
-  background: rgba(var(--button-secondary-hover), 1);
+  color: var(--btn-hover-color, var(--btn-color));
+  background: var(--btn-hover-bg, var(--btn-bg));
+  border-color: var(--btn-hover-border, var(--btn-border));
+  text-decoration: var(--btn-hover-underline, unset);
+}
+a.secondary:hover .icon,
+button.secondary:hover .icon {
+  background: var(--btn-hover-color, var(--btn-color));
+}
+a.secondary:focus,
+button.secondary:focus {
+  color: var(--btn-focus-color, var(--btn-color));
+  background: var(--btn-focus-bg, var(--btn-bg));
+  border-color: var(--btn-focus-border, var(--btn-border));
+}
+a.secondary:disabled,
+button.secondary:disabled {
+  color: var(--btn-disabled-color, var(--btn-color));
+  background: var(--btn-disabled-bg, var(--btn-bg));
+  border-color: var(--btn-disabled-border, var(--btn-border));
+}
+a.secondary:hover,
+button.secondary:hover {
+  color: var(--btn-hover-color, var(--btn-color));
+  background: var(--btn-hover-bg, var(--btn-bg));
+  border-color: var(--btn-hover-border, var(--btn-border));
+  text-decoration: var(--btn-hover-underline, unset);
+}
+a.secondary:hover .icon,
+button.secondary:hover .icon {
+  background: var(--btn-hover-color, var(--btn-color));
+}
+a.secondary:focus,
+button.secondary:focus {
+  color: var(--btn-focus-color, var(--btn-color));
+  background: var(--btn-focus-bg, var(--btn-bg));
+  border-color: var(--btn-focus-border, var(--btn-border));
+}
+a.secondary:disabled,
+button.secondary:disabled {
+  color: var(--btn-disabled-color, var(--btn-color));
+  background: var(--btn-disabled-bg, var(--btn-bg));
+  border-color: var(--btn-disabled-border, var(--btn-border));
 }
 
 a.tertiary,
 button.tertiary {
-  background: rgba(var(--button-secondary-option), 1);
-  color: rgba(var(--on-button-secondary-option), 1);
-  padding: 0.3125rem 1.875rem;
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border-color: var(--btn-border);
+  text-decoration: none;
+  text-align: center;
+  padding: var(--btn-padding);
+  cursor: pointer;
+  --btn-bg: var(--btn-tertiary-bg);
+  --btn-color: var(--btn-tertiary-color);
+  --btn-border: var(--btn-tertiary-border);
+  --btn-hover-bg: var(--btn-tertiary-hover-bg);
+  --btn-hover-color: var(--btn-tertiary-hover-color);
+  --btn-hover-border: var(--btn-tertiary-hover-border);
+  --btn-hover-underline: var(--btn-tertiary-hover-underline);
+  --btn-focus-bg: var(--btn-tertiary-focus-bg);
+  --btn-focus-color: var(--btn-tertiary-focus-color);
+  --btn-focus-border: var(--btn-tertiary-focus-border);
+  --btn-disabled-bg: var(--btn-tertiary-disabled-bg);
+  --btn-disabled-color: var(--btn-tertiary-disabled-color);
+  --btn-disabled-border: var(--btn-tertiary-disabled-border);
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border-color: var(--btn-border);
+  text-decoration: none;
+  text-align: center;
+  padding: var(--btn-padding);
+  cursor: pointer;
 }
 a.tertiary:hover,
 button.tertiary:hover {
-  background: rgba(var(--button-secondary-option-hover), 1);
+  color: var(--btn-hover-color, var(--btn-color));
+  background: var(--btn-hover-bg, var(--btn-bg));
+  border-color: var(--btn-hover-border, var(--btn-border));
+  text-decoration: var(--btn-hover-underline, unset);
+}
+a.tertiary:hover .icon,
+button.tertiary:hover .icon {
+  background: var(--btn-hover-color, var(--btn-color));
+}
+a.tertiary:focus,
+button.tertiary:focus {
+  color: var(--btn-focus-color, var(--btn-color));
+  background: var(--btn-focus-bg, var(--btn-bg));
+  border-color: var(--btn-focus-border, var(--btn-border));
+}
+a.tertiary:disabled,
+button.tertiary:disabled {
+  color: var(--btn-disabled-color, var(--btn-color));
+  background: var(--btn-disabled-bg, var(--btn-bg));
+  border-color: var(--btn-disabled-border, var(--btn-border));
+}
+a.tertiary:hover,
+button.tertiary:hover {
+  color: var(--btn-hover-color, var(--btn-color));
+  background: var(--btn-hover-bg, var(--btn-bg));
+  border-color: var(--btn-hover-border, var(--btn-border));
+  text-decoration: var(--btn-hover-underline, unset);
+}
+a.tertiary:hover .icon,
+button.tertiary:hover .icon {
+  background: var(--btn-hover-color, var(--btn-color));
+}
+a.tertiary:focus,
+button.tertiary:focus {
+  color: var(--btn-focus-color, var(--btn-color));
+  background: var(--btn-focus-bg, var(--btn-bg));
+  border-color: var(--btn-focus-border, var(--btn-border));
+}
+a.tertiary:disabled,
+button.tertiary:disabled {
+  color: var(--btn-disabled-color, var(--btn-color));
+  background: var(--btn-disabled-bg, var(--btn-bg));
+  border-color: var(--btn-disabled-border, var(--btn-border));
 }
 
 .icon {
@@ -372,4 +586,14 @@ button.tertiary:hover {
   grid-template-columns: 7fr 3fr;
   gap: 2rem;
   place-items: center stretch;
+}
+
+.dark {
+  background: rgba(var(--dark), 1);
+  color: rgba(var(--light), 1);
+}
+
+.light {
+  background: rgba(var(--light), 1);
+  color: rgba(var(--dark), 1);
 }

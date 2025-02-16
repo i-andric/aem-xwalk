@@ -1,0 +1,53 @@
+@use '../../styles/mixins/_all-helpers' as *;
+
+.post {
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        width: 100%;
+    }
+
+    &-card {
+        @include flex-column-start;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        height: 100%;
+  
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        &-image {
+            position: relative;
+            width: 100%;
+            
+            img {
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+            }
+          }
+          &-content {
+            @include flex-container(column, space-between, flex-start, nowrap, 1rem);
+            padding: remUnit(24px);
+            flex-grow: 1;
+            
+            .post-card-title {
+              margin: 0;
+              font-size: 1.25rem;
+              font-weight: bold;
+              
+              .button a {
+                @include button;
+                @include button-variant('primary');
+              }
+            }
+    }
+    &-description {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+}

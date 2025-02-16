@@ -50,6 +50,21 @@
           "name": "limit",
           "label": "Limit",
           "value": "4"
+        },
+        {
+            "component": "select",
+            "name": "classes",
+            "label": "Classes",
+            "options": [
+              {
+                "name": "dark",
+                "value": "dark"
+              },
+              {
+                "name": "light",
+                "value": "light"
+              }
+            ]
         }
       ]
     }

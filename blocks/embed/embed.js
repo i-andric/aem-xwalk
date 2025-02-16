@@ -18,7 +18,7 @@ function getVideoCdnParams(url) {
   return match ? {
     videoId: match[1],
     playerId: match[2],
-    channelId: match[3]
+    channelId: match[3],
   } : null;
 }
 

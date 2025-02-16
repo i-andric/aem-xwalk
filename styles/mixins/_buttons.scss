@@ -1,4 +1,8 @@
 
+@use "sass:map";
+@use "sass:string";
+@use "sass:color";
+
 $base-button-properties: (
     'bg',
     'color',
@@ -94,6 +98,9 @@ $base-button-properties: (
     color: var(--btn-color);
     border-color: var(--btn-border);
     text-decoration: none;
+    text-align: center;
+    padding: var(--btn-padding);
+    cursor: pointer;
 
     &:hover {
         color: var(--btn-hover-color, var(--btn-color));
@@ -116,9 +123,5 @@ $base-button-properties: (
         color: var(--btn-disabled-color, var(--btn-color));
         background: var(--btn-disabled-bg, var(--btn-bg));
         border-color: var(--btn-disabled-border, var(--btn-border));
-    }
-
-    .icon {
-        background-color: var(--btn-color);
     }
 }
