@@ -439,20 +439,10 @@
     "id": "embed",
     "fields": [
       {
-        "component": "tab",
-        "label": "Tab 1",
-        "name": "tab1"
-      },
-      {
         "component": "text",
         "label": "Text 1",
         "name": "text1",
         "valueType": "string"
-      },
-      {
-        "component": "tab",
-        "label": "Tab 2",
-        "name": "tab2"
       },
       {
         "component": "text",
