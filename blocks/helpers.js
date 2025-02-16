@@ -57,3 +57,20 @@ export async function getDictionary() {
   );
   return dictionaryLangNested;
 }
+
+/**
+ * Creates an HTML element with the specified tag name and attributes
+ * @param {string} tag - The HTML tag name
+ * @param {Object} [attributes] - Optional object containing element attributes
+ * @returns {HTMLElement} The created HTML element
+ */
+export function createTag(tag, attributes = {}) {
+  const element = document.createElement(tag);
+  Object.entries(attributes).forEach(([key, value]) => {
+    if (value === true) element.setAttribute(key, '');
+    else if (value !== false && value !== null && value !== '') {
+      element.setAttribute(key, value);
+    }
+  });
+  return element;
+}
