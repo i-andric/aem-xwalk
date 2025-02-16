@@ -560,6 +560,40 @@
     ]
   },
   {
+    "id": "list",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "source",
+        "label": "Source Path",
+        "value": "/content/site/articles.json"
+      },
+      {
+        "component": "multiselect",
+        "name": "keywords",
+        "label": "Keywords",
+        "options": [
+          {
+            "name": "Developer",
+            "value": "Developer"
+          },
+          {
+            "name": "Courses",
+            "value": "Courses"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "limit",
+        "label": "Limit",
+        "value": "4"
+      }
+    ]
+  },
+  {
     "id": "quote",
     "fields": [
       {
