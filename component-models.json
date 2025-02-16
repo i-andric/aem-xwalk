@@ -436,6 +436,33 @@
     ]
   },
   {
+    "id": "embed",
+    "fields": [
+      {
+        "component": "tab",
+        "label": "URL",
+        "name": "tab1"
+      },
+      {
+        "component": "text-input",
+        "label": "URL",
+        "name": "text1",
+        "valueType": "string"
+      },
+      {
+        "component": "tab",
+        "label": "Embedable",
+        "name": "tab2"
+      },
+      {
+        "component": "text-input",
+        "label": "Embedable",
+        "name": "text2",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "event",
     "fields": [
       {

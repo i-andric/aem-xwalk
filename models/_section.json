@@ -75,7 +75,8 @@
         "events",
         "tabs",
         "dynamic-media-asset",
-        "social-share"
+        "social-share",
+        "embed"
       ]
     }
   ]
