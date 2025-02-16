@@ -22,23 +22,23 @@
         "fields": [
             {
             "component": "tab",
-            "label": "Tab 1",
+            "label": "URL",
             "name": "tab1"
             },
             {
             "component": "text",
-            "label": "Text 1",
+            "label": "URL link",
             "name": "text1",
             "valueType": "string"
             },
             {
             "component": "tab",
-            "label": "Tab 2",
+            "label": "Embedable",
             "name": "tab2"
             },
             {
             "component": "text",
-            "label": "Text 2",
+            "label": "Embedable",
             "name": "text2",
             "valueType": "string"
             }
