@@ -80,29 +80,29 @@ indices:
   blog:
     include:
         - '/en-us/blog/**'
-      target: /api/blog.json
-      properties:
-        path:
-          select: none
-          value: |
-            path
-        title:
-          select: head > meta[property="og:title"]
-          value: |
-            attribute(el, 'content')
-        description:
-          select: head > meta[property="og:description"]
-          value: |
-            attribute(el, 'content')
-        image:
-          select: head > meta[property="og:image"]
-          value: |
-            match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
-        content:
-          select: main
-          value: |
-            textContent(el)
-        date:
-          select: head > meta[name="published-time"]
-          value: |
-            attribute(el, 'content')
+    target: /api/blog.json
+    properties:
+      path:
+        select: none
+        value: |
+          path
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          attribute(el, 'content')
+      description:
+        select: head > meta[property="og:description"]
+        value: |
+          attribute(el, 'content')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
+      content:
+        select: main
+        value: |
+          textContent(el)
+      date:
+        select: head > meta[name="published-time"]
+        value: |
+          attribute(el, 'content')
