@@ -1,5 +1,93 @@
 [
   {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "container",
+        "label": "Fieldset",
+        "fields": [
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "jcr:title",
+            "label": "Title"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "jcr:description",
+            "label": "Description"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "cq:canonicalUrl",
+            "label": "Canonical"
+          },
+          {
+            "component": "aem-tag",
+            "valueType": "string",
+            "name": "cq:tags",
+            "label": "AEM Tag Picker"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "keywords",
+            "multi": true,
+            "label": "Keywords"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "topics",
+            "multi": true,
+            "label": "Topics"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "authorName",
+            "label": "Author Name"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "authorTitle",
+            "label": "Author Title"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "brand",
+            "label": "Brand"
+          },
+          {
+            "component": "text",
+            "valueType": "number",
+            "name": "readingTime",
+            "label": "Reading Time"
+          },
+          {
+            "component": "date-time",
+            "valueType": "date-time",
+            "name": "publishDate",
+            "label": "Publish Date",
+            "placeholder": "YYYY-MM-DD",
+            "displayFormat": null,
+            "valueFormat": null
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "navTitle",
+            "label": "Navigation Title"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "image",
     "fields": [
       {
@@ -348,7 +436,7 @@
     ]
   },
   {
-    "id": "tab",
+    "id": "embed",
     "fields": [
       {
         "component": "tab",
@@ -356,7 +444,7 @@
         "name": "tab1"
       },
       {
-        "component": "text-input",
+        "component": "text",
         "label": "Text 1",
         "name": "text1",
         "valueType": "string"
@@ -367,7 +455,7 @@
         "name": "tab2"
       },
       {
-        "component": "text-input",
+        "component": "text",
         "label": "Text 2",
         "name": "text2",
         "valueType": "string"
