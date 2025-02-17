@@ -74,11 +74,13 @@ export default function decorate(block) {
   // Current sort state
   let currentSortColumn = null;
   let isAscending = true;
-  const tbody = document.querySelector('tbody');
+
+  // Create table body
+  let tableBody = document.createElement('tbody');
 
   // Function to sort table data
   const sortTable = (columnIndex, isDate = false) => {
-    const rows = Array.from(tbody.querySelectorAll('tr'));
+    const rows = Array.from(tableBody.querySelectorAll('tr'));
     const sortedRows = rows.sort((a, b) => {
       const aValue = a.children[columnIndex].textContent.trim();
       const bValue = b.children[columnIndex].textContent.trim();
@@ -95,24 +97,24 @@ export default function decorate(block) {
     });
 
     // Clear and re-append sorted rows
-    tbody.innerHTML = '';
-    sortedRows.forEach((row) => tbody.appendChild(row));
+    tableBody.innerHTML = '';
+    sortedRows.forEach((row) => tableBody.appendChild(row));
   };
 
   // Add headers with sort icons
   fields.forEach((field, index) => {
     const th = document.createElement('th');
     th.textContent = field;
+    th.style.cursor = 'pointer';
 
     const sortIcon = document.createElement('span');
     sortIcon.className = 'events-icon-sort';
-    sortIcon.style.cursor = 'pointer';
     sortIcon.style.marginLeft = '5px';
 
     th.appendChild(sortIcon);
 
-    // Add click handler
-    sortIcon.addEventListener('click', () => {
+    // Move click handler to th element
+    th.addEventListener('click', () => {
       // Toggle sort direction if clicking the same column
       if (currentSortColumn === index) {
         isAscending = !isAscending;
@@ -140,7 +142,7 @@ export default function decorate(block) {
   table.appendChild(thead);
 
   // Create table body
-  const tableBody = document.createElement('tbody');
+  tableBody = document.createElement('tbody');
 
   // Function to apply filters
   const applyFilters = () => {

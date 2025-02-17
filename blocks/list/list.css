@@ -10,13 +10,11 @@
   align-items: flex-start;
   flex-flow: column nowrap;
   gap: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   height: 100%;
 }
 .post-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 .post-card-image {
   position: relative;
@@ -42,13 +40,6 @@
   font-weight: bold;
 }
 .post-card-content .post-card-title .button a {
-  background-color: var(--btn-bg);
-  color: var(--btn-color);
-  border-color: var(--btn-border);
-  text-decoration: none;
-  text-align: center;
-  padding: var(--btn-padding);
-  cursor: pointer;
   --btn-bg: var(--btn-primary-bg);
   --btn-color: var(--btn-primary-color);
   --btn-border: var(--btn-primary-border);
@@ -62,51 +53,10 @@
   --btn-disabled-bg: var(--btn-primary-disabled-bg);
   --btn-disabled-color: var(--btn-primary-disabled-color);
   --btn-disabled-border: var(--btn-primary-disabled-border);
-  background-color: var(--btn-bg);
-  color: var(--btn-color);
-  border-color: var(--btn-border);
   text-decoration: none;
   text-align: center;
   padding: var(--btn-padding);
   cursor: pointer;
-}
-.post-card-content .post-card-title .button a:hover {
-  color: var(--btn-hover-color, var(--btn-color));
-  background: var(--btn-hover-bg, var(--btn-bg));
-  border-color: var(--btn-hover-border, var(--btn-border));
-  text-decoration: var(--btn-hover-underline, unset);
-}
-.post-card-content .post-card-title .button a:hover .icon {
-  background: var(--btn-hover-color, var(--btn-color));
-}
-.post-card-content .post-card-title .button a:focus {
-  color: var(--btn-focus-color, var(--btn-color));
-  background: var(--btn-focus-bg, var(--btn-bg));
-  border-color: var(--btn-focus-border, var(--btn-border));
-}
-.post-card-content .post-card-title .button a:disabled {
-  color: var(--btn-disabled-color, var(--btn-color));
-  background: var(--btn-disabled-bg, var(--btn-bg));
-  border-color: var(--btn-disabled-border, var(--btn-border));
-}
-.post-card-content .post-card-title .button a:hover {
-  color: var(--btn-hover-color, var(--btn-color));
-  background: var(--btn-hover-bg, var(--btn-bg));
-  border-color: var(--btn-hover-border, var(--btn-border));
-  text-decoration: var(--btn-hover-underline, unset);
-}
-.post-card-content .post-card-title .button a:hover .icon {
-  background: var(--btn-hover-color, var(--btn-color));
-}
-.post-card-content .post-card-title .button a:focus {
-  color: var(--btn-focus-color, var(--btn-color));
-  background: var(--btn-focus-bg, var(--btn-bg));
-  border-color: var(--btn-focus-border, var(--btn-border));
-}
-.post-card-content .post-card-title .button a:disabled {
-  color: var(--btn-disabled-color, var(--btn-color));
-  background: var(--btn-disabled-bg, var(--btn-bg));
-  border-color: var(--btn-disabled-border, var(--btn-border));
 }
 .post-card-description {
   margin: 0;

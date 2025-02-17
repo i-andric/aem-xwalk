@@ -39,7 +39,7 @@ export default async function decorate(block) {
 
     // Initialize the viewer
     // Note: In a real implementation, these parameters should come from the block's configuration
-    const viewer = new s7viewers.InteractiveImage({
+    const viewer = new window.s7viewers.InteractiveImage({
       containerId: 's7interactiveimage_div',
       params: {
         serverurl: 'https://s7g10.scene7.com/is/image/',
@@ -60,7 +60,6 @@ export default async function decorate(block) {
       }
     }); */
   } catch (error) {
-    console.error('Error initializing Dynamic Media interactive image:', error);
     block.innerHTML = '<div class="error">Error loading interactive image viewer</div>';
   }
 }
