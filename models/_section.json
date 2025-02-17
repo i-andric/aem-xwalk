@@ -20,6 +20,11 @@
       "id": "section",
       "fields": [
         {
+          "component": "text",
+          "name": "id",
+          "label": "Id"
+        },
+        {
           "component": "multiselect",
           "name": "style",
           "label": "Style",
