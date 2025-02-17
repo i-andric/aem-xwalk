@@ -265,6 +265,11 @@
         "component": "text",
         "name": "id",
         "label": "Id"
+      },
+      {
+        "component": "title",
+        "name": "title",
+        "label": "Title"
       }
     ]
   },
