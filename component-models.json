@@ -427,11 +427,9 @@
     "id": "dynamic-media-asset",
     "fields": [
       {
-        "component": "reference",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "asset",
-        "label": "Asset",
-        "multi": false
+        "label": "Asset"
       }
     ]
   },
