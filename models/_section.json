@@ -82,7 +82,8 @@
         "dynamic-media-asset",
         "social-share",
         "embed",
-        "list"
+        "list",
+        "wysiwyg-table"
       ]
     }
   ]
