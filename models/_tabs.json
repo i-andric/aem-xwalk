@@ -28,7 +28,7 @@
         },
         {
             "component": "text",
-            "name": "title",
+            "name": "tabsTitle",
             "label": "Title"
           }
       ]
