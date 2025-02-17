@@ -656,7 +656,20 @@
   },
   {
     "id": "tabs",
-    "fields": []
+    "fields": [
+      {
+        "component": "text",
+        "name": "tabTitle",
+        "value": "",
+        "label": "Tab Title"
+      },
+      {
+        "component": "text",
+        "name": "tabTitle",
+        "value": "",
+        "label": "Tab Title"
+      }
+    ]
   },
   {
     "id": "teaser",
