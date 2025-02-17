@@ -2,7 +2,8 @@
   {
     "id": "main",
     "components": [
-      "section"
+      "section",
+      "tabs"
     ]
   },
   {
@@ -24,7 +25,32 @@
       "quote",
       "download",
       "events",
-      "tabs",
+      "dynamic-media-asset",
+      "social-share",
+      "embed",
+      "list",
+      "wysiwyg-table"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "cards",
+      "columns",
+      "fragment",
+      "accordion",
+      "teaser",
+      "carousel",
+      "articlefeed",
+      "breadcrumbs",
+      "quote",
+      "download",
+      "events",
       "dynamic-media-asset",
       "social-share",
       "embed",
@@ -74,9 +100,5 @@
     "components": [
       "event"
     ]
-  },
-  "embed",
-  "quote",
-  "download",
-  "events"
+  }
 ]

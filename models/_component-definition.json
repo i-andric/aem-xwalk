@@ -28,6 +28,15 @@
       ]
     },
     {
+      "title": "Tabs",
+      "id": "tabs",
+      "components": [
+        {
+          "...": "./_tabs.json#/definitions"
+        }
+      ]
+    },
+    {
       "title": "Blocks",
       "id": "blocks",
       "components": [

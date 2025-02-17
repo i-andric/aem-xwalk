@@ -79,6 +79,28 @@
       ]
     },
     {
+      "title": "Tabs",
+      "id": "tabs",
+      "components": [
+        {
+          "title": "Tabs",
+          "id": "tabs",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "name": "Tabs",
+                  "model": "tabs",
+                  "filter": "section"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
       "title": "Blocks",
       "id": "blocks",
       "components": [
@@ -384,22 +406,6 @@
                   "model": "social-share",
                   "quote": "<p>Think, McFly! Think!</p>",
                   "author": "Biff Tannen"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Tabs",
-          "id": "tabs",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
-                "template": {
-                  "name": "Tabs",
-                  "model": "tabs",
-                  "filter": "section"
                 }
               }
             }

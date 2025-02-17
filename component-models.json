@@ -259,6 +259,16 @@
     ]
   },
   {
+    "id": "tabs",
+    "fields": [
+      {
+        "component": "text",
+        "name": "id",
+        "label": "Id"
+      }
+    ]
+  },
+  {
     "id": "accordionitem",
     "fields": [
       {
@@ -651,23 +661,6 @@
         "label": "LinkedIn URL",
         "valueType": "string",
         "description": "Enter LinkedIn profile URL. If left empty, will enable sharing current page."
-      }
-    ]
-  },
-  {
-    "id": "tabs",
-    "fields": [
-      {
-        "component": "text",
-        "name": "tabTitle",
-        "value": "",
-        "label": "Tab Title"
-      },
-      {
-        "component": "text",
-        "name": "tabTitle",
-        "value": "",
-        "label": "Tab Title"
       }
     ]
   },
