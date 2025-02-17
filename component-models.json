@@ -267,7 +267,7 @@
         "label": "Id"
       },
       {
-        "component": "title",
+        "component": "text",
         "name": "title",
         "label": "Title"
       }
