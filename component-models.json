@@ -845,7 +845,7 @@
     "fields": [
       {
         "component": "reference",
-        "name": "video_url",
+        "name": "video",
         "label": "Video",
         "multi": false
       }
