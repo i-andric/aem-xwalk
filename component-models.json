@@ -155,33 +155,6 @@
     ]
   },
   {
-    "id": "video",
-    "fields": [
-      {
-        "component": "reference",
-        "name": "video",
-        "label": "Video",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "videoTitle",
-        "label": "Video Title"
-      },
-      {
-        "component": "text",
-        "name": "videoCaption",
-        "label": "Video Caption"
-      },
-      {
-        "component": "reference",
-        "name": "poster",
-        "label": "Poster",
-        "multi": false
-      }
-    ]
-  },
-  {
     "id": "button",
     "fields": [
       {
@@ -864,6 +837,33 @@
             "value": "tertiary"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "video",
+        "label": "Video",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "videoTitle",
+        "label": "Video Title"
+      },
+      {
+        "component": "text",
+        "name": "videoCaption",
+        "label": "Video Caption"
+      },
+      {
+        "component": "reference",
+        "name": "poster",
+        "label": "Poster",
+        "multi": false
       }
     ]
   },
