@@ -851,18 +851,18 @@
       },
       {
         "component": "text",
-        "name": "videoTitle",
+        "name": "video_title",
         "label": "Video Title"
       },
       {
         "component": "text",
-        "name": "videoCaption",
+        "name": "video_caption",
         "label": "Video Caption"
       },
       {
         "component": "reference",
-        "name": "poster",
-        "label": "Poster",
+        "name": "video_poster",
+        "label": "Video Poster",
         "multi": false
       }
     ]
