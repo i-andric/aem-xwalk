@@ -82,7 +82,8 @@
         "social-share",
         "embed",
         "list",
-        "wysiwyg-table"
+        "wysiwyg-table",
+        "customtable"
       ]
     }
   ]
