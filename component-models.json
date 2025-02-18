@@ -867,6 +867,29 @@
         "component": "aem-content",
         "name": "videodetails_button",
         "label": "Button"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Classes",
+        "options": [
+          {
+            "name": "hero",
+            "value": "hero"
+          },
+          {
+            "name": "inline",
+            "value": "inline"
+          },
+          {
+            "name": "cards",
+            "value": "cards"
+          },
+          {
+            "name": "modal",
+            "value": "modal"
+          }
+        ]
       }
     ]
   },
