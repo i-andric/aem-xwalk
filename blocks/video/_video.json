@@ -23,8 +23,28 @@
         "fields": [
           {
             "component": "reference",
-            "name": "customvideo",
+            "name": "video_image",
+            "label": "Image"
+          },
+          {
+            "component": "reference",
+            "name": "video_customvideo",
             "label": "Video"
+          },
+          {
+            "component": "text",
+            "name": "videodetails_title",
+            "label": "Title"
+          },
+          {
+            "component": "text",
+            "name": "videodetails_description",
+            "label": "Description"
+          },
+          {
+            "component": "aem-content",
+            "name": "videodetails_button",
+            "label": "Button"
           }
         ]
       }
