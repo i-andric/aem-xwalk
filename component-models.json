@@ -848,22 +848,6 @@
         "name": "video_url",
         "label": "Video",
         "multi": false
-      },
-      {
-        "component": "text",
-        "name": "video_title",
-        "label": "Video Title"
-      },
-      {
-        "component": "text",
-        "name": "video_caption",
-        "label": "Video Caption"
-      },
-      {
-        "component": "reference",
-        "name": "video_poster",
-        "label": "Video Poster",
-        "multi": false
       }
     ]
   },
