@@ -35,32 +35,6 @@
     ]
   },
   {
-    "id": "tabs",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title",
-      "hero",
-      "cards",
-      "columns",
-      "fragment",
-      "accordion",
-      "teaser",
-      "carousel",
-      "articlefeed",
-      "breadcrumbs",
-      "quote",
-      "download",
-      "events",
-      "dynamic-media-asset",
-      "social-share",
-      "embed",
-      "list",
-      "wysiwyg-table"
-    ]
-  },
-  {
     "id": "accordion",
     "components": [
       "accordionitem"
