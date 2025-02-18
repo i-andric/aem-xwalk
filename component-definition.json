@@ -257,7 +257,7 @@
         },
         {
           "title": "Custom Table",
-          "id": "custom-table",
+          "id": "customtable",
           "plugins": {
             "xwalk": {
               "page": {

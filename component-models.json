@@ -408,7 +408,7 @@
     ]
   },
   {
-    "id": "custom-table",
+    "id": "customtable",
     "fields": [
       {
         "component": "text",

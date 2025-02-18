@@ -99,11 +99,11 @@
   {
     "id": "customtable",
     "components": [
-      "column"
+      "customtablecolumn"
     ]
   },
   {
-    "id": "column",
+    "id": "customtablecolumn",
     "components": [
       "text"
     ]
