@@ -266,8 +266,8 @@
                   "name": "Custom Table",
                   "model": "customtable",
                   "filter": "columns",
-                  "columns": "2",
-                  "rows": "1"
+                  "customtable_columns": "2",
+                  "customtable_rows": "1"
                 }
               }
             }
