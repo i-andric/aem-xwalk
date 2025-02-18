@@ -265,6 +265,7 @@
                 "template": {
                   "name": "Custom Table",
                   "model": "customtable",
+                  "filter": "columns",
                   "columns": "2",
                   "rows": "1"
                 }
