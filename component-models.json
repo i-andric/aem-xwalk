@@ -844,11 +844,9 @@
     "id": "video",
     "fields": [
       {
-        "component": "reference",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "video",
-        "label": "Video",
-        "multi": false
+        "label": "Video"
       }
     ]
   },
