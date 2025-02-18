@@ -372,3 +372,18 @@ button.tertiary {
   @include bg-color(var(--light));
   @include text-color(var(--dark));
 }
+
+// TABS
+.tabs {
+  max-width: var(--max-width);
+  margin: auto;
+  .tab {
+    &-button {
+      @include button-variant('tertiary');
+      border: 0;
+      &.active {
+        @include button-variant('secondary');
+      }
+    }
+  }
+}

@@ -507,3 +507,91 @@ button.tertiary:disabled {
   background: rgba(var(--light), 1);
   color: rgba(var(--dark), 1);
 }
+
+.tabs {
+  max-width: var(--max-width);
+  margin: auto;
+}
+.tabs .tab-button {
+  --btn-bg: var(--btn-tertiary-bg);
+  --btn-color: var(--btn-tertiary-color);
+  --btn-border: var(--btn-tertiary-border);
+  --btn-hover-bg: var(--btn-tertiary-hover-bg);
+  --btn-hover-color: var(--btn-tertiary-hover-color);
+  --btn-hover-border: var(--btn-tertiary-hover-border);
+  --btn-hover-underline: var(--btn-tertiary-hover-underline);
+  --btn-focus-bg: var(--btn-tertiary-focus-bg);
+  --btn-focus-color: var(--btn-tertiary-focus-color);
+  --btn-focus-border: var(--btn-tertiary-focus-border);
+  --btn-disabled-bg: var(--btn-tertiary-disabled-bg);
+  --btn-disabled-color: var(--btn-tertiary-disabled-color);
+  --btn-disabled-border: var(--btn-tertiary-disabled-border);
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border-color: var(--btn-border);
+  text-decoration: none;
+  text-align: center;
+  padding: var(--btn-padding);
+  cursor: pointer;
+  border: 0;
+}
+.tabs .tab-button:hover {
+  color: var(--btn-hover-color, var(--btn-color));
+  background: var(--btn-hover-bg, var(--btn-bg));
+  border-color: var(--btn-hover-border, var(--btn-border));
+  text-decoration: var(--btn-hover-underline, unset);
+}
+.tabs .tab-button:hover .icon {
+  background: var(--btn-hover-color, var(--btn-color));
+}
+.tabs .tab-button:focus {
+  color: var(--btn-focus-color, var(--btn-color));
+  background: var(--btn-focus-bg, var(--btn-bg));
+  border-color: var(--btn-focus-border, var(--btn-border));
+}
+.tabs .tab-button:disabled {
+  color: var(--btn-disabled-color, var(--btn-color));
+  background: var(--btn-disabled-bg, var(--btn-bg));
+  border-color: var(--btn-disabled-border, var(--btn-border));
+}
+.tabs .tab-button.active {
+  --btn-bg: var(--btn-secondary-bg);
+  --btn-color: var(--btn-secondary-color);
+  --btn-border: var(--btn-secondary-border);
+  --btn-hover-bg: var(--btn-secondary-hover-bg);
+  --btn-hover-color: var(--btn-secondary-hover-color);
+  --btn-hover-border: var(--btn-secondary-hover-border);
+  --btn-hover-underline: var(--btn-secondary-hover-underline);
+  --btn-focus-bg: var(--btn-secondary-focus-bg);
+  --btn-focus-color: var(--btn-secondary-focus-color);
+  --btn-focus-border: var(--btn-secondary-focus-border);
+  --btn-disabled-bg: var(--btn-secondary-disabled-bg);
+  --btn-disabled-color: var(--btn-secondary-disabled-color);
+  --btn-disabled-border: var(--btn-secondary-disabled-border);
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border-color: var(--btn-border);
+  text-decoration: none;
+  text-align: center;
+  padding: var(--btn-padding);
+  cursor: pointer;
+}
+.tabs .tab-button.active:hover {
+  color: var(--btn-hover-color, var(--btn-color));
+  background: var(--btn-hover-bg, var(--btn-bg));
+  border-color: var(--btn-hover-border, var(--btn-border));
+  text-decoration: var(--btn-hover-underline, unset);
+}
+.tabs .tab-button.active:hover .icon {
+  background: var(--btn-hover-color, var(--btn-color));
+}
+.tabs .tab-button.active:focus {
+  color: var(--btn-focus-color, var(--btn-color));
+  background: var(--btn-focus-bg, var(--btn-bg));
+  border-color: var(--btn-focus-border, var(--btn-border));
+}
+.tabs .tab-button.active:disabled {
+  color: var(--btn-disabled-color, var(--btn-color));
+  background: var(--btn-disabled-bg, var(--btn-bg));
+  border-color: var(--btn-disabled-border, var(--btn-border));
+}

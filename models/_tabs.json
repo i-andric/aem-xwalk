@@ -29,7 +29,8 @@
         {
             "component": "text",
             "name": "tabsTitle",
-            "label": "Title"
+            "label": "Title",
+            "required": true
           }
       ]
     }
