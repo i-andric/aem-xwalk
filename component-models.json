@@ -413,14 +413,14 @@
       {
         "component": "text",
         "valueType": "number",
-        "name": "columns",
+        "name": "customtable_columns",
         "value": "",
         "label": "Columns"
       },
       {
         "component": "text",
         "valueType": "number",
-        "name": "rows",
+        "name": "customtable_rows",
         "value": "",
         "label": "Rows"
       }

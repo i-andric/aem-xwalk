@@ -6,7 +6,7 @@
         "plugins": {
           "xwalk": {
             "page": {
-              "resourceSuperType": "core/franklin/components/columns/v1/columns",
+              "resourceType": "core/franklin/components/columns/v1/columns",
               "template": {
                 "columns": "2",
                 "rows": "1"
@@ -23,14 +23,14 @@
           {
             "component": "text",
             "valueType": "number",
-            "name": "columns",
+            "name": "customtable_columns",
             "value": "",
             "label": "Columns"
           },
           {
             "component": "text",
             "valueType": "number",
-            "name": "rows",
+            "name": "customtable_rows",
             "value": "",
             "label": "Rows"
           }
