@@ -2,7 +2,7 @@
     "definitions": [
       {
         "title": "Custom Table",
-        "id": "customtable",
+        "id": "custom-table",
         "plugins": {
           "xwalk": {
             "page": {
@@ -18,7 +18,7 @@
     ],
     "models": [
       {
-        "id": "customtable",
+        "id": "custom-table",
         "fields": [
           {
             "component": "text",
