@@ -137,16 +137,16 @@ function buildTabs(main) {
       // Add keyboard navigation
       tabButton.addEventListener('keydown', (e) => {
         const tabs = [...tabNav.querySelectorAll('[role="tab"]')];
-        const index = tabs.indexOf(e.target);
+        const tabIndex = tabs.indexOf(e.target);
 
         let newIndex;
         switch (e.key) {
           case 'ArrowLeft':
-            newIndex = index - 1;
+            newIndex = tabIndex - 1;
             if (newIndex < 0) newIndex = tabs.length - 1;
             break;
           case 'ArrowRight':
-            newIndex = index + 1;
+            newIndex = tabIndex + 1;
             if (newIndex >= tabs.length) newIndex = 0;
             break;
           default:

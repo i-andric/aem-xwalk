@@ -380,7 +380,8 @@ button.tertiary {
   .tab {
     &-button {
       @include button-variant('tertiary');
-      border: 0;
+      border-width: 0;
+      border-style: none;
       &.active {
         @include button-variant('secondary');
       }

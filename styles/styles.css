@@ -533,7 +533,8 @@ button.tertiary:disabled {
   text-align: center;
   padding: var(--btn-padding);
   cursor: pointer;
-  border: 0;
+  border-width: 0;
+  border-style: none;
 }
 .tabs .tab-button:hover {
   color: var(--btn-hover-color, var(--btn-color));
