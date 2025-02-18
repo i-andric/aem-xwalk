@@ -1,0 +1,46 @@
+{
+    "definitions": [
+      {
+        "title": "Video",
+        "id": "video",
+        "plugins": {
+          "xwalk": {
+            "page": {
+              "resourceType": "core/franklin/components/image/v1/image",
+              "template": {}
+            }
+          }
+        }
+      }
+    ],
+    "models": [
+      {
+        "id": "video",
+        "fields": [
+          {
+            "component": "reference",
+            "name": "video",
+            "label": "Video",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "name": "videoTitle",
+            "label": "Video Title"
+          },
+          {
+            "component": "text",
+            "name": "videoCaption",
+            "label": "Video Caption"
+          },
+          {
+            "component": "reference",
+            "name": "poster",
+            "label": "Poster",
+            "multi": false
+          }
+        ]
+      }
+    ]
+  }
+  

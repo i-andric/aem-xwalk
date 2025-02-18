@@ -43,6 +43,18 @@
           }
         },
         {
+          "title": "Video",
+          "id": "video",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/image/v1/image",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
           "title": "Button",
           "id": "button",
           "plugins": {

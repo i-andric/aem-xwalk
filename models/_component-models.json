@@ -97,6 +97,9 @@
     "...": "./_text.json#/models"
   },
   {
+    "...": "./_video.json#/models"
+  },
+  {
     "...": "./_button.json#/models"
   },
   {
