@@ -96,6 +96,18 @@
     ]
   },
   {
+    "id": "customtable",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text"
+    ]
+  },
+  {
     "id": "events",
     "components": [
       "event"
