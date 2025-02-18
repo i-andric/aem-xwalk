@@ -22,7 +22,7 @@
         "fields": [
           {
             "component": "reference",
-            "name": "video",
+            "name": "video_url",
             "label": "Video",
             "multi": false
           },
