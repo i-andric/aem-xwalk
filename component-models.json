@@ -403,6 +403,23 @@
         "name": "rows",
         "value": "",
         "label": "Rows"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Variation",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Columns",
+            "value": "columns"
+          },
+          {
+            "name": "table",
+            "value": "table"
+          }
+        ]
       }
     ]
   },
