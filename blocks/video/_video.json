@@ -49,7 +49,9 @@
           {
             "component": "select",
             "name": "classes",
-            "label": "Classes",
+            "value": "",
+            "label": "Type of Video",
+            "valueType": "string",
             "options": [
               {
                 "name": "hero",
