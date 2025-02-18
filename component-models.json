@@ -844,7 +844,7 @@
     "id": "video",
     "fields": [
       {
-        "component": "aem-content",
+        "component": "reference",
         "name": "video",
         "label": "Video"
       }
