@@ -47,6 +47,12 @@
           {
             "component": "text",
             "valueType": "string",
+            "name": "cq:template",
+            "label": "Template name"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
             "name": "authorName",
             "label": "Author Name"
           },
