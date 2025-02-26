@@ -397,12 +397,14 @@ button.tertiary {
 .two-column main 
  {
   max-width: unset;
-  @include flex-container(row, center, flex-start, wrap, remUnit(40px));
+  @include flex-container(row, center, flex-start, wrap);
 
   #main-section {
-    max-width: 66.66%;
+    max-width: calc(66% - 20px);
+    margin-right: remUnit(20px);
   }
   #marginal {
-    max-width: 33.33%;
+    max-width: calc(33% - 20px);
+    margin-left: remUnit(20px);
   }
  }
