@@ -45,10 +45,19 @@
             "label": "Topics"
           },
           {
-            "component": "text",
-            "valueType": "string",
-            "name": "cq:template",
-            "label": "Template name"
+            "component": "select",
+            "name": "template",
+            "label": "Template name",
+            "options": [
+            {
+              "name": "One column",
+              "value": "one-column"
+            },
+            {
+              "name": "Two columns",
+              "value": "two-column"
+            }
+          ]
           },
           {
             "component": "text",
