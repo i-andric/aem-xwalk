@@ -388,3 +388,21 @@ button.tertiary {
     }
   }
 }
+
+.one-column main 
+ {
+  max-width: unset;
+ }
+
+.two-column main 
+ {
+  max-width: unset;
+  @include flex-container(row, center, flex-start, wrap, remUnit(40px));
+
+  #main-section {
+    max-width: 66.66%;
+  }
+  #marginal {
+    max-width: 33.33%;
+  }
+ }

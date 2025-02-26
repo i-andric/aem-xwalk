@@ -596,3 +596,22 @@ button.tertiary:disabled {
   background: var(--btn-disabled-bg, var(--btn-bg));
   border-color: var(--btn-disabled-border, var(--btn-border));
 }
+
+.one-column main {
+  max-width: unset;
+}
+
+.two-column main {
+  max-width: unset;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  gap: 2.5rem;
+}
+.two-column main #main-section {
+  max-width: 66.66%;
+}
+.two-column main #marginal {
+  max-width: 33.33%;
+}
