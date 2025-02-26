@@ -103,6 +103,9 @@
     "...": "./_section.json#/models"
   },
   {
+    "...": "./_marginal.json#/models"
+  },
+  {
     "...": "./_tabs.json#/models"
   },
   {

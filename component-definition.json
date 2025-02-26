@@ -79,6 +79,26 @@
       ]
     },
     {
+      "title": "Marginal",
+      "id": "marginal",
+      "components": [
+        {
+          "title": "Marginal",
+          "id": "marginal",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "model": "marginal"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
       "title": "Tabs",
       "id": "tabs",
       "components": [
