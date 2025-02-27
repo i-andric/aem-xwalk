@@ -84,7 +84,8 @@
         "list",
         "wysiwyg-table",
         "customtable",
-        "video"
+        "video",
+        "table"
       ]
     }
   ]
