@@ -85,7 +85,8 @@
         "wysiwyg-table",
         "customtable",
         "video",
-        "table"
+        "table",
+        "form"
       ]
     }
   ]
