@@ -91,7 +91,8 @@
                 "resourceType": "core/franklin/components/section/v1/section",
                 "template": {
                   "name": "Nav",
-                  "model": "nav"
+                  "model": "nav",
+                  "filter": "nav"
                 }
               }
             }
