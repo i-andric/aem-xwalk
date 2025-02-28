@@ -38,6 +38,15 @@
     ]
   },
   {
+    "id": "nav",
+    "components": [
+      "text",
+      "title",
+      "image",
+      "navitems"
+    ]
+  },
+  {
     "id": "marginal",
     "components": [
       "text",
@@ -118,6 +127,12 @@
     "id": "events",
     "components": [
       "event"
+    ]
+  },
+  {
+    "id": "navitems",
+    "components": [
+      "navitem"
     ]
   },
   {

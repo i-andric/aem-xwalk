@@ -28,6 +28,15 @@
       ]
     },
     {
+      "title": "Nav",
+      "id": "nav",
+      "components": [
+        {
+          "...": "./_nav.json#/definitions"
+        }
+      ]
+    },
+    {
       "title": "Marginal",
       "id": "marginal",
       "components": [

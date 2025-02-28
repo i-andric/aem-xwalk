@@ -11,6 +11,9 @@
     "...": "./_section.json#/filters"
   },
   {
+    "...": "./_nav.json#/filters"
+  },
+  {
     "...": "./_marginal.json#/filters"
   },
   {

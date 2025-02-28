@@ -273,6 +273,16 @@
     ]
   },
   {
+    "id": "nav",
+    "fields": [
+      {
+        "component": "text",
+        "name": "id",
+        "label": "Id"
+      }
+    ]
+  },
+  {
     "id": "marginal",
     "fields": [
       {
@@ -726,6 +736,32 @@
             "value": "light"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "navitem",
+    "fields": [
+      {
+        "component": "text",
+        "name": "question",
+        "label": "Question",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "answer",
+        "label": "Answer",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "valueType": "string",
+        "multi": false
       }
     ]
   },

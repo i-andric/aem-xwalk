@@ -1,0 +1,70 @@
+{
+  "definitions": [
+    {
+      "title": "Nav Items",
+      "id": "navitems",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Nav Items",
+              "filter": "navitems"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Nav Item",
+      "id": "navitem",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Nav Item",
+              "model": "navitem"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "navitem",
+      "fields": [
+        {
+          "component": "text",
+          "name": "question",
+          "label": "Question",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "richtext",
+          "name": "answer",
+          "label": "Answer",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Image",
+          "valueType": "string",
+          "multi": false
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "navitems",
+      "components": [
+        "navitem"
+      ]
+    }
+  ]
+}

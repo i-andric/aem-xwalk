@@ -1,0 +1,44 @@
+{
+    "definitions": [
+      {
+        "title": "Nav",
+        "id": "nav",
+        "plugins": {
+          "xwalk": {
+            "page": {
+              "resourceType": "core/franklin/components/section/v1/section",
+              "template": {
+                "name": "Nav",
+                "model": "nav",
+                "filter": "section"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "models": [
+      {
+        "id": "nav",
+        "fields": [
+          {
+            "component": "text",
+            "name": "id",
+            "label": "Id"
+          }
+        ]
+      }
+    ],
+    "filters": [
+      {
+        "id": "nav",
+        "components": [
+          "text",
+          "title",
+          "image",
+          "navitems"
+        ]
+      }
+    ]
+  }
+  
