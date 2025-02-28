@@ -33,9 +33,6 @@
       {
         "id": "nav",
         "components": [
-          "text",
-          "title",
-          "image",
           "navitems"
         ]
       }
