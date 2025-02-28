@@ -10,7 +10,7 @@
               "template": {
                 "name": "Nav",
                 "model": "nav",
-                "filter": "nav"
+                "filters": "nav"
               }
             }
           }
