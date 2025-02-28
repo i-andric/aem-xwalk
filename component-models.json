@@ -740,28 +740,48 @@
     ]
   },
   {
-    "id": "navitem",
+    "id": "navitems",
     "fields": [
       {
         "component": "text",
-        "name": "question",
-        "label": "Question",
+        "name": "title",
+        "label": "Sublink Title",
         "valueType": "string",
         "value": ""
       },
       {
-        "component": "richtext",
-        "name": "answer",
-        "label": "Answer",
+        "component": "aem-content",
+        "name": "link",
+        "label": "Sublink Link"
+      }
+    ]
+  },
+  {
+    "id": "navitem",
+    "fields": [
+      {
+        "component": "text",
+        "name": "navitem_title",
+        "label": "Sublink Item Title",
         "valueType": "string",
         "value": ""
       },
       {
         "component": "reference",
-        "name": "image",
-        "label": "Image",
+        "name": "navitem_image",
+        "label": "Sublink Item Image",
         "valueType": "string",
         "multi": false
+      },
+      {
+        "component": "text",
+        "name": "navitem_imageAlt",
+        "label": "Sublink Item Image Alt"
+      },
+      {
+        "component": "aem-content",
+        "name": "navitem_link",
+        "label": "Sublink Item Link"
       }
     ]
   },
