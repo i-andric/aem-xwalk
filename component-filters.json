@@ -34,8 +34,7 @@
       "customtable",
       "video",
       "table",
-      "form",
-      "newnav"
+      "form"
     ]
   },
   {
@@ -119,18 +118,6 @@
     "id": "events",
     "components": [
       "event"
-    ]
-  },
-  {
-    "id": "newnav",
-    "components": [
-      "newnavitem"
-    ]
-  },
-  {
-    "id": "newnavitem",
-    "components": [
-      "newnavitemitem"
     ]
   },
   {
