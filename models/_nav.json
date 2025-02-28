@@ -23,8 +23,18 @@
         "fields": [
           {
             "component": "text",
-            "name": "id",
+            "name": "nav_id",
             "label": "Id"
+          },
+          {
+            "component": "aem-content",
+            "name": "nav_logo",
+            "label": "Navigation Logo"
+          },
+          {
+            "component": "text",
+            "name": "nav_logoAlt",
+            "label": "Navigation Logo Alt"
           }
         ]
       }
