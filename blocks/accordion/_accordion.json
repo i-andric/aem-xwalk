@@ -63,7 +63,8 @@
     {
       "id": "accordion",
       "components": [
-        "accordionitem"
+        "accordionitem",
+        "quote"
       ]
     }
   ]
