@@ -1,9 +1,11 @@
 {
     "repoNames": [
-      "author-p24706-e491522.adobeaemcloud.com"
+      "author-p24706-e491522.adobeaemcloud.com",
+      "s7g10.scene7.com"
     ],
    "aemTierType": [
-        "author"
+        "author",
+        "scene7"
     ],
     "expiryOptions": {
         "allowSelectionAndDrag": false
