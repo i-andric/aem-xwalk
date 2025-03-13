@@ -360,22 +360,46 @@
         "value": ""
       },
       {
-        "component": "boolean",
-        "label": "Shall the text field be revealed?",
-        "name": "reveal",
-        "valueType": "boolean"
+        "component": "select",
+        "label": "Component",
+        "name": "accordionItem_component",
+        "valueType": "string",
+        "options": [
+          {
+            "label": "Quote",
+            "value": "quote"
+          },
+          {
+            "label": "Text",
+            "value": "text"
+          }
+        ]
       },
       {
         "component": "text-input",
-        "label": "Hidden text field",
+        "label": "This text is shown when clicked quote",
         "name": "hidden-text",
         "valueType": "string",
         "condition": {
           "===": [
             {
-              "var": "reveal"
+              "var": "accordionItem_component"
             },
-            true
+            "quote"
+          ]
+        }
+      },
+      {
+        "component": "text-input",
+        "label": "This text is shown when clicked text",
+        "name": "hidden-text",
+        "valueType": "string",
+        "condition": {
+          "===": [
+            {
+              "var": "accordionItem_component"
+            },
+            "text"
           ]
         }
       },
