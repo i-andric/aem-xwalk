@@ -61,7 +61,7 @@
         {
           "component": "text-input",
           "label": "This text is shown when clicked quote",
-          "name": "hidden-text",
+          "name": "hidden-quote",
           "valueType": "string",
           "condition": { "===": [{"var" : "accordionItem_component"}, "quote"] }
         },
