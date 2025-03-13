@@ -300,6 +300,21 @@
           }
         },
         {
+          "title": "Custom Image",
+          "id": "custom-asset",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Custom Image",
+                  "model": "custom-asset"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Custom Table",
           "id": "customtable",
           "plugins": {
