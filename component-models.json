@@ -363,7 +363,6 @@
         "component": "select",
         "label": "Component",
         "name": "accordionItem_component",
-        "valueType": "string",
         "options": [
           {
             "label": "Quote",
