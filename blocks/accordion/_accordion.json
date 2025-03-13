@@ -37,24 +37,37 @@
       "fields": [
         {
           "component": "text",
-          "name": "question",
-          "label": "Question",
+          "name": "accordiontitle",
+          "label": "Accordion Item Title",
           "valueType": "string",
           "value": ""
         },
         {
+          "component": "boolean",
+          "label": "Shall the text field be revealed?",
+          "name": "reveal",
+          "valueType": "boolean"
+        },
+        {
+          "component": "text-input",
+          "label": "Hidden text field",
+          "name": "hidden-text",
+          "valueType": "string",
+          "condition": { "===": [{"var" : "reveal"}, true] }
+        },
+        {
           "component": "richtext",
-          "name": "answer",
+          "name": "accordionItem_quote",
           "label": "Answer",
           "valueType": "string",
           "value": ""
         },
         {
-          "component": "reference",
-          "name": "image",
-          "label": "Image",
+          "component": "richtext",
+          "name": "accordionItem_quote",
+          "label": "Answer",
           "valueType": "string",
-          "multi": false
+          "value": ""
         }
       ]
     }
@@ -63,8 +76,7 @@
     {
       "id": "accordion",
       "components": [
-        "accordionitem",
-        "quote"
+        "accordionitem"
       ]
     }
   ]
