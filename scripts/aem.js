@@ -339,6 +339,54 @@ function createOptimizedPicture(
   return picture;
 }
 
+function createDmOptimizedPicture(
+  src,
+  alt = '',
+  eager = false,
+  breakpoints = [
+    { media: '(min-width: 600px)', width: '2000' },
+    { width: '750' },
+  ],
+) {
+  const url = new URL(src);
+  const picture = document.createElement('picture');
+  // const { pathname } = url;
+  // const ext = pathname.substring(pathname.lastIndexOf('.') + 1);
+
+  // webp
+  breakpoints.forEach((br) => {
+    const source = document.createElement('source');
+    if (br.media) source.setAttribute('media', br.media);
+    // source.setAttribute("type", "image/webp");
+    // convert url to a URL object
+    // const url = new URL(pathname);
+    // add the fmt query parameter to the url
+    url.searchParams.append('wid', br.width);
+    // set the src of the image to the url
+
+    source.setAttribute('srcset', decodeURIComponent(url.toString()));
+    picture.appendChild(source);
+  });
+
+  // fallback
+  breakpoints.forEach((br, i) => {
+    if (i < breakpoints.length - 1) {
+      const source = document.createElement('source');
+      if (br.media) source.setAttribute('media', br.media);
+      source.setAttribute('srcset', src);
+      picture.appendChild(source);
+    } else {
+      const img = document.createElement('img');
+      img.setAttribute('loading', eager ? 'eager' : 'lazy');
+      img.setAttribute('alt', alt);
+      picture.appendChild(img);
+      img.setAttribute('src', src);
+    }
+  });
+
+  return picture;
+}
+
 /**
  * Set template (page structure) and theme (page styles).
  */
@@ -742,6 +790,7 @@ init();
 export {
   buildBlock,
   createOptimizedPicture,
+  createDmOptimizedPicture,
   decorateBlock,
   decorateBlocks,
   decorateButtons,

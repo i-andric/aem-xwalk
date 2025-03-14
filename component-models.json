@@ -435,6 +435,24 @@
     ]
   },
   {
+    "id": "asset-picker",
+    "fields": [
+      {
+        "component": "asset-picker-namespace:custom-asset",
+        "name": "image",
+        "label": "Image",
+        "configUrl": "https://aem-xwalk--i-andric.aem.page/tools/assets-selector/image/config.json",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "imageTitle",
+        "label": "Alt Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "breadcrumbs",
     "fields": [
       {
@@ -562,11 +580,10 @@
     "id": "custom-asset",
     "fields": [
       {
-        "component": "custom-asset-namespace:custom-asset",
+        "component": "aem-content",
         "name": "image",
         "label": "Image",
-        "configUrl": "https://aem-xwalk--i-andric.aem.page/tools/assets-selector/image/config.json",
-        "valueType": "string"
+        "configUrl": "https://aem-xwalk--i-andric.aem.page/tools/assets-selector/config.json"
       },
       {
         "component": "text",
