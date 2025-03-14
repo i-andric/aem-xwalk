@@ -361,16 +361,16 @@
       },
       {
         "component": "select",
-        "label": "Component",
-        "name": "accordionItem_component",
+        "label": "Add Component",
+        "name": "accordionitem-component",
         "options": [
           {
             "label": "Quote",
-            "value": "accordionItem_component_quote"
+            "value": "accordionitem-component-quote"
           },
           {
             "label": "Text",
-            "value": "accordionItem_component_text"
+            "value": "accordionitem-component-text"
           }
         ]
       },
@@ -384,7 +384,7 @@
             {
               "var": "accordionItem_component"
             },
-            "accordionItem_component_quote"
+            "accordionitem-component-quote"
           ]
         }
       },
@@ -398,7 +398,7 @@
             {
               "var": "accordionItem_component"
             },
-            "accordionItem_component_text"
+            "accordionitem-component-text"
           ]
         }
       },
@@ -413,7 +413,7 @@
             {
               "var": "accordionItem_component"
             },
-            "accordionItem_component_quote"
+            "accordionitem-component-quote"
           ]
         }
       },
@@ -428,7 +428,7 @@
             {
               "var": "accordionItem_component"
             },
-            "accordionItem_component_text"
+            "accordionitem-component-text"
           ]
         }
       }
