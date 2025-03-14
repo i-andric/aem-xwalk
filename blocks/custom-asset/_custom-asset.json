@@ -21,9 +21,10 @@
             "id": "custom-asset",
             "fields": [
               {
-                "component": "aem-content",
+                "component": "reference",
                 "name": "image",
                 "label": "Image",
+                "multi": false,
                 "configUrl": "https://aem-xwalk--i-andric.aem.page/tools/assets-selector/config.json"
               },
               {
