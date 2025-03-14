@@ -11,6 +11,7 @@ header {
     width: 100%;
     position: fixed;
     padding: 24px;
+    @include z-index('header');
 
     .nav-search {
       position: fixed;
@@ -86,8 +87,9 @@ header {
       }
 
       &-items {
-        @include flex-container(row, center, flex-start, nowrap, 24px);
+        
         margin: 0;
+        display: none;
       }
 
       &-item:not(.nav-item-empty) {
@@ -96,8 +98,8 @@ header {
           display: inline-block;
           width: 8px;
           height: 8px;
-          border-right: 2px solid currentColor;
-          border-bottom: 2px solid currentColor;
+          border-right: 2px solid currentcolor;
+          border-bottom: 2px solid currentcolor;
           margin-left: 8px;
           vertical-align: middle;
           transition: transform 0.3s ease;
@@ -119,8 +121,9 @@ header {
         font: var(--body-size-xs);
         cursor: pointer;
         position: relative;
+        opacity: 1;
 
-        &:after {
+        &::after {
           transform: rotate(45deg);
         }
 
@@ -156,10 +159,6 @@ header {
       }
     }
 
-    .nav-trigger {
-      opacity: 1;
-    }
-
     &:hover .nav-trigger {
       opacity: 0.5;
 
@@ -167,10 +166,6 @@ header {
         opacity: 1;
       }
     }
-
-      .nav-items {
-        display: none;
-      }
 
       .nav-hamburger {
         position: fixed;
@@ -191,8 +186,8 @@ header {
         }
 
         .nav-hamburger-icon,
-        .nav-hamburger-icon:before,
-        .nav-hamburger-icon:after {
+        .nav-hamburger-icon::before,
+        .nav-hamburger-icon::after {
           content: '';
           display: block;
           position: absolute;
@@ -206,11 +201,11 @@ header {
           top: 50%;
           transform: translateY(-50%);
 
-          &:before {
+          &::before {
             top: -8px;
           }
 
-          &:after {
+          &::after {
             bottom: -8px;
           }
         }
@@ -219,11 +214,11 @@ header {
           .nav-hamburger-icon {
             background-color: transparent;
 
-            &:before {
+            &::before {
               transform: translateY(8px) rotate(45deg);
             }
 
-            &:after {
+            &::after {
               transform: translateY(-8px) rotate(-45deg);
             }
           }
@@ -268,7 +263,7 @@ header {
           }
         }
         &-items {
-          display: flex;
+          @include flex-container(row, center, flex-start, nowrap, 24px);
         }
       }
     }

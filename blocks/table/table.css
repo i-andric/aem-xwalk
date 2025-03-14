@@ -17,7 +17,7 @@
 }
 @media (width >= 900px) {
   .table.block table {
-    font-size: var(--body-font-size-m);
+    font-size: var(--body-size-m);
   }
 }
 .table.block table thead tr {

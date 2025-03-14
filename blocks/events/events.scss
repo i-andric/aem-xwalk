@@ -5,6 +5,10 @@
         width: 100%;
         border-collapse: collapse;
         margin: remUnit(20px) 0;
+
+        &-view {
+          overflow: auto;
+        }
       
         th,
         td {

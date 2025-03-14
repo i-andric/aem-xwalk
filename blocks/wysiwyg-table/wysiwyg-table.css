@@ -18,7 +18,7 @@
   
   @media (width >= 900px) {
     .wysiwyg-table table {
-      font-size: var(--body-font-size-m);
+      font-size: var(--body-size-m);
     }
   }
   

@@ -1,0 +1,23 @@
+// Z-INDEX VARIABLES
+// Defines a consistent layering system for components
+
+$z-index: (
+  'base': 0,
+  'dropdown': 100,
+  'header': 200,
+  'nav': 300,
+  'modal': 400,
+  'overlay': 500,
+  'tooltip': 600,
+  'toast': 700,
+  'carousel': 800,
+  'carousel-arrows': 801
+);
+
+@function z($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z($key);
+}

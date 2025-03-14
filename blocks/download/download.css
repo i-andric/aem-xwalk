@@ -15,7 +15,7 @@
   color: rgba(var(--text-color), 1);
 }
 .download-wrapper .download-description {
-  font-size: var(--body-font-size-m, 1rem);
+  font-size: var(--body-size-m, 1rem);
   line-height: 1.5;
   margin-bottom: 1.5rem;
   color: rgba(var(--text-color), 1);

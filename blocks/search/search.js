@@ -1,5 +1,4 @@
 import {
-  createOptimizedPicture,
   decorateIcons,
   fetchPlaceholders,
 } from '../../scripts/aem.js';

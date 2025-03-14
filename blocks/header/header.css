@@ -13,6 +13,7 @@ header nav {
   width: 100%;
   position: fixed;
   padding: 24px;
+  z-index: 200;
 }
 header nav .nav-search {
   position: fixed;
@@ -88,20 +89,16 @@ header nav .nav-dropdown-close:hover {
   color: rgba(var(--color-team-red), 1);
 }
 header nav .nav-items {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-flow: row nowrap;
-  gap: 24px;
   margin: 0;
+  display: none;
 }
 header nav .nav-item:not(.nav-item-empty) .nav-trigger::after {
   content: "";
   display: inline-block;
   width: 8px;
   height: 8px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
   margin-left: 8px;
   vertical-align: middle;
   transition: transform 0.3s ease;
@@ -120,8 +117,9 @@ header nav .nav-trigger {
   font: var(--body-size-xs);
   cursor: pointer;
   position: relative;
+  opacity: 1;
 }
-header nav .nav-trigger:after {
+header nav .nav-trigger::after {
   transform: rotate(45deg);
 }
 header nav .nav-trigger:hover {
@@ -148,17 +146,11 @@ header nav .nav-trigger[aria-expanded=true] ~ .nav-dropdown {
 header nav .nav-trigger[aria-expanded=true]::after {
   transform: rotate(225deg);
 }
-header nav .nav-trigger {
-  opacity: 1;
-}
 header nav:hover .nav-trigger {
   opacity: 0.5;
 }
 header nav:hover .nav-trigger:hover {
   opacity: 1;
-}
-header nav .nav-items {
-  display: none;
 }
 header nav .nav-hamburger {
   position: fixed;
@@ -182,8 +174,8 @@ header nav .nav-hamburger button {
   position: relative;
 }
 header nav .nav-hamburger .nav-hamburger-icon,
-header nav .nav-hamburger .nav-hamburger-icon:before,
-header nav .nav-hamburger .nav-hamburger-icon:after {
+header nav .nav-hamburger .nav-hamburger-icon::before,
+header nav .nav-hamburger .nav-hamburger-icon::after {
   content: "";
   display: block;
   position: absolute;
@@ -196,19 +188,19 @@ header nav .nav-hamburger .nav-hamburger-icon {
   top: 50%;
   transform: translateY(-50%);
 }
-header nav .nav-hamburger .nav-hamburger-icon:before {
+header nav .nav-hamburger .nav-hamburger-icon::before {
   top: -8px;
 }
-header nav .nav-hamburger .nav-hamburger-icon:after {
+header nav .nav-hamburger .nav-hamburger-icon::after {
   bottom: -8px;
 }
 header nav .nav-hamburger.active .nav-hamburger-icon {
   background-color: transparent;
 }
-header nav .nav-hamburger.active .nav-hamburger-icon:before {
+header nav .nav-hamburger.active .nav-hamburger-icon::before {
   transform: translateY(8px) rotate(45deg);
 }
-header nav .nav-hamburger.active .nav-hamburger-icon:after {
+header nav .nav-hamburger.active .nav-hamburger-icon::after {
   transform: translateY(-8px) rotate(-45deg);
 }
 header nav[aria-expanded=true] .nav-items {
@@ -245,5 +237,9 @@ header nav-items-wrapper:empty {
   }
   header nav .nav-items {
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    gap: 24px;
   }
 }

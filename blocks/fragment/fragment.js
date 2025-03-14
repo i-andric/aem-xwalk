@@ -26,7 +26,6 @@ export async function loadFragment(path) {
       if (resp.ok) {
         const text = await resp.text();
         if (!text.trim()) {
-          console.warn(`Empty response from ${path}`);
           return null;
         }
 
@@ -47,7 +46,7 @@ export async function loadFragment(path) {
         return main;
       }
     } catch (error) {
-      console.error(`Error loading fragment from ${path}:`, error);
+      // Here we can show errors
     }
   }
   return null;
