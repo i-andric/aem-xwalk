@@ -24,6 +24,8 @@
   --warning-color: 255, 150, 0; // #ff9600
   --success-color: 0, 142, 79; // #008e4f
 
+  --menu-inner-color: 234, 234, 234; // #eaeaea
+
   --dark: 0, 0, 0; // #000
   --light: 255, 255, 255; // #f7f7f9
 
@@ -57,7 +59,7 @@
   --btn-tertiary-hover-color: rgb(0 0 0); // #000
 
 
-  --color-team-red: 229, 0, 67; // #e5004‚3
+  --color-team-red: 229, 0, 67; // #e50043
   --color-pure-black: 0, 0, 0; // #000
   --color-pure-white: 255, 255, 255; // #fff
   --color-light-gray: 245, 245, 247; // #f5f5f7
@@ -102,12 +104,19 @@
   --max-width: 1400px;
 }
 body {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-size-m);
   font-family: var(--body-font-family);
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
   margin: 0;
+  width: 100%;
+}
+html {
+  margin: 0;
+  display: -webkit-box;
+  width: 100%;
+  overscroll-behavior: contain;
 }
 h1 {
   font-family: var(--heading-font-family);

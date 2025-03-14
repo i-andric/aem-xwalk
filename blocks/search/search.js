@@ -92,15 +92,15 @@ function renderResult(result, searchTerms, titleTag) {
   const li = document.createElement('li');
   const a = document.createElement('a');
   a.href = result.path;
-  if (result.image) {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'search-result-image';
-    const pic = createOptimizedPicture(result.image, '', false, [
-      { width: '375' },
-    ]);
-    wrapper.append(pic);
-    a.append(wrapper);
-  }
+  // if (result.image) {
+  //   const wrapper = document.createElement('div');
+  //   wrapper.className = 'search-result-image';
+  //   const pic = createOptimizedPicture(result.image, '', false, [
+  //     { width: '375' },
+  //   ]);
+  //   wrapper.append(pic);
+  //   a.append(wrapper);
+  // }
   if (result.title) {
     const title = document.createElement(titleTag);
     title.className = 'search-result-title';
@@ -251,15 +251,38 @@ function searchInput(block, config) {
 
 function searchIcon() {
   const icon = document.createElement('span');
-  icon.classList.add('icon', 'icon-search');
+  icon.classList.add('icon', 'nav-icon-search');
+  icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+    <path d="M16.9,15.5c2.4-3.2,2.2-7.7-0.7-10.6c-3.1-3.1-8.1-3.1-11.3,0c-3.1,3.2-3.1,8.3,0,11.4c2.9,2.9,7.5,3.1,10.6,0.6c0,0.1,0,0.1,0,0.1l4.2,4.2c0.5,0.4,1.1,0.4,1.5,0c0.4-0.4,0.4-1,0-1.4L16.9,15.5C16.9,15.5,16.9,15.5,16.9,15.5L16.9,15.5z M14.8,6.3c2.3,2.3,2.3,6.1,0,8.5c-2.3,2.3-6.1,2.3-8.5,0C4,12.5,4,8.7,6.3,6.3C8.7,4,12.5,4,14.8,6.3z"/>
+  </svg>`;
   return icon;
 }
 
 function searchBox(block, config) {
   const box = document.createElement('div');
-  box.classList.add('search-box');
-  box.append(searchIcon(), searchInput(block, config));
+  box.classList.add('nav-search-box');
 
+  const icon = searchIcon();
+  const input = searchInput(block, config);
+
+  function updateSearchDisplay() {
+    if (window.innerWidth < 1440) {
+      input.style.display = 'none';
+      icon.style.cursor = 'pointer';
+      icon.onclick = () => {
+        window.location.href = '/search';
+      };
+    } else {
+      input.style.display = '';
+      icon.style.cursor = '';
+      icon.onclick = null;
+    }
+  }
+
+  window.addEventListener('resize', updateSearchDisplay);
+  updateSearchDisplay();
+
+  box.append(icon, input);
   return box;
 }
 

@@ -22,6 +22,7 @@
   --error-color: 190, 0, 0;
   --warning-color: 255, 150, 0;
   --success-color: 0, 142, 79;
+  --menu-inner-color: 234, 234, 234;
   --dark: 0, 0, 0;
   --light: 255, 255, 255;
   /* Buttons */
@@ -86,12 +87,20 @@
 }
 
 body {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-size-m);
   font-family: var(--body-font-family);
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
   margin: 0;
+  width: 100%;
+}
+
+html {
+  margin: 0;
+  display: -webkit-box;
+  width: 100%;
+  overscroll-behavior: contain;
 }
 
 h1 {
