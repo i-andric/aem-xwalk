@@ -366,11 +366,11 @@
         "options": [
           {
             "label": "Quote",
-            "value": "quote"
+            "value": "accordionItem_component_quote"
           },
           {
             "label": "Text",
-            "value": "text"
+            "value": "accordionItem_component_text"
           }
         ]
       },
@@ -384,7 +384,7 @@
             {
               "var": "accordionItem_component"
             },
-            "quote"
+            "accordionItem_component_quote"
           ]
         }
       },
@@ -398,7 +398,7 @@
             {
               "var": "accordionItem_component"
             },
-            "text"
+            "accordionItem_component_text"
           ]
         }
       },
@@ -407,14 +407,30 @@
         "name": "accordionItem_quote",
         "label": "Answer",
         "valueType": "string",
-        "value": ""
+        "value": "",
+        "condition": {
+          "===": [
+            {
+              "var": "accordionItem_component"
+            },
+            "accordionItem_component_quote"
+          ]
+        }
       },
       {
         "component": "richtext",
-        "name": "accordionItem_quote",
+        "name": "accordionItem_text",
         "label": "Answer",
         "valueType": "string",
-        "value": ""
+        "value": "",
+        "condition": {
+          "===": [
+            {
+              "var": "accordionItem_component"
+            },
+            "accordionItem_component_text"
+          ]
+        }
       }
     ]
   },

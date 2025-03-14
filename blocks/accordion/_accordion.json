@@ -49,11 +49,11 @@
           "options": [
             {
               "label": "Quote",
-              "value": "quote"
+              "value": "accordionItem_component_quote"
             },
             {
               "label": "Text",
-              "value": "text"
+              "value": "accordionItem_component_text"
             }
           ]
         },
@@ -62,28 +62,30 @@
           "label": "This text is shown when clicked quote",
           "name": "hidden-quote",
           "valueType": "string",
-          "condition": { "===": [{"var" : "accordionItem_component"}, "quote"] }
+          "condition": { "===": [{"var" : "accordionItem_component"}, "accordionItem_component_quote"] }
         },
         {
           "component": "text-input",
           "label": "This text is shown when clicked text",
           "name": "hidden-text",
           "valueType": "string",
-          "condition": { "===": [{"var" : "accordionItem_component"}, "text"] }
+          "condition": { "===": [{"var" : "accordionItem_component"}, "accordionItem_component_text"] }
         },
         {
           "component": "richtext",
           "name": "accordionItem_quote",
           "label": "Answer",
           "valueType": "string",
-          "value": ""
+          "value": "",
+          "condition": { "===": [{"var" : "accordionItem_component"}, "accordionItem_component_quote"] }
         },
         {
           "component": "richtext",
-          "name": "accordionItem_quote",
+          "name": "accordionItem_text",
           "label": "Answer",
           "valueType": "string",
-          "value": ""
+          "value": "",
+          "condition": { "===": [{"var" : "accordionItem_component"}, "accordionItem_component_text"] }
         }
       ]
     }
