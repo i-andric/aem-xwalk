@@ -360,9 +360,11 @@
         "value": ""
       },
       {
-        "component": "select",
+        "component": "multiselect",
         "label": "Add Component",
         "name": "accordionitem-component",
+        "valueType": "string",
+        "maxSize": 1,
         "options": [
           {
             "label": "Quote",
