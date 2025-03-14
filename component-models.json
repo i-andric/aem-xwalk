@@ -382,7 +382,7 @@
         "condition": {
           "===": [
             {
-              "var": "accordionItem_component"
+              "var": "accordionitem-component"
             },
             "accordionitem-component-quote"
           ]
@@ -396,7 +396,7 @@
         "condition": {
           "===": [
             {
-              "var": "accordionItem_component"
+              "var": "accordionitem-component"
             },
             "accordionitem-component-text"
           ]
@@ -411,7 +411,7 @@
         "condition": {
           "===": [
             {
-              "var": "accordionItem_component"
+              "var": "accordionitem-component"
             },
             "accordionitem-component-quote"
           ]
@@ -426,7 +426,7 @@
         "condition": {
           "===": [
             {
-              "var": "accordionItem_component"
+              "var": "accordionitem-component"
             },
             "accordionitem-component-text"
           ]

@@ -62,14 +62,14 @@
           "label": "This text is shown when clicked quote",
           "name": "hidden-quote",
           "valueType": "string",
-          "condition": { "===": [{"var" : "accordionItem_component"}, "accordionitem-component-quote"] }
+          "condition": { "===": [{"var" : "accordionitem-component"}, "accordionitem-component-quote"] }
         },
         {
           "component": "text-input",
           "label": "This text is shown when clicked text",
           "name": "hidden-text",
           "valueType": "string",
-          "condition": { "===": [{"var" : "accordionItem_component"}, "accordionitem-component-text"] }
+          "condition": { "===": [{"var" : "accordionitem-component"}, "accordionitem-component-text"] }
         },
         {
           "component": "richtext",
@@ -77,7 +77,7 @@
           "label": "Answer",
           "valueType": "string",
           "value": "",
-          "condition": { "===": [{"var" : "accordionItem_component"}, "accordionitem-component-quote"] }
+          "condition": { "===": [{"var" : "accordionitem-component"}, "accordionitem-component-quote"] }
         },
         {
           "component": "richtext",
@@ -85,7 +85,7 @@
           "label": "Answer",
           "valueType": "string",
           "value": "",
-          "condition": { "===": [{"var" : "accordionItem_component"}, "accordionitem-component-text"] }
+          "condition": { "===": [{"var" : "accordionitem-component"}, "accordionitem-component-text"] }
         }
       ]
     }
