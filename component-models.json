@@ -441,7 +441,7 @@
         "component": "asset-picker-namespace:custom-asset",
         "name": "image",
         "label": "Image",
-        "configUrl": "https://aem-xwalk--i-andric.aem.page/tools/assets-selector/image/config.json",
+        "configUrl": "https://main--aem-xwalk--i-andric.aem.page/tools/assets-selector/image.config.json",
         "valueType": "string"
       },
       {
