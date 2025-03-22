@@ -4,8 +4,8 @@
       "delivery-p24706-e491522.adobeaemcloud.com"
     ],
    "aemTierType": [
-        "author",
-        "delivery"
+        "delivery",
+        "author"
     ],
     "expiryOptions": {
         "allowSelectionAndDrag": false
