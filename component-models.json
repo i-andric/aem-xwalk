@@ -584,7 +584,7 @@
         "name": "image",
         "label": "Image",
         "multi": false,
-        "configUrl": "https://aem-xwalk--i-andric.aem.page/tools/assets-selector/config.json"
+        "configUrl": "https://aem-xwalk--i-andric.aem.page/tools/assets-selector/image/config.json"
       },
       {
         "component": "text",
