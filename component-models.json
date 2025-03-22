@@ -438,14 +438,14 @@
     "id": "asset-picker",
     "fields": [
       {
-        "component": "asset-picker-namespace:custom-asset",
+        "component": "custom-asset-namespace:custom-asset",
         "name": "image",
         "label": "Image",
         "configUrl": "https://main--aem-xwalk--i-andric.aem.page/tools/assets-selector/image.config.json",
         "valueType": "string"
       },
       {
-        "component": "asset-picker-namespace:custom-asset-mimetype",
+        "component": "custom-asset-namespace:custom-asset-mimetype",
         "valueType": "string",
         "name": "imageMimeType"
       },
