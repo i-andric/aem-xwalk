@@ -441,7 +441,7 @@
         "component": "custom-asset-namespace:custom-asset",
         "name": "image",
         "label": "Image",
-        "configUrl": "/content/dam/aem-xwalk/image.config.json",
+        "configUrl": "/content/dam/aem-xwalk/asset-selector.json",
         "valueType": "string"
       },
       {
