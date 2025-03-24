@@ -24,7 +24,7 @@
                 "component": "custom-asset-namespace:custom-asset",
                 "name": "image",
                 "label": "Image",
-                "configUrl": "https://main--aem-xwalk--i-andric.aem.page/tools/assets-selector/image.config.json",
+                "configUrl": "/content/dam/aem-xwalk/image.config.json",
                 "valueType": "string"
               },
               {
