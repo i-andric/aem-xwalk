@@ -1,6 +1,7 @@
 import { createDmOptimizedPicture, getMetadata } from '../../scripts/aem.js';
 
 export default function decorate(block) {
+  console.log('custom-asset.js', block);
   // get the url of the page
   let url = new URL(window.location.href);
 

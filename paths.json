@@ -6,6 +6,6 @@
     "/content/aem-xwalk/metadata:/metadata.json",
     "/content/aem-xwalk/api/blog.json",
     "/content/aem-xwalk/api/authors.json",
-    "/content/aem-xwalk/de-de/placeholders:/de-de/placeholders.json"
+    "/content/aem-xwalk/placeholders:/placeholders.json"
   ]
 }
