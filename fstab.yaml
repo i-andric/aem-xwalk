@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p24706-e491522.adobeaemcloud.com/bin/franklin.delivery/comwrap/blog-blueprint/main"
+    url: "https://author-p24706-e491522.adobeaemcloud.com/bin/franklin.delivery/i-andric/aem-xwalk/main"
     type: "markup"
     suffix: ".html"
