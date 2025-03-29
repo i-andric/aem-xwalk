@@ -22,20 +22,20 @@
             "fields": [
               {
                 "component": "custom-asset-namespace:custom-asset",
-                "name": "image",
+                "name": "customAsset_image",
                 "label": "Image",
                 "configUrl": "/content/dam/aem-xwalk/asset-selector.json",
                 "valueType": "string"
               },
               {
                 "component": "text",
-                "name": "imageTitle",
+                "name": "customAsset_imageTitle",
                 "label": "Alt Text",
                 "valueType": "string"
               },
               {
                 "component": "select",
-                "name": "imageSmartCrop",
+                "name": "customAsset_imageSmartCrop",
                 "label": "Image Version",
                 "options": [
                   {
