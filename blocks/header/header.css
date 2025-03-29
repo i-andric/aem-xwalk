@@ -73,6 +73,12 @@ header nav .nav-dropdown {
   left: 0;
   height: 100%;
   width: 100%;
+  display: none;
+}
+@media (width >= 90rem) {
+  header nav .nav-dropdown {
+    display: flex;
+  }
 }
 header nav .nav-dropdown-close {
   color: rgba(var(--color-pure-black), 1);
@@ -127,13 +133,16 @@ header nav .nav-trigger:hover {
 }
 header nav .nav-logo {
   position: absolute;
-  top: 5px;
   left: 32px;
   display: flex;
   align-items: center;
-  margin-right: 32px;
+  margin-top: 5px;
+}
+header nav .nav-logo a {
+  margin: 0;
 }
 header nav .nav-logo img {
+  background: rgba(var(--color-pure-white), 1);
   max-height: 40px;
   width: auto;
 }
