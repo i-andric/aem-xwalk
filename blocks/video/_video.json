@@ -21,7 +21,7 @@
           "id": "video",
           "fields": [
             {
-              "component": "video-namespace:video",
+              "component": "custom-asset-namespace:custom-asset",
               "name": "video",
               "label": "Video",
               "configUrl": "/content/dam/aem-xwalk/video-selector.json",
