@@ -1,0 +1,49 @@
+{
+    "repoNames": [
+      "delivery-p24706-e491522.adobeaemcloud.com"
+    ],
+   "aemTierType": [
+        "delivery"
+    ],
+    "expiryOptions": {
+        "allowSelectionAndDrag": false
+    },
+    "filterSchema": [
+        {
+          "fields": [
+            {
+              "defaultValue": ["video/*"],
+              "element": "checkbox",
+              "name": "type",
+              "options": [
+                {
+                  "label": "Video",
+                  "readOnly": true,
+                  "value": "video/*"
+                }
+              ]
+            }
+          ],
+          "groupKey": "FileTypeGroup",
+          "header": "File Type"
+        },
+        {
+          "fields": [
+            {
+              "columns": 3,
+              "defaultValue": ["arena"],
+              "element": "taggroup",
+              "name": "property=xcm:keywords.id=",
+              "options": [
+                {
+                  "label": "Demo",
+                  "value": "demo"
+                }
+              ]
+            }
+          ],
+          "groupKey": "AssetTagsGroup",
+          "header": "Assets Tags"
+        }
+      ]
+}
