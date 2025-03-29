@@ -596,6 +596,25 @@
         "name": "imageTitle",
         "label": "Alt Text",
         "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "imageSmartCrop",
+        "label": "Image Version",
+        "options": [
+          {
+            "name": "11square",
+            "value": "11square"
+          },
+          {
+            "name": "169banner",
+            "value": "169banner"
+          },
+          {
+            "name": "54vert",
+            "value": "54vert"
+          }
+        ]
       }
     ]
   },
