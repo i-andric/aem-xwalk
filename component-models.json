@@ -1246,52 +1246,34 @@
     "id": "video",
     "fields": [
       {
-        "component": "reference",
-        "name": "video_image",
-        "label": "Image"
-      },
-      {
-        "component": "reference",
-        "name": "video_customvideo",
-        "label": "Video"
+        "component": "video-namespace:video",
+        "name": "video",
+        "label": "Video",
+        "configUrl": "/content/dam/aem-xwalk/video-selector.json",
+        "valueType": "string"
       },
       {
         "component": "text",
-        "name": "videodetails_title",
-        "label": "Title"
-      },
-      {
-        "component": "text",
-        "name": "videodetails_description",
-        "label": "Description"
-      },
-      {
-        "component": "aem-content",
-        "name": "videodetails_button",
-        "label": "Button"
+        "name": "video_description",
+        "label": "Video Description",
+        "valueType": "string"
       },
       {
         "component": "select",
-        "name": "classes",
-        "value": "",
-        "label": "Type of Video",
-        "valueType": "string",
+        "name": "customAsset_imageSmartCrop",
+        "label": "Image Version",
         "options": [
           {
-            "name": "hero",
-            "value": "hero"
+            "name": "11square",
+            "value": "11square"
           },
           {
-            "name": "inline",
-            "value": "inline"
+            "name": "169banner",
+            "value": "169banner"
           },
           {
-            "name": "cards",
-            "value": "cards"
-          },
-          {
-            "name": "modal",
-            "value": "modal"
+            "name": "54vert",
+            "value": "54vert"
           }
         ]
       }
