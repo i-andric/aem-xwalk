@@ -42,27 +42,22 @@ function lockComponent(element) {
  * Updates component filters based on user group membership
  * @param {Object} userData - Current user data including group memberships
  */
-async function updateComponentFilters(userData) {
+function updateComponentFilters(userData) {
   console.log('Updating component filters for user:', userData);
   if (!userData?.memberOf) return;
 
   const userGroups = userData.memberOf;
-  let filterScript = document.querySelector('script[type="application/vnd.adobe.aue.filter+json"]');
-
-  // Create script tag if it doesn't exist
-  if (!filterScript) {
-    filterScript = document.createElement('script');
-    filterScript.setAttribute('type', 'application/vnd.adobe.aue.filter+json');
-    document.head.appendChild(filterScript);
-  }
+  const filterScript = document.querySelector('script[type="application/vnd.adobe.aue.filter+json"]');
 
   // Determine appropriate filter based on user groups
-  let filterPath = '/content/aem-xwalk.resource/component-filters.json'; // default path
+  let filterPath = ''; // default path
   console.log('User groups:', userGroups);
 
   // Check if any group in the array has the name 'contributor'
   if (userGroups.some((group) => group.authorizableId === 'contributor')) {
     filterPath = '/content/aem-xwalk.resource/component-limited-filters.json';
+  } else {
+    filterPath = '/content/aem-xwalk.resource/component-filters.json';
   }
 
   filterScript.setAttribute('src', filterPath);

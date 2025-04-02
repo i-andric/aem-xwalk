@@ -126,7 +126,7 @@ async function initializeEditorSupport() {
   const userData = await getCurrentUser();
   console.log('getting user data', userData);
   if (userData) {
-    await updateComponentFilters(userData);
+    updateComponentFilters(userData);
   }
 }
 
