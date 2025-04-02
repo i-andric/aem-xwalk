@@ -7,6 +7,7 @@ import {
   loadBlock,
   loadSections,
 } from './aem.js';
+import { getCurrentUser, lockComponent, updateComponentFilters } from './editor-support-components.js';
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
@@ -102,4 +103,31 @@ function attachEventListners(main) {
   }));
 }
 
-attachEventListners(document.querySelector('main'));
+// Initialize component locking and user-specific filtering
+async function initializeEditorSupport() {
+  const main = document.querySelector('main');
+  attachEventListners(main);
+
+  console.log('editor support initialized');
+  // Check if this is an article page that needs component locking
+  const isTwoColumnPage = document.body.classList.contains('two-column');
+  if (isTwoColumnPage) {
+    console.log('two columns page initialized');
+    // Lock all components except those that should remain editable
+    document.querySelectorAll('.block[data-aue-resource]').forEach((component) => {
+      // You can add conditions here to determine which components to lock
+      if (!component.classList.contains('editable')) {
+        lockComponent(component);
+      }
+    });
+  }
+
+  // Set up user-specific component filtering
+  const userData = await getCurrentUser();
+  console.log('getting user data', userData);
+  if (userData) {
+    await updateComponentFilters(userData);
+  }
+}
+
+initializeEditorSupport();
