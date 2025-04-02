@@ -57,12 +57,12 @@ async function updateComponentFilters(userData) {
   }
 
   // Determine appropriate filter based on user groups
-  let filterPath = 'content/aem-xwalk.resource/component-filters.json'; // default path
+  let filterPath = '/content/aem-xwalk.resource/component-filters.json'; // default path
   console.log('User groups:', userGroups);
 
   // Check if any group in the array has the name 'contributor'
   if (userGroups.some((group) => group.authorizableId === 'contributor')) {
-    filterPath = 'content/aem-xwalk.resource/component-limited-filters.json';
+    filterPath = '/content/aem-xwalk.resource/component-limited-filters.json';
   }
 
   filterScript.setAttribute('src', filterPath);
