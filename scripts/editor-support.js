@@ -89,6 +89,19 @@ async function applyChanges(event) {
   return false;
 }
 
+function attachLimitedEventListners(main) {
+  [
+    'aue:content-patch',
+    'aue:content-update',
+    'aue:content-move',
+    'aue:content-remove',
+  ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
+    event.stopPropagation();
+    const applied = await applyChanges(event);
+    if (!applied) window.location.reload();
+  }));
+}
+
 function attachEventListners(main) {
   [
     'aue:content-patch',
@@ -110,8 +123,10 @@ async function initializeEditorSupport() {
   console.log('getting user data', userData);
   if (userData) {
     await updateComponentFilters(userData);
+    attachLimitedEventListners(main);
+  } else {
+    attachEventListners(main);
   }
-  attachEventListners(main);
 
   console.log('editor support initialized');
   // Check if this is an article page that needs component locking
