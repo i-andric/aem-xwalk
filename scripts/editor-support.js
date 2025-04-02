@@ -89,19 +89,6 @@ async function applyChanges(event) {
   return false;
 }
 
-function attachLimitedEventListners(main) {
-  [
-    'aue:content-patch',
-    'aue:content-update',
-    'aue:content-move',
-    'aue:content-remove',
-  ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
-    event.stopPropagation();
-    const applied = await applyChanges(event);
-    if (!applied) window.location.reload();
-  }));
-}
-
 function attachEventListners(main) {
   [
     'aue:content-patch',
@@ -119,20 +106,11 @@ function attachEventListners(main) {
 // Initialize component locking and user-specific filtering
 async function initializeEditorSupport() {
   const main = document.querySelector('main');
-  const userData = await getCurrentUser();
-  console.log('getting user data', userData);
-  if (userData) {
-    await updateComponentFilters(userData);
-    attachLimitedEventListners(main);
-  } else {
-    attachEventListners(main);
-  }
+  attachEventListners(main);
 
-  console.log('editor support initialized');
   // Check if this is an article page that needs component locking
-  const isTwoColumnPage = document.body.classList.contains('two-column');
-  if (isTwoColumnPage) {
-    console.log('two columns page initialized');
+  const isArticlePage = document.body.classList.contains('article-template');
+  if (isArticlePage) {
     // Lock all components except those that should remain editable
     document.querySelectorAll('.block[data-aue-resource]').forEach((component) => {
       // You can add conditions here to determine which components to lock
@@ -143,6 +121,10 @@ async function initializeEditorSupport() {
   }
 
   // Set up user-specific component filtering
+  const userData = await getCurrentUser();
+  if (userData) {
+    await updateComponentFilters(userData);
+  }
 }
 
 initializeEditorSupport();
