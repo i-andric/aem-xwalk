@@ -47,27 +47,25 @@ async function updateComponentFilters(userData) {
   if (!userData?.memberOf) return;
 
   const userGroups = userData.memberOf;
-  let filterMetaTag = document.querySelector('meta[name="component-filters"]');
+  let filterScript = document.querySelector('script[type="application/vnd.adobe.aue.filter+json"]');
 
-  // Create meta tag if it doesn't exist
-  if (!filterMetaTag) {
-    filterMetaTag = document.createElement('meta');
-    filterMetaTag.setAttribute('name', 'component-filters');
-    document.head.appendChild(filterMetaTag);
+  // Create script tag if it doesn't exist
+  if (!filterScript) {
+    filterScript = document.createElement('script');
+    filterScript.setAttribute('type', 'application/vnd.adobe.aue.filter+json');
+    document.head.appendChild(filterScript);
   }
 
   // Determine appropriate filter based on user groups
   // This can be customized based on your group-to-filter mapping
-  let filterPath = 'component-filters.json'; // default path
+  let filterPath = 'content/aem-xwalk.resource/component-filters.json'; // default path
 
   // Example: Apply specific filters based on group membership
-  if (userGroups.includes('/content-authors')) {
-    filterPath = 'content-authors-filters.json';
-  } else if (userGroups.includes('/template-editors')) {
-    filterPath = 'template-editors-filters.json';
+  if (userGroups.includes('contributor')) {
+    filterPath = 'content/aem-xwalk.resource/component-limited-filters.json';
   }
 
-  filterMetaTag.setAttribute('content', filterPath);
+  filterScript.setAttribute('src', filterPath);
 }
 
 export { getCurrentUser, lockComponent, updateComponentFilters };
