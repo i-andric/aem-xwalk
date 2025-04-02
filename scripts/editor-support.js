@@ -92,8 +92,8 @@ async function applyChanges(event) {
 function attachEventListners(main) {
   [
     'aue:content-patch',
-    // 'aue:content-update',
-    // 'aue:content-add',
+    'aue:content-update',
+    'aue:content-add',
     'aue:content-move',
     'aue:content-remove',
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
@@ -111,7 +111,7 @@ async function initializeEditorSupport() {
   // Check if this is an article page that needs component locking
   const isArticlePage = document.body.classList.contains('article-template');
   if (isArticlePage) {
-    // Lock all add except those that should remain editable
+    // Lock all components except those that should remain editable
     document.querySelectorAll('.block[data-aue-resource]').forEach((component) => {
       // You can add conditions here to determine which components to lock
       if (!component.classList.contains('editable')) {
