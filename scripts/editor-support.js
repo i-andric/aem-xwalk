@@ -106,6 +106,11 @@ function attachEventListners(main) {
 // Initialize component locking and user-specific filtering
 async function initializeEditorSupport() {
   const main = document.querySelector('main');
+  const userData = await getCurrentUser();
+  console.log('getting user data', userData);
+  if (userData) {
+    await updateComponentFilters(userData);
+  }
   attachEventListners(main);
 
   console.log('editor support initialized');
@@ -123,11 +128,6 @@ async function initializeEditorSupport() {
   }
 
   // Set up user-specific component filtering
-  const userData = await getCurrentUser();
-  console.log('getting user data', userData);
-  if (userData) {
-    updateComponentFilters(userData);
-  }
 }
 
 initializeEditorSupport();
