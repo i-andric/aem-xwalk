@@ -47,24 +47,25 @@ async function updateComponentFilters(userData) {
   if (!userData?.memberOf) return;
 
   const userGroups = userData.memberOf;
-  const filterScript = document.querySelector('script[type="application/vnd.adobe.aue.filter+json"]');
-
-  // Determine appropriate filter based on user groups
-  let filterPath = ''; // default path
-  console.log('User groups:', userGroups);
-  if (userData.name === 'Ive Andric') {
-    filterPath = '/content/aem-xwalk.resource/component-limited-filters.json';
-  } else {
-    filterPath = '/content/aem-xwalk.resource/component-filters.json';
-  }
-  // Check if any group in the array has the name 'contributor'
-  // if (userGroups.some((group) => group.authorizableId === 'contributor')) {
-  //   filterPath = '/content/aem-xwalk.resource/component-limited-filters.json';
-  // } else {
-  //   filterPath = '/content/aem-xwalk.resource/component-filters.json';
-  // }
-
-  filterScript.setAttribute('src', filterPath);
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterScript = document.querySelector('script[type="application/vnd.adobe.aue.filter+json"]');
+    if (!filterScript) {
+      console.error('Filter script not found');
+      return;
+    }
+    // Determine the appropriate filter based on user groups
+    let filterPath = '/content/aem-xwalk.resource/component-filters.json'; // Default path
+    console.log('User groups:', userGroups);
+    if (userGroups.some((group) => group.authorizableId === 'contributor')) {
+      filterPath = '/content/aem-xwalk.resource/component-limited-filters.json';
+    }
+    // Create a new script element with the updated source
+    const newScript = document.createElement('script');
+    newScript.type = 'application/vnd.adobe.aue.filter+json';
+    newScript.src = filterPath;
+    // Replace the old script with the new one
+    filterScript.parentNode.replaceChild(newScript, filterScript);
+  });
 }
 
 export { getCurrentUser, lockComponent, updateComponentFilters };
