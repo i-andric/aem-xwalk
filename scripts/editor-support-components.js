@@ -57,13 +57,11 @@ async function updateComponentFilters(userData) {
   }
 
   // Determine appropriate filter based on user groups
-  // This can be customized based on your group-to-filter mapping
   let filterPath = 'content/aem-xwalk.resource/component-filters.json'; // default path
-console.log('User groups:', userGroups);
-  // TODO: Implement logic to determine filter based on user groups
-  // This is a placeholder and should be replaced with actual logic according to your scenari
-  // Example: Apply specific filters based on group membership
-  if (userGroups.includes('contributor')) {
+  console.log('User groups:', userGroups);
+
+  // Check if any group in the array has the name 'contributor'
+  if (userGroups.some((group) => group.authorizableId === 'contributor')) {
     filterPath = 'content/aem-xwalk.resource/component-limited-filters.json';
   }
 
