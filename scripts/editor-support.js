@@ -105,7 +105,7 @@ function attachEventListners(main) {
 }
 
 // Initialize component locking and user-specific filtering
-async function initializeEditorSupport() {
+function initializeEditorSupport() {
   console.log('User data:', userData);
 
   // Set up user-specific component filtering
@@ -126,7 +126,6 @@ async function initializeEditorSupport() {
       }
     });
   }
-
 }
 
-await initializeEditorSupport();
+initializeEditorSupport();
