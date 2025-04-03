@@ -107,9 +107,14 @@ function attachEventListners(main) {
 // Initialize component locking and user-specific filtering
 async function initializeEditorSupport() {
   console.log('User data:', userData);
+
+  // Set up user-specific component filtering
+  if (userData) {
+    updateComponentFilters(userData);
+  }
+
   const main = document.querySelector('main');
   attachEventListners(main);
-
   // Check if this is an article page that needs component locking
   const isArticlePage = document.body.classList.contains('two-columns');
   if (isArticlePage) {
@@ -122,10 +127,6 @@ async function initializeEditorSupport() {
     });
   }
 
-  // Set up user-specific component filtering
-  if (userData) {
-    updateComponentFilters(userData);
-  }
 }
 
 await initializeEditorSupport();
