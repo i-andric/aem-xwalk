@@ -7,7 +7,7 @@ import {
   loadBlock,
   loadSections,
 } from './aem.js';
-import { getCurrentUser, lockComponent, updateComponentFilters } from './editor-support-components.js';
+import { getCurrentUser, updateComponentFilters } from './editor-support-components.js';
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
@@ -105,26 +105,18 @@ function attachEventListners(main) {
 
 // Initialize component locking and user-specific filtering
 async function initializeEditorSupport() {
-  const main = document.querySelector('main');
-  attachEventListners(main);
-
-  // Check if this is an article page that needs component locking
-  const isArticlePage = document.body.classList.contains('article-template');
-  if (isArticlePage) {
-    // Lock all components except those that should remain editable
-    document.querySelectorAll('.block[data-aue-resource]').forEach((component) => {
-      // You can add conditions here to determine which components to lock
-      if (!component.classList.contains('editable')) {
-        lockComponent(component);
-      }
-    });
-  }
-
-  // Set up user-specific component filtering
+  // Set up user-specific component filtering first
   const userData = await getCurrentUser();
   if (userData) {
     await updateComponentFilters(userData);
   }
+
+  // After user data is processed, set up event listeners
+  const main = document.querySelector('main');
+  attachEventListners(main);
 }
 
-initializeEditorSupport();
+// Wait for DOM content to be loaded before initializing
+document.addEventListener('DOMContentLoaded', () => {
+  initializeEditorSupport();
+});

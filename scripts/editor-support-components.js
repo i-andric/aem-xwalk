@@ -18,32 +18,10 @@ async function getCurrentUser() {
 }
 
 /**
- * Removes authoring instrumentation from specified components
- * @param {HTMLElement} element - The component element to lock
- */
-function lockComponent(element) {
-  if (!element) return;
-
-  // Remove all data-aue-* attributes
-  const aueAttributes = Array.from(element.attributes)
-    .filter((attr) => attr.name.startsWith('data-aue-'));
-
-  aueAttributes.forEach((attr) => {
-    element.removeAttribute(attr.name);
-  });
-
-  // Also remove from child elements
-  element.querySelectorAll('[data-aue-resource]').forEach((child) => {
-    lockComponent(child);
-  });
-}
-
-/**
  * Updates component filters based on user group membership
  * @param {Object} userData - Current user data including group memberships
  */
 async function updateComponentFilters(userData) {
-  console.log('Updating component filters for user:', userData);
   if (!userData?.memberOf) return;
 
   const userGroups = userData.memberOf;
@@ -55,7 +33,7 @@ async function updateComponentFilters(userData) {
     }
     // Determine the appropriate filter based on user groups
     let filterPath = '/content/aem-xwalk.resource/component-filters.json'; // Default path
-    console.log('User groups:', userGroups);
+
     if (userGroups.some((group) => group.authorizableId === 'contributor')) {
       filterPath = '/content/aem-xwalk.resource/component-limited-filters.json';
     }
@@ -68,4 +46,4 @@ async function updateComponentFilters(userData) {
   });
 }
 
-export { getCurrentUser, lockComponent, updateComponentFilters };
+export { getCurrentUser, updateComponentFilters };
