@@ -11,7 +11,6 @@ import { getCurrentUser, lockComponent, updateComponentFilters } from './editor-
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
-const userData = await getCurrentUser();
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
   const { detail } = event;
@@ -104,28 +103,36 @@ function attachEventListners(main) {
   }));
 }
 
-// Initialize component locking and user-specific filtering
-function initializeEditorSupport() {
-  console.log('User data:', userData);
+// Make this an async function to properly handle the user data fetching
+async function initializeEditorSupport() {
+  try {
+    // Wait for user data before proceeding
+    const userData = await getCurrentUser();
+    console.log('User data:', userData);
 
-  // Set up user-specific component filtering
-  if (userData) {
-    updateComponentFilters(userData);
-  }
+    // Only proceed with filter updates if we have valid user data
+    if (userData) {
+      await updateComponentFilters(userData);
+    }
 
-  const main = document.querySelector('main');
-  attachEventListners(main);
-  // Check if this is an article page that needs component locking
-  const isArticlePage = document.body.classList.contains('two-columns');
-  if (isArticlePage) {
-    // Lock all add except those that should remain editable
-    document.querySelectorAll('.block[data-aue-resource]').forEach((component) => {
-      // You can add conditions here to determine which components to lock
-      if (!component.classList.contains('editable')) {
-        lockComponent(component);
-      }
-    });
+    const main = document.querySelector('main');
+    attachEventListners(main);
+
+    // Check if this is an article page that needs component locking
+    const isArticlePage = document.body.classList.contains('two-columns');
+    if (isArticlePage) {
+      document.querySelectorAll('.block[data-aue-resource]').forEach((component) => {
+        if (!component.classList.contains('editable')) {
+          lockComponent(component);
+        }
+      });
+    }
+  } catch (error) {
+    console.error('Error during editor support initialization:', error);
   }
 }
 
-initializeEditorSupport();
+// Use proper async initialization
+document.addEventListener('DOMContentLoaded', () => {
+  initializeEditorSupport();
+});
