@@ -128,4 +128,6 @@ async function initializeEditorSupport() {
   }
 }
 
-await initializeEditorSupport();
+(async () => {
+  await initializeEditorSupport();
+})();
