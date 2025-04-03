@@ -11,6 +11,9 @@ import { getCurrentUser, lockComponent, updateComponentFilters } from './editor-
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
+// eslint-disable-next-line no-use-before-define
+await initializeEditorSupport();
+
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
   const { detail } = event;
@@ -131,8 +134,3 @@ async function initializeEditorSupport() {
     console.error('Error during editor support initialization:', error);
   }
 }
-
-// Use proper async initialization
-document.addEventListener('DOMContentLoaded', () => {
-  initializeEditorSupport();
-});
