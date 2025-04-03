@@ -33,7 +33,7 @@ async function updateComponentFilters(userData) {
     }
     // Determine the appropriate filter based on user groups
     let filterPath = '/content/aem-xwalk.resource/component-filters.json'; // Default path
-
+    console.log('USER GROUPS', userGroups);
     if (userGroups.some((group) => group.authorizableId === 'contributor')) {
       filterPath = '/content/aem-xwalk.resource/component-limited-filters.json';
     }
