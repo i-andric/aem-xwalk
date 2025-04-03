@@ -11,6 +11,7 @@ import { getCurrentUser, lockComponent, updateComponentFilters } from './editor-
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
+const userData = await getCurrentUser();
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
   const { detail } = event;
@@ -105,7 +106,6 @@ function attachEventListners(main) {
 
 // Initialize component locking and user-specific filtering
 async function initializeEditorSupport() {
-  const userData = await getCurrentUser();
   console.log('User data:', userData);
   const main = document.querySelector('main');
   attachEventListners(main);
@@ -128,6 +128,4 @@ async function initializeEditorSupport() {
   }
 }
 
-(async () => {
-  await initializeEditorSupport();
-})();
+await initializeEditorSupport();
