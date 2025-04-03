@@ -108,18 +108,6 @@ async function initializeEditorSupport() {
   const main = document.querySelector('main');
   attachEventListners(main);
 
-  // Check if this is an article page that needs component locking
-  const isArticlePage = document.body.classList.contains('article-template');
-  if (isArticlePage) {
-    // Lock all add except those that should remain editable
-    document.querySelectorAll('.block[data-aue-resource]').forEach((component) => {
-      // You can add conditions here to determine which components to lock
-      if (!component.classList.contains('editable')) {
-        lockComponent(component);
-      }
-    });
-  }
-
   // Set up user-specific component filtering
   const userData = await getCurrentUser();
   if (userData) {
