@@ -115,4 +115,4 @@ async function initializeEditorSupport() {
   }
 }
 
-initializeEditorSupport();
+await initializeEditorSupport();
