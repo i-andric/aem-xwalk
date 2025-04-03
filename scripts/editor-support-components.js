@@ -42,7 +42,7 @@ function lockComponent(element) {
  * Updates component filters based on user group membership
  * @param {Object} userData - Current user data including group memberships
  */
-async function updateComponentFilters(userData) {
+function updateComponentFilters(userData) {
   console.log('Updating component filters for user:', userData);
   if (!userData?.memberOf) return;
 
