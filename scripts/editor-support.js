@@ -105,18 +105,14 @@ function attachEventListners(main) {
 
 // Initialize component locking and user-specific filtering
 async function initializeEditorSupport() {
-  // Set up user-specific component filtering first
+  const main = document.querySelector('main');
+  attachEventListners(main);
+
+  // Set up user-specific component filtering
   const userData = await getCurrentUser();
   if (userData) {
     await updateComponentFilters(userData);
   }
-
-  // After user data is processed, set up event listeners
-  const main = document.querySelector('main');
-  attachEventListners(main);
 }
 
-// Wait for DOM content to be loaded before initializing
-document.addEventListener('DOMContentLoaded', () => {
-  initializeEditorSupport();
-});
+initializeEditorSupport();
