@@ -11,7 +11,7 @@
   {
     "id": "section",
     "components": [
-      "text",
+      "copy_text",
       "image",
       "button",
       "title",
