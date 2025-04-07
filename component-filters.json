@@ -70,7 +70,7 @@
     ]
   },
   {
-    "id": "slide_title",
+    "id": "slideTitleText",
     "rte": {
       "format": [
         "bold"
