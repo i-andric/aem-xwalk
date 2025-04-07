@@ -103,16 +103,15 @@
       {
         "id": "slideTitleText",
         "rte": {
-          "format": ["bold"],
+          "format": [],
           "alignment": [],
           "indentation": [],
-          "sr_script": ["superscript"],
-          "list": ["bullist", "numlist"],
+          "sr_script": [],
+          "list": ["bullist"],
           "insert": ["link"],
-          "blocks": [],
-          "advanced": ["h3"],
+          "advanced": [],
           "extensions": [],
-          "editor": ["removeformat"]
+          "editor": []
         }
       }
     ]

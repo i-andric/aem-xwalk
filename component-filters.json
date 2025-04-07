@@ -72,29 +72,19 @@
   {
     "id": "slideTitleText",
     "rte": {
-      "format": [
-        "bold"
-      ],
+      "format": [],
       "alignment": [],
       "indentation": [],
-      "sr_script": [
-        "superscript"
-      ],
+      "sr_script": [],
       "list": [
-        "bullist",
-        "numlist"
+        "bullist"
       ],
       "insert": [
         "link"
       ],
-      "blocks": [],
-      "advanced": [
-        "h3"
-      ],
+      "advanced": [],
       "extensions": [],
-      "editor": [
-        "removeformat"
-      ]
+      "editor": []
     }
   },
   {
