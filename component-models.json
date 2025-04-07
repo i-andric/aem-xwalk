@@ -525,7 +525,7 @@
         "multi": false
       },
       {
-        "component": "text",
+        "component": "text-input",
         "valueType": "string",
         "name": "imageAlt",
         "label": "Image Alt Text",
@@ -534,7 +534,7 @@
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "slide_title",
+        "name": "slideTitleText",
         "label": "Slide Title",
         "value": ""
       },
