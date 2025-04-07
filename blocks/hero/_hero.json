@@ -46,9 +46,9 @@
   ],
   "filters": [
     {
-      "id": "text",
+      "id": "heroCopyText",
       "rte": {
-        "format": ["bold"]
+        "format": ["italic", "underline"]
       }
     }
   ]

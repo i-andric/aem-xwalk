@@ -104,10 +104,11 @@
     ]
   },
   {
-    "id": "text",
+    "id": "heroCopyText",
     "rte": {
       "format": [
-        "bold"
+        "italic",
+        "underline"
       ]
     }
   },

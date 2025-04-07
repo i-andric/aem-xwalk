@@ -23,7 +23,7 @@
   "filters": {
       "id": "text",
       "rte": {
-        "format": ["bold"],
+        "format": ["italic", "underline"],
         "alignment": [],
         "indentation": [],
         "sr_script": ["superscript"],
