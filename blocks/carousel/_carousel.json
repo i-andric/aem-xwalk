@@ -71,7 +71,7 @@
             "multi": false
           },
           {
-            "component": "text-input",
+            "component": "text",
             "valueType": "string",
             "name": "imageAlt",
             "label": "Image Alt Text",
@@ -79,10 +79,9 @@
           },
           {
             "component": "richtext",
-            "valueType": "string",
-            "name": "slideTitleText",
+            "name": "slide_title",
             "label": "Slide Title",
-            "value": ""
+            "valueType": "string"
           },
           {
             "component": "button",
@@ -99,12 +98,6 @@
         "components": [
           "carouselitem"
         ]
-      },
-      {
-        "id": "slideTitleText",
-        "rte": {
-          "format": ["italic", "underline"]
-        }
       }
     ]
   }
