@@ -79,9 +79,10 @@
           },
           {
             "component": "richtext",
+            "valueType": "string",
             "name": "slide_title",
             "label": "Slide Title",
-            "valueType": "string"
+            "value": ""
           },
           {
             "component": "button",
@@ -100,7 +101,7 @@
         ]
       },
       {
-        "id": "carouselitem",
+        "id": "slide_title",
         "rte": {
           "format": ["bold"],
           "alignment": [],

@@ -70,7 +70,7 @@
     ]
   },
   {
-    "id": "carouselitem",
+    "id": "slide_title",
     "rte": {
       "format": [
         "bold"

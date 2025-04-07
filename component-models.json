@@ -533,9 +533,10 @@
       },
       {
         "component": "richtext",
+        "valueType": "string",
         "name": "slide_title",
         "label": "Slide Title",
-        "valueType": "string"
+        "value": ""
       },
       {
         "component": "button",
