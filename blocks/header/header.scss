@@ -11,7 +11,7 @@ header {
     width: 100%;
     position: fixed;
     padding: 24px;
-    @include z-index('header');
+    // @include z-index('header');
 
     .nav-search {
       position: fixed;
@@ -63,7 +63,7 @@ header {
       &-dropdown {
         @include bg-color(var(--menu-inner-color));
         @include text-color(var(--color-pure-black));
-        @include flex-container(row, center, flex-start, nowrap);
+        // @include flex-container(row, center, flex-start, nowrap);
         position: absolute;
         top: var(--nav-height);
         left: 0;

@@ -111,7 +111,7 @@ async function initializeEditorSupport() {
   try {
     // Wait for user data before proceeding
     const userData = await getCurrentUser();
-    console.log('User data:', userData);
+    // console.log('User data:', userData);
 
     // Only proceed with filter updates if we have valid user data
     if (userData) {
@@ -131,6 +131,6 @@ async function initializeEditorSupport() {
       });
     }
   } catch (error) {
-    console.error('Error during editor support initialization:', error);
+    // console.error('Error during editor support initialization:', error);
   }
 }

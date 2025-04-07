@@ -108,17 +108,7 @@
     "rte": {
       "format": [
         "bold"
-      ],
-      "alignment": [],
-      "indentation": [],
-      "sr_script": [],
-      "list": [],
-      "insert": [],
-      "advanced": [
-        "h3"
-      ],
-      "extensions": [],
-      "editor": []
+      ]
     }
   },
   {

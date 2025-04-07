@@ -13,5 +13,8 @@
       }
     }
   ],
-  "models": []
+  "models": [],
+  "filters": {
+    "format": ["italic", "underline"]
+  }
 }
