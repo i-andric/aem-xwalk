@@ -5,13 +5,19 @@
       "id": "default",
       "components": [
         {
-          "title": "Text",
-          "id": "text",
+          "title": "Copy Text",
+          "id": "copy_text",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/text/v1/text",
-                "template": {}
+                "template": {
+                  "name": "Copy Text",
+                  "model": "copy_text",
+                  "filter": "copy_text",
+                  "text": "<p>This is a Copy Text</p>",
+                  "heroCopyText": "This is a Copy Text."
+                }
               }
             }
           }

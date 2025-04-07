@@ -1,13 +1,19 @@
 {
   "definitions": [
     {
-      "title": "Text",
-      "id": "text",
+      "title": "Copy Text",
+      "id": "copy_text",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/text/v1/text",
-            "template": {}
+            "template": {
+              "name": "Copy Text",
+              "model": "copy_text",
+              "filter": "copy_text",
+              "text": "<p>This is a Copy Text</p>",
+              "heroCopyText": "This is a Copy Text."
+            }
           }
         }
       }
@@ -15,6 +21,18 @@
   ],
   "models": [],
   "filters": {
-    "format": ["italic", "underline"]
+      "id": "copy_text",
+      "rte": {
+        "format": ["bold"],
+        "alignment": [],
+        "indentation": [],
+        "sr_script": ["superscript"],
+        "list": ["bullist", "numlist"],
+        "insert": ["link"],
+        "blocks": [],
+        "advanced": ["h3"],
+        "extensions": [],
+        "editor": ["removeformat"]
+      }
   }
 }
