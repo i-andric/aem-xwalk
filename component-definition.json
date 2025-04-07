@@ -6,7 +6,7 @@
       "components": [
         {
           "title": "Copy Text",
-          "id": "copy_text",
+          "id": "text",
           "plugins": {
             "xwalk": {
               "page": {

@@ -62,7 +62,7 @@
     {
       "id": "section",
       "components": [
-        "copy_text",
+        "text",
         "image",
         "button",
         "title",

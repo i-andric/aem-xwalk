@@ -2,7 +2,7 @@
   "definitions": [
     {
       "title": "Copy Text",
-      "id": "copy_text",
+      "id": "text",
       "plugins": {
         "xwalk": {
           "page": {
@@ -21,7 +21,7 @@
   ],
   "models": [],
   "filters": {
-      "id": "copy_text",
+      "id": "text",
       "rte": {
         "format": ["bold"],
         "alignment": [],
