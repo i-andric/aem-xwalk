@@ -67,7 +67,10 @@
     "id": "carousel",
     "components": [
       "carouselitem"
-    ],
+    ]
+  },
+  {
+    "id": "carouselitem",
     "rte": {
       "format": [
         "bold"
