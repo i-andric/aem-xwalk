@@ -98,6 +98,21 @@
         "components": [
           "carouselitem"
         ]
+      },
+      {
+        "id": "slide_title",
+        "rte": {
+          "format": ["bold"],
+          "alignment": [],
+          "indentation": [],
+          "sr_script": ["superscript"],
+          "list": ["bullist", "numlist"],
+          "insert": ["link"],
+          "blocks": [],
+          "advanced": ["h3"],
+          "extensions": [],
+          "editor": ["removeformat"]
+        }
       }
     ]
   }
