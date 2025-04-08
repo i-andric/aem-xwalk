@@ -1,16 +1,16 @@
 {
   "definitions": [
     {
-      "title": "Copy Text",
+      "title": "Text",
       "id": "text",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/text/v1/text",
             "template": {
-              "name": "Copy Text",
-              "model": "copy_text",
-              "filter": "copy_text",
+              "name": "Text",
+              "model": "text",
+              "filter": "text",
               "text": "<p>This is a Copy Text</p>",
               "heroCopyText": "This is a Copy Text."
             }
@@ -22,6 +22,7 @@
   "models": [],
   "filters": {
       "id": "text",
+      "components": [],
       "rte": {
         "format": ["italic", "underline"],
         "alignment": [],
