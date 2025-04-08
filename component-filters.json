@@ -108,14 +108,12 @@
     "components": [],
     "rte": {
       "format": [
-        "bold",
-        "italic"
+        "bold"
       ],
       "alignment": [],
       "indentation": [],
       "sr_script": [
-        "superscript",
-        "subscript"
+        "superscript"
       ],
       "list": [
         "bullist",
@@ -124,12 +122,12 @@
       "insert": [
         "link"
       ],
+      "blocks": [],
       "advanced": [],
       "extensions": [],
       "editor": [
         "removeformat"
-      ],
-      "blocks": []
+      ]
     }
   },
   {

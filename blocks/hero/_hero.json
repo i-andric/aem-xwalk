@@ -49,16 +49,16 @@
     "id": "hero",
     "components": [],
     "rte": {
-      "format": ["bold", "italic"],
+      "format": ["bold"],
       "alignment": [],
       "indentation": [],
-      "sr_script": ["superscript", "subscript"],
+      "sr_script": ["superscript"],
       "list": ["bullist", "numlist"],
       "insert": ["link"],
+      "blocks": [],
       "advanced": [],
       "extensions": [],
-      "editor": ["removeformat"],
-      "blocks": []
+      "editor": ["removeformat"]
       }
     }
   ]
