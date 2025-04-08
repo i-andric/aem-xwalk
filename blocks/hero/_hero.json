@@ -28,18 +28,25 @@
           "multi": false
         },
         {
-          "component": "text",
+          "component": "text-input",
           "valueType": "string",
           "name": "imageAlt",
           "label": "Alt",
           "value": ""
         },
         {
+          "component": "text",
+          "name": "accordionItemIconType",        
+          "valueType": "string",
+          "value": "h5",
+          "hidden": true
+        },
+        {
           "component": "richtext",
+          "valueType": "string",
           "name": "heroCopyText",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
+          "value": "This is a Copy Text.",
+          "label": "Text"
         }
       ]
     }
