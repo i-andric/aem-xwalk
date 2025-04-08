@@ -1,110 +1,74 @@
 /* eslint-disable no-console */
+/* eslint-disable no-cond-assign */
+/* eslint-disable import/prefer-default-export */
 
-// Rich Text Editor Extensions
-export default function extendRichTextEditor(container = document) {
-  // Custom toolbar configuration
-  const toolbarConfig = {
-    buttons: [
-      {
-        name: 'bold',
-        icon: 'B',
-        command: 'bold',
-      },
-      {
-        name: 'italic',
-        icon: 'I',
-        command: 'italic',
-      },
-      {
-        name: 'underline',
-        icon: 'U',
-        command: 'underline',
-      },
-      {
-        name: 'strikethrough',
-        icon: 'S',
-        command: 'strikethrough',
-      },
-      {
-        name: 'link',
-        icon: '🔗',
-        command: 'createLink',
-      },
-    ],
-  };
+// group editable texts in single wrappers if applicable.
+// this script should execute after script.js but before the the universal editor cors script
+// and any block being loaded
 
-  // Create toolbar element
-  function createToolbar() {
-    const toolbar = document.createElement('div');
-    toolbar.className = 'rte-toolbar';
-
-    toolbarConfig.buttons.forEach((button) => {
-      const btnElement = document.createElement('button');
-      btnElement.className = 'rte-toolbar-button';
-      btnElement.textContent = button.icon;
-      btnElement.title = button.name;
-
-      btnElement.addEventListener('click', () => {
-        if (button.command === 'createLink') {
-          // eslint-disable-next-line no-alert
-          const url = prompt('Enter URL:');
-          if (url) {
-            document.execCommand(button.command, false, url);
-          }
-        } else {
-          document.execCommand(button.command, false, null);
-        }
-      });
-
-      toolbar.appendChild(btnElement);
-    });
-
-    return toolbar;
+export function decorateRichtext(container = document) {
+  function deleteInstrumentation(element) {
+    delete element.dataset.richtextResource;
+    delete element.dataset.richtextProp;
+    delete element.dataset.richtextFilter;
+    delete element.dataset.richtextLabel;
   }
 
-  // Find all rich text elements and add toolbar
-  const richTextElements = container.querySelectorAll('[data-aue-type="richtext"]');
-  richTextElements.forEach((element) => {
-    // Make element editable
-    element.contentEditable = true;
-
-    // Add toolbar
-    const toolbar = createToolbar(element);
-    element.parentNode.insertBefore(toolbar, element);
-
-    // Add basic styling
-    element.style.border = '1px solid #ccc';
-    element.style.padding = '10px';
-    element.style.margin = '5px 0';
-  });
-
-  // Add toolbar styles
-  const style = document.createElement('style');
-  style.textContent = `
-    .rte-toolbar {
-      display: flex;
-      gap: 5px;
-      padding: 5px;
-      background: #f5f5f5;
-      border: 1px solid #ccc;
-      border-bottom: none;
+  let element;
+  while (element = container.querySelector('[data-richtext-prop]:not(div)')) {
+    const {
+      richtextResource,
+      richtextProp,
+      richtextFilter,
+      richtextLabel,
+    } = element.dataset;
+    deleteInstrumentation(element);
+    const siblings = [];
+    let sibling = element;
+    while (sibling = sibling.nextElementSibling) {
+      if (sibling.dataset.richtextResource === richtextResource
+        && sibling.dataset.richtextProp === richtextProp) {
+        deleteInstrumentation(sibling);
+        siblings.push(sibling);
+      } else break;
     }
-    
-    .rte-toolbar-button {
-      padding: 5px 10px;
-      border: 1px solid #ccc;
-      background: white;
-      cursor: pointer;
+
+    let orphanElements;
+    if (richtextResource && richtextProp) {
+      orphanElements = document.querySelectorAll(`[data-richtext-id="${richtextResource}"][data-richtext-prop="${richtextProp}"]`);
+    } else {
+      const editable = element.closest('[data-aue-resource]');
+      if (editable) {
+        orphanElements = editable.querySelectorAll(`:scope > :not([data-aue-resource]) [data-richtext-prop="${richtextProp}"]`);
+      } else {
+        console.warn(`Editable parent not found or richtext property ${richtextProp}`);
+        return;
+      }
     }
-    
-    .rte-toolbar-button:hover {
-      background: #e5e5e5;
+
+    if (orphanElements.length) {
+      console.warn('Found orphan elements of a richtext, that were not consecutive siblings of '
+        + 'the first paragraph', orphanElements);
+      orphanElements.forEach((orphanElement) => deleteInstrumentation(orphanElement));
+    } else {
+      const group = document.createElement('div');
+      if (richtextResource) {
+        group.dataset.aueResource = richtextResource;
+        group.dataset.aueBehavior = 'component';
+      }
+      if (richtextProp) group.dataset.aueProp = richtextProp;
+      if (richtextLabel) group.dataset.aueLabel = richtextLabel;
+      if (richtextFilter) group.dataset.aueFilter = richtextFilter;
+      group.dataset.aueType = 'richtext';
+      element.replaceWith(group);
+      group.append(element, ...siblings);
     }
-  `;
-  document.head.appendChild(style);
+  }
 }
 
-// Initialize extensions when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  extendRichTextEditor();
-});
+// in cases where the block decoration is not done in one synchronous iteration we need to listen
+// for new richtext-instrumented elements
+const observer = new MutationObserver(() => decorateRichtext());
+observer.observe(document, { attributeFilter: ['data-richtext-prop'], subtree: true });
+
+decorateRichtext();
