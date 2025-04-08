@@ -122,10 +122,10 @@
       "insert": [
         "link"
       ],
-      "blocks": [
-        "quote"
+      "blocks": [],
+      "advanced": [
+        "h3"
       ],
-      "advanced": [],
       "extensions": [],
       "editor": [
         "removeformat"

@@ -63,8 +63,8 @@
       "sr_script": ["superscript"],
       "list": ["bullist", "numlist"],
       "insert": ["link"],
-      "blocks": ["quote"],
-      "advanced": [],
+      "blocks": [],
+      "advanced": ["h3"],
       "extensions": [],
       "editor": ["removeformat"]
       }
