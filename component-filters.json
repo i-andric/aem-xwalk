@@ -105,10 +105,37 @@
   },
   {
     "id": "heroCopyText",
+    "components": [],
     "rte": {
       "format": [
-        "italic",
-        "underline"
+        "bold",
+        "italic"
+      ],
+      "alignment": [],
+      "indentation": [],
+      "sr_script": [
+        "superscript",
+        "subscript"
+      ],
+      "list": [
+        "bullist",
+        "numlist"
+      ],
+      "insert": [
+        "link"
+      ],
+      "advanced": [],
+      "extensions": [],
+      "editor": [
+        "removeformat"
+      ],
+      "blocks": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6"
       ]
     }
   },
