@@ -5,14 +5,11 @@ import {
   decorateIcons,
   decorateSections,
   loadBlock,
+  loadScript,
   loadSections,
 } from './aem.js';
-import { getCurrentUser, lockComponent, updateComponentFilters } from './editor-support-components.js';
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
-
-// eslint-disable-next-line no-use-before-define
-await initializeEditorSupport();
 
 async function applyChanges(event) {
   // redecorate default content and blocks on patches (in the properties rail)
@@ -27,7 +24,11 @@ async function applyChanges(event) {
   const { content } = updates[0];
   if (!content) return false;
 
-  const parsedUpdate = new DOMParser().parseFromString(content, 'text/html');
+  // load dompurify
+  await loadScript(`${window.hlx.codeBasePath}/scripts/dompurify.min.js`);
+
+  const sanitizedContent = window.DOMPurify.sanitize(content, { USE_PROFILES: { html: true } });
+  const parsedUpdate = new DOMParser().parseFromString(sanitizedContent, 'text/html');
   const element = document.querySelector(`[data-aue-resource="${resource}"]`);
 
   if (element) {
@@ -99,6 +100,7 @@ function attachEventListners(main) {
     'aue:content-add',
     'aue:content-move',
     'aue:content-remove',
+    'aue:content-copy',
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
     const applied = await applyChanges(event);
@@ -106,31 +108,4 @@ function attachEventListners(main) {
   }));
 }
 
-// Make this an async function to properly handle the user data fetching
-async function initializeEditorSupport() {
-  try {
-    // Wait for user data before proceeding
-    const userData = await getCurrentUser();
-    // console.log('User data:', userData);
-
-    // Only proceed with filter updates if we have valid user data
-    if (userData) {
-      await updateComponentFilters(userData);
-    }
-
-    const main = document.querySelector('main');
-    attachEventListners(main);
-
-    // Check if this is an article page that needs component locking
-    const isArticlePage = document.body.classList.contains('two-columns');
-    if (isArticlePage) {
-      document.querySelectorAll('.block[data-aue-resource]').forEach((component) => {
-        if (!component.classList.contains('editable')) {
-          lockComponent(component);
-        }
-      });
-    }
-  } catch (error) {
-    // console.error('Error during editor support initialization:', error);
-  }
-}
+attachEventListners(document.querySelector('main'));
