@@ -80,7 +80,7 @@ async function applyChanges(event) {
           element.remove();
           newSection.style.display = null;
         } else {
-          // element.replaceWith(...newElements);
+          element.replaceWith(...newElements);
           decorateButtons(parentElement);
           decorateIcons(parentElement);
           decorateRichtext(parentElement);

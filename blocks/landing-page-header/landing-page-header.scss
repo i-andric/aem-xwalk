@@ -1,65 +1,80 @@
 .landing-page-header {
-  position: relative;
-  min-height: 18.75rem;
+  max-width: 1200px;
   width: 100%;
-  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: clip;
+  height: 30rem;
 
-  @include media-m {
-    height: 50rem;
-  }
-
-  @include media-l {
-    height: 56.25rem;
-  }
-
-  .landing-page-header-wrapper {
-    max-width: unset;
-    padding: 0;
-  }
-
-  > div {
-    max-width: 75rem;
-    margin: 0 auto;
-  }
-
-  .landing-page-header-text {
+  &-content {
+    left: 7rem;
     position: absolute;
-    max-width: 28.625rem;
-    padding: 1.25rem;
-    background: rgba(var(--color-pure-black), 1);
-    box-shadow: inset 0 0 12.5rem rgba(var(--color-pure-black));
-    backdrop-filter: blur(5px);
+    top: 50%;
+    left: 2rem;
+    max-width: 436px;
+    transform: translate(0, -50%);
+
+    &-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: calc(67% + 64px);
+      clip-path: polygon(0 100%, calc(100% - 160px) 100%, 100% 0, 0 0);
+      transform: translate(0, -5%) scaleY(90%);
+    }
   }
 
-  h1,
-  p,
-  h3 {
-    margin-left: auto;
-    margin-right: auto;
-    color: rgba(var(--color-pure-white), 1);
-    z-index: 10;
-    font-weight: normal;
+  &-card-image {
+    width: 400px;
+    height: auto;
+    &-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-15%, -50%);
+      z-index: 5;
+    }
+
+    img {
+      object-fit: cover;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
   }
 
-  p:first-child {
-    color: rgba(var(--color-team-red), 1);
-    font-weight: bold;
-  }
-
-  picture {
+  &-background-image {
     position: absolute;
-    inset: 0;
-    object-fit: cover;
-    box-sizing: border-box;
-  }
-  
-  img {
-    object-fit: cover;
-    width: 100%;
+    top: 0;
+    right: 0;
     height: 100%;
+    width: calc(33% + 64px);
+    display: block;
+    overflow: hidden;
+    transform: translate(0, 5%) scaleY(90%);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 160px 0);
+
+    div {
+      height: 100%;
+    }
+
+    img {
+      object-fit: cover;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 
-.adobe-ue-edit .landing-page-header {
-  height: 37.5rem;
+.bulletpoints-check-green {
+  ul li {
+    // set the bullets shape of checkmarks and with green color to the li
+    &::before {
+      content: '✓';
+      color: #008000;
+    }
+  }
 }
