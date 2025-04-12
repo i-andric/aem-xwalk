@@ -64,7 +64,7 @@
           {
             "component": "select",
             "valueType": "string",
-            "name": "keypoint_classes",
+            "name": "keypoint-classes",
             "label": "Text",
             "value": "",
             "options": [

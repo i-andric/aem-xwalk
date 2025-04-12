@@ -14,7 +14,6 @@ export default function decorate(block) {
   const button = remainingChildren.slice(3, 9);
   const cardImage = remainingChildren.slice(9, 10);
   const backgroundImage = remainingChildren.slice(10, 11);
-  console.log(content);
 
   const contentWrapper = document.createElement('div');
   contentWrapper.classList.add('landing-page-header-content-wrapper');
