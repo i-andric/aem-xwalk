@@ -101,18 +101,17 @@
           },
           {
             "component": "select",
-            "valueType": "string",
-            "name": "button-option",
-            "label": "Button Type",
+            "name": "button-type",
+            "value": "internal",
+            "label": "Type",
+            "condition": {
+              "!!": [{ "var": "button-text" }, true]
+            },
             "options": [
               {
                 "...": "../../models/partials/_button-types.json#/options"
               }
-            ],
-            "condition": {
-              "!!": [{ "var": "button-text" }, true]
-            },
-            "value": ""
+            ]
           },
           {
             "component": "select",
@@ -121,7 +120,7 @@
             "label": "Button Style",
             "options": [
               {
-                "...": "../../models/partials/_button-types.json#/options"
+                "...": "../../models/partials/_button-styles.json#/options"
               }
             ],
             "condition": {
