@@ -1,0 +1,16 @@
+{
+  "options": [
+    {
+      "name": "None",
+      "value": ""
+    },
+    {
+      "name": "Green Checkmarks",
+      "value": "bulletpoints-check-green"
+    },
+    {
+      "name": "Blue Checkmarks",
+      "value": "bulletpoints-check-blue"
+    }
+  ]
+}

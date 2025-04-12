@@ -1,0 +1,12 @@
+{
+  "options": [
+    {
+      "name": "Dark",
+      "value": "bg-dark"
+    },
+    {
+      "name": "Light",
+      "value": "bg-light"
+    }
+  ]
+}

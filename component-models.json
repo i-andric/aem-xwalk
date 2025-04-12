@@ -827,6 +827,247 @@
     ]
   },
   {
+    "id": "landing-page-header",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "id",
+        "label": "ID",
+        "value": ""
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Background Color",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Dark",
+            "value": "bg-dark"
+          },
+          {
+            "name": "Light",
+            "value": "bg-light"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "headline",
+        "label": "Headline",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "subheadline",
+        "label": "Subheadline",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "keypoint",
+        "label": "Text",
+        "value": ""
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "keypoint_classes",
+        "label": "Text",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Green Checkmarks",
+            "value": "bulletpoints-check-green"
+          },
+          {
+            "name": "Blue Checkmarks",
+            "value": "bulletpoints-check-blue"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "button-text",
+        "label": "Button Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "button-url",
+        "label": "Button Url",
+        "condition": {
+          "!!": [
+            {
+              "var": "button-text"
+            },
+            true
+          ]
+        },
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "button-aria-label",
+        "label": "Button Aria Label",
+        "condition": {
+          "!!": [
+            {
+              "var": "button-text"
+            },
+            true
+          ]
+        },
+        "value": ""
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "button-option",
+        "label": "Button Type",
+        "options": [
+          {
+            "name": "CTA",
+            "value": "cta"
+          },
+          {
+            "name": "CTA inverted",
+            "value": "cta-inverted"
+          },
+          {
+            "name": "CTA white career",
+            "value": "cta-white-career"
+          },
+          {
+            "name": "CTA white career (small)",
+            "value": "cta-white-career-small"
+          },
+          {
+            "name": "CTA white/blue border",
+            "value": "cta-white-blue-border"
+          },
+          {
+            "name": "CTA blue",
+            "value": "cta-blue"
+          },
+          {
+            "name": "Standard",
+            "value": "standard"
+          },
+          {
+            "name": "Animated",
+            "value": "animated"
+          }
+        ],
+        "condition": {
+          "!!": [
+            {
+              "var": "button-text"
+            },
+            true
+          ]
+        },
+        "value": ""
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "button-style",
+        "label": "Button Style",
+        "options": [
+          {
+            "name": "CTA",
+            "value": "cta"
+          },
+          {
+            "name": "CTA inverted",
+            "value": "cta-inverted"
+          },
+          {
+            "name": "CTA white career",
+            "value": "cta-white-career"
+          },
+          {
+            "name": "CTA white career (small)",
+            "value": "cta-white-career-small"
+          },
+          {
+            "name": "CTA white/blue border",
+            "value": "cta-white-blue-border"
+          },
+          {
+            "name": "CTA blue",
+            "value": "cta-blue"
+          },
+          {
+            "name": "Standard",
+            "value": "standard"
+          },
+          {
+            "name": "Animated",
+            "value": "animated"
+          }
+        ],
+        "condition": {
+          "!!": [
+            {
+              "var": "button-text"
+            },
+            true
+          ]
+        },
+        "value": ""
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "button-target",
+        "label": "Button Target",
+        "options": [
+          {
+            "name": "Self",
+            "value": ""
+          },
+          {
+            "name": "Blank",
+            "value": "_blank"
+          }
+        ],
+        "condition": {
+          "!!": [
+            {
+              "var": "button-text"
+            },
+            true
+          ]
+        },
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      }
+    ]
+  },
+  {
     "id": "list",
     "fields": [
       {

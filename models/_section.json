@@ -87,7 +87,8 @@
         "video",
         "table",
         "form",
-        "custom-asset"
+        "custom-asset",
+        "landing-page-header"
       ]
     }
   ]
