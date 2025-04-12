@@ -1057,13 +1057,24 @@
       {
         "component": "reference",
         "name": "image",
-        "label": "Image",
+        "label": "Card Image",
         "multi": false
       },
       {
         "component": "text",
         "name": "imageAlt",
-        "label": "Image Alt Text"
+        "label": "Card Image Alt Text"
+      },
+      {
+        "component": "reference",
+        "name": "background-image",
+        "label": "Background Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "background-imageAlt",
+        "label": "Background Image Alt Text"
       }
     ]
   },
