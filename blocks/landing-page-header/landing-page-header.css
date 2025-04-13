@@ -63,7 +63,11 @@
   width: 100%;
 }
 
+.bulletpoints-check-green ul li {
+  list-style-type: none;
+}
 .bulletpoints-check-green ul li::before {
   content: "✓";
+  margin-right: 0.5rem;
   color: #008000;
 }

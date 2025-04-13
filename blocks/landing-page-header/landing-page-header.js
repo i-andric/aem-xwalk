@@ -10,10 +10,10 @@ export default function decorate(block) {
   }
 
   const remainingChildren = children.slice(1);
-  const content = remainingChildren.slice(0, 3);
-  const button = remainingChildren.slice(3, 9);
-  const cardImage = remainingChildren.slice(9, 10);
-  const backgroundImage = remainingChildren.slice(10, 11);
+  const content = remainingChildren.slice(0, 4);
+  const button = remainingChildren.slice(4, 10);
+  const cardImage = remainingChildren.slice(10, 11);
+  const backgroundImage = remainingChildren.slice(11, 12);
 
   const contentWrapper = document.createElement('div');
   contentWrapper.classList.add('landing-page-header-content-wrapper');
@@ -28,8 +28,9 @@ export default function decorate(block) {
     contentDiv.appendChild(contentChild);
   });
 
-  const bulletClass = contentWrapper.children[0].children[2].innerText.trim();
-  contentWrapper.children[0].children[1].classList.add(bulletClass);
+  const bulletClass = contentWrapper.children[0].children[3].innerText.trim();
+  contentWrapper.children[0].children[2].classList.add(bulletClass);
+  contentWrapper.children[0].children[3].remove();
 
   const buttonWrapper = document.createElement('div');
   buttonWrapper.classList.add('landing-page-header-button');

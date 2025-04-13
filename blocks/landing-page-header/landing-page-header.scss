@@ -71,9 +71,10 @@
 
 .bulletpoints-check-green {
   ul li {
-    // set the bullets shape of checkmarks and with green color to the li
+    list-style-type: none;
     &::before {
-      content: '✓';
+      content: "\2713";
+      margin-right: 0.5rem;
       color: #008000;
     }
   }
