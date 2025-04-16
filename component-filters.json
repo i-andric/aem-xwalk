@@ -141,6 +141,24 @@
     }
   },
   {
+    "id": "keypoint",
+    "components": [],
+    "rte": {
+      "format": [],
+      "alignment": [],
+      "indentation": [],
+      "sr_script": [],
+      "list": [
+        "bullist"
+      ],
+      "insert": [],
+      "blocks": [],
+      "advanced": [],
+      "extensions": [],
+      "editor": []
+    }
+  },
+  {
     "id": "navitems",
     "components": [
       "navitem"

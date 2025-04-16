@@ -1,4 +1,3 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
 import { adjustButton, setId } from '../../scripts/helpers.js';
 
 /** @param {HTMLElement} block */
