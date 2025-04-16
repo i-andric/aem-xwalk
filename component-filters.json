@@ -144,7 +144,10 @@
     "id": "keypoint",
     "components": [],
     "rte": {
-      "format": [],
+      "format": [
+        "bold",
+        "italic"
+      ],
       "alignment": [],
       "indentation": [],
       "sr_script": [],
@@ -152,10 +155,10 @@
         "bullist"
       ],
       "insert": [],
-      "blocks": [],
       "advanced": [],
       "extensions": [],
-      "editor": []
+      "editor": [],
+      "blocks": []
     }
   },
   {

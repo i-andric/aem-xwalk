@@ -169,20 +169,20 @@
       }
     ],
     "filters": {
-      "id": "keypoint",
-      "components": [],
-      "rte": {
-        "format": [],
-        "alignment": [],
-        "indentation": [],
-        "sr_script": [],
-        "list": ["bullist"],
-        "insert": [],
-        "blocks": [],
-        "advanced": [],
-        "extensions": [],
-        "editor": []
-      }
+        "id": "keypoint",
+        "components": [],
+        "rte": {
+          "format": ["bold", "italic"],
+          "alignment": [],
+          "indentation": [],
+          "sr_script": [],
+          "list": ["bullist"],
+          "insert": [],
+          "advanced": [],
+          "extensions": [],
+          "editor": [],
+          "blocks": []
+        }
     }
   }
   
