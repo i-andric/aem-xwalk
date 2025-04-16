@@ -975,14 +975,14 @@
         "component": "richtext",
         "valueType": "string",
         "name": "keypoint",
-        "label": "Text",
+        "label": "Keypoint",
         "value": ""
       },
       {
         "component": "select",
         "valueType": "string",
         "name": "keypoint-classes",
-        "label": "Text",
+        "label": "Keypoint Style",
         "value": "",
         "options": [
           {

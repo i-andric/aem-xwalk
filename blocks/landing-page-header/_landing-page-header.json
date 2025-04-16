@@ -58,14 +58,14 @@
             "component": "richtext",
             "valueType": "string",
             "name": "keypoint",
-            "label": "Text",
+            "label": "Keypoint",
             "value": ""
           },
           {
             "component": "select",
             "valueType": "string",
             "name": "keypoint-classes",
-            "label": "Text",
+            "label": "Keypoint Style",
             "value": "",
             "options": [
               {
@@ -169,7 +169,7 @@
       }
     ],
     "filters": {
-        "id": "keypoint",
+        "id": "landing-page-header",
         "components": [],
         "rte": {
           "format": ["bold", "italic"],
