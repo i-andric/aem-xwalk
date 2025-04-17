@@ -65,3 +65,29 @@ export const setBackgroundClassOnParent = (block) => {
     block.classList.remove(backgroundClass);
   }
 };
+
+/**
+ * Set margin top
+ * @param {HTMLElement} marginTop margin top element
+ * @param {HTMLElement} block block element
+ */
+export const setMarginTop = (marginTop, block) => {
+  const marginTopValue = marginTop.textContent.trim();
+  if (marginTopValue) {
+    block.parentElement.classList.add(marginTopValue);
+  }
+  marginTop.remove();
+};
+
+/**
+ * Set margin bottom
+ * @param {HTMLElement} marginBottom margin bottom element
+ * @param {HTMLElement} block block element
+ */
+export const setMarginBottom = (marginBottom, block) => {
+  const marginBottomValue = marginBottom.textContent.trim();
+  if (marginBottomValue) {
+    block.parentElement.classList.add(marginBottomValue);
+  }
+  marginBottom.remove();
+};
