@@ -1,0 +1,62 @@
+main > .section > div:not(.landing-page-logo-overview) {
+  max-width: unset;
+  padding: 0;
+}
+
+.landing-page-logo-overview {
+  max-width: 83.33%;
+  margin: 0 auto;
+}
+
+.landing-page-logo-overview-headline,
+.landing-page-logo-overview-subheadline {
+  margin-bottom: var(--spacing-small);
+}
+
+.landing-page-logo-overview-logo-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-small);
+  order: 3;
+  width: 100%;
+}
+
+.landing-page-logo-item {
+  flex: 0 0 50%;
+  max-width: calc(50% - var(--spacing-medium));
+  padding: 0 var(--spacing-xsmall);
+}
+
+.landing-page-logo-item img {
+  flex-grow: 1;
+  max-height: 52px;
+}
+
+.landing-page-logo__image--link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.landing-page-logo-item label {
+  text-align: center;
+}
+
+.landing-page-logo-item:hover label {
+  text-decoration: underline;
+}
+
+.landing-page-logo-overview-button {
+  order: 4;
+}
+
+@media (width > 768px) {
+  .landing-page-logo-item {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}

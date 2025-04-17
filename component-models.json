@@ -1166,6 +1166,321 @@
     ]
   },
   {
+    "id": "landing-page-logo-overview",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "id",
+        "label": "ID",
+        "value": ""
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Background Color",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Dark",
+            "value": "bg-dark"
+          },
+          {
+            "name": "Light",
+            "value": "bg-light"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "margin-top",
+        "value": "",
+        "label": "Margin Top",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "3XS - Triple Extra Small",
+            "value": "margin-top-3xs"
+          },
+          {
+            "name": "2XS - Double Extra Small",
+            "value": "margin-top-2xs"
+          },
+          {
+            "name": "XS - Extra Small",
+            "value": "margin-top-xs"
+          },
+          {
+            "name": "S - Small",
+            "value": "margin-top-s"
+          },
+          {
+            "name": "M - Medium",
+            "value": "margin-top-m"
+          },
+          {
+            "name": "L - Large",
+            "value": "margin-top-l"
+          },
+          {
+            "name": "XL - Extra Large",
+            "value": "margin-top-xl"
+          },
+          {
+            "name": "2XL - Double Extra large",
+            "value": "margin-top-2xl"
+          },
+          {
+            "name": "3XL - Triple Extra large",
+            "value": "margin-top-3xl"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "margin-bottom",
+        "value": "",
+        "label": "Margin Bottom",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "3XS - Triple Extra Small",
+            "value": "margin-bottom-3xs"
+          },
+          {
+            "name": "2XS - Double Extra Small",
+            "value": "margin-bottom-2xs"
+          },
+          {
+            "name": "XS - Extra Small",
+            "value": "margin-bottom-xs"
+          },
+          {
+            "name": "S - Small",
+            "value": "margin-bottom-s"
+          },
+          {
+            "name": "M - Medium",
+            "value": "margin-bottom-m"
+          },
+          {
+            "name": "L - Large",
+            "value": "margin-bottom-l"
+          },
+          {
+            "name": "XL - Extra Large",
+            "value": "margin-bottom-xl"
+          },
+          {
+            "name": "2XL - Double Extra large",
+            "value": "margin-bottom-2xl"
+          },
+          {
+            "name": "3XL - Triple Extra large",
+            "value": "margin-bottom-3xl"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "headline",
+        "label": "Headline Text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "button-text",
+        "label": "Button Label"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "button-url",
+        "label": "Button Url",
+        "condition": {
+          "!!": [
+            {
+              "var": "button-text"
+            },
+            true
+          ]
+        },
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "button-aria-label",
+        "label": "Button Aria Label",
+        "condition": {
+          "!!": [
+            {
+              "var": "button-text"
+            },
+            true
+          ]
+        },
+        "value": ""
+      },
+      {
+        "component": "select",
+        "name": "button-type",
+        "value": "",
+        "label": "Button Type",
+        "condition": {
+          "!!": [
+            {
+              "var": "button-text"
+            },
+            true
+          ]
+        },
+        "options": [
+          {
+            "name": "Internal",
+            "value": ""
+          },
+          {
+            "name": "E-mail",
+            "value": "email"
+          },
+          {
+            "name": "Phone",
+            "value": "phone"
+          },
+          {
+            "name": "Icon",
+            "value": "icon"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "button-style",
+        "label": "Button Style",
+        "options": [
+          {
+            "name": "CTA",
+            "value": "cta"
+          },
+          {
+            "name": "CTA inverted",
+            "value": "cta-inverted"
+          },
+          {
+            "name": "CTA white career",
+            "value": "cta-white-career"
+          },
+          {
+            "name": "CTA white career (small)",
+            "value": "cta-white-career-small"
+          },
+          {
+            "name": "CTA white/blue border",
+            "value": "cta-white-blue-border"
+          },
+          {
+            "name": "CTA blue",
+            "value": "cta-blue"
+          },
+          {
+            "name": "Standard",
+            "value": "standard"
+          },
+          {
+            "name": "Animated",
+            "value": "animated"
+          }
+        ],
+        "condition": {
+          "!!": [
+            {
+              "var": "button-text"
+            },
+            true
+          ]
+        },
+        "value": ""
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "button-target",
+        "label": "Button Target",
+        "options": [
+          {
+            "name": "Self",
+            "value": ""
+          },
+          {
+            "name": "Blank",
+            "value": "_blank"
+          }
+        ],
+        "condition": {
+          "!!": [
+            {
+              "var": "button-text"
+            },
+            true
+          ]
+        },
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "landing-page-logo-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "logo-description",
+        "label": "Logo Description Text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "logo-link",
+        "label": "Logo Link",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "logo-link-title",
+        "label": "Logo Link Title",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "list",
     "fields": [
       {

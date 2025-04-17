@@ -37,7 +37,8 @@
       "table",
       "form",
       "custom-asset",
-      "landing-page-header"
+      "landing-page-header",
+      "landing-page-logo-overview"
     ]
   },
   {
@@ -160,6 +161,12 @@
       "editor": [],
       "blocks": []
     }
+  },
+  {
+    "id": "landing-page-logo-overview",
+    "components": [
+      "landing-page-logo-item"
+    ]
   },
   {
     "id": "navitems",
