@@ -484,7 +484,7 @@
                 "template": {
                   "name": "Hubspot Form",
                   "model": "hubspot-form",
-                  "inner-block-marker": "inner-block-layout-form-item",
+                  "inner-block-marker": "inner-block-hubspot-form",
                   "headline": "<h2>Hubspot Form</h2>",
                   "region": "na1",
                   "portalId": "14572559",

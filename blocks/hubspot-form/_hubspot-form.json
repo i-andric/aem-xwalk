@@ -10,7 +10,7 @@
               "template": {
                 "name": "Hubspot Form",
                 "model": "hubspot-form",
-                "inner-block-marker": "inner-block-layout-form-item",
+                "inner-block-marker": "inner-block-hubspot-form",
                 "headline": "<h2>Hubspot Form</h2>",
                 "region": "na1",
                 "portalId": "14572559",
@@ -108,7 +108,7 @@
             "label": "REQUIRED: Initialising the js of a nested component",
             "readOnly": true,
             "hidden": true,
-            "value": "inner-block-layout-form-item"
+            "value": "inner-block-hubspot-form"
           }
         ]
       }
