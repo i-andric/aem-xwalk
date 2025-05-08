@@ -143,6 +143,10 @@
     }
   },
   {
+    "id": "hubspot-form",
+    "components": []
+  },
+  {
     "id": "landing-page-header",
     "components": [],
     "rte": {
