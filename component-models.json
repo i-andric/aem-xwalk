@@ -931,6 +931,165 @@
     ]
   },
   {
+    "id": "hubspot-form",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "id",
+        "label": "ID",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "headline",
+        "label": "Headline Text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "region",
+        "label": "Region"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "portalId",
+        "label": "Portal Id"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "formId",
+        "label": "Form Id"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Subtitle Text",
+        "value": ""
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Background Color",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Dark",
+            "value": "bg-dark"
+          },
+          {
+            "name": "Light",
+            "value": "bg-light"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "margin-top",
+        "value": "",
+        "label": "Margin Top",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "3XS - Triple Extra Small",
+            "value": "margin-top-3xs"
+          },
+          {
+            "name": "2XS - Double Extra Small",
+            "value": "margin-top-2xs"
+          },
+          {
+            "name": "XS - Extra Small",
+            "value": "margin-top-xs"
+          },
+          {
+            "name": "S - Small",
+            "value": "margin-top-s"
+          },
+          {
+            "name": "M - Medium",
+            "value": "margin-top-m"
+          },
+          {
+            "name": "L - Large",
+            "value": "margin-top-l"
+          },
+          {
+            "name": "XL - Extra Large",
+            "value": "margin-top-xl"
+          },
+          {
+            "name": "2XL - Double Extra large",
+            "value": "margin-top-2xl"
+          },
+          {
+            "name": "3XL - Triple Extra large",
+            "value": "margin-top-3xl"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "margin-bottom",
+        "value": "",
+        "label": "Margin Bottom",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "3XS - Triple Extra Small",
+            "value": "margin-bottom-3xs"
+          },
+          {
+            "name": "2XS - Double Extra Small",
+            "value": "margin-bottom-2xs"
+          },
+          {
+            "name": "XS - Extra Small",
+            "value": "margin-bottom-xs"
+          },
+          {
+            "name": "S - Small",
+            "value": "margin-bottom-s"
+          },
+          {
+            "name": "M - Medium",
+            "value": "margin-bottom-m"
+          },
+          {
+            "name": "L - Large",
+            "value": "margin-bottom-l"
+          },
+          {
+            "name": "XL - Extra Large",
+            "value": "margin-bottom-xl"
+          },
+          {
+            "name": "2XL - Double Extra large",
+            "value": "margin-bottom-2xl"
+          },
+          {
+            "name": "3XL - Triple Extra large",
+            "value": "margin-bottom-3xl"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "landing-page-header",
     "fields": [
       {

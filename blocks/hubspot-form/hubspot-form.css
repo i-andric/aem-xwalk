@@ -1,0 +1,22 @@
+main > .section > div:not(.hubspot-form-container) {
+    max-width: unset;
+  }
+  
+  .hubspot-form {
+    padding: var(--spacing-medium) 0;
+  }
+  
+  .hubspot-form-inner {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 6px #0000001a, 0 1px 3px #00000014;
+    padding: var(--spacing-l) var(--spacing-m);
+    background-color: var(--background-color);
+    border-radius: var(--shape-border-width-4);
+  }
+  
+  .hubspot-form-title {
+    margin-bottom: var(--spacing-xl);
+  }
+  

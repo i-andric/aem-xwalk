@@ -475,6 +475,27 @@
           }
         },
         {
+          "title": "Hubspot Form",
+          "id": "hubspot-form",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Hubspot Form",
+                  "model": "hubspot-form",
+                  "filter": "hubspot-form",
+                  "headline": "<h2>Hubspot Form</h2>",
+                  "region": "na1",
+                  "portalId": "14572559",
+                  "formId": "ddb6de59-e77d-4f2f-9859-0c01f1cc44f9",
+                  "description": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Landing Page Header",
           "id": "landing-page-header",
           "plugins": {
