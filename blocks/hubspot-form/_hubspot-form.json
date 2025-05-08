@@ -100,6 +100,15 @@
                 "...": "../../models/partials/_margin-bottom-types.json#/options"
               }
             ]
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "inner-block-marker",
+            "label": "REQUIRED: Initialising the js of a nested component",
+            "readOnly": true,
+            "hidden": true,
+            "value": "inner-block-career-teaser-list-item"
           }
         ]
       }
