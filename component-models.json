@@ -1094,7 +1094,7 @@
         "label": "REQUIRED: Initialising the js of a nested component",
         "readOnly": true,
         "hidden": true,
-        "value": "inner-block-career-teaser-list-item"
+        "value": "inner-block-layout-form-item"
       }
     ]
   },
