@@ -38,7 +38,8 @@
       "form",
       "custom-asset",
       "landing-page-header",
-      "landing-page-logo-overview"
+      "landing-page-logo-overview",
+      "test"
     ]
   },
   {
@@ -63,7 +64,8 @@
     "id": "cards",
     "components": [
       "card",
-      "hubspot-form"
+      "hubspot-form",
+      "test"
     ]
   },
   {
@@ -202,5 +204,9 @@
     "components": [
       "table-col-4"
     ]
+  },
+  {
+    "id": "hubspot-form",
+    "components": []
   }
 ]

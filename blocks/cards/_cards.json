@@ -57,7 +57,8 @@
       "id": "cards",
       "components": [
         "card",
-        "hubspot-form"
+        "hubspot-form",
+        "test"
       ]
     }
   ]
