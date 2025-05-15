@@ -4,7 +4,7 @@
     "/content/aem-xwalk/configuration:/.helix/config.json",
     "/content/aem-xwalk.resource/query-index.json:/query-index.json",
     "/content/aem-xwalk/metadata:/metadata.json",
-    "/content/aem-xwalk/api/blog.json",
+    "/content/aem-xwalk.resource/api/blog.json:/api/blog.json",
     "/content/aem-xwalk/api/authors.json",
     "/content/aem-xwalk/placeholders:/placeholders.json"
   ]
