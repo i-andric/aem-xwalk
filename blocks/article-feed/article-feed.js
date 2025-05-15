@@ -4,7 +4,7 @@ import {
 
 export default async function decorate(block) {
   const [currentCountry, currentLanguage] = getCurrentCountryLanguage();
-  const response = await fetch('/query-index.json');
+  const response = await fetch('/api/blog.json');
   const articles = await response.json();
 
   const container = document.createElement('div');
