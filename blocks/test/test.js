@@ -1,3 +1,3 @@
-export default async function decorate(block) {
-    console.log('test', block);
+export default function decorate(block) {
+  console.log('test', block);
 }
