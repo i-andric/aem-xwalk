@@ -10,6 +10,7 @@
               "template": {
                 "name": "Test",
                 "model": "test",
+                "filter": "test",
                 "key-value": true,
                 "headline": "<h2>Hubspot Form</h2>",
                 "region": "na1",
