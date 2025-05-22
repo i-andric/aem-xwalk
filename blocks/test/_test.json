@@ -11,7 +11,6 @@
                 "name": "Test",
                 "model": "test",
                 "key-value": true,
-                "inner-block-marker": "inner-block-test",
                 "headline": "<h2>Hubspot Form</h2>",
                 "region": "na1",
                 "portalId": "14572559",
@@ -101,22 +100,13 @@
                 "...": "../../models/partials/_margin-bottom-types.json#/options"
               }
             ]
-          },
-          {
-            "component": "text",
-            "valueType": "string",
-            "name": "inner-block-marker",
-            "label": "REQUIRED: Initialising the js of a nested component",
-            "readOnly": true,
-            "hidden": true,
-            "value": "inner-block-hubspot-form"
           }
         ]
       }
     ],
     "filters": [
     {
-      "id": "hubspot-form",
+      "id": "test",
       "components": []
     }
   ]

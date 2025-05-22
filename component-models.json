@@ -2258,15 +2258,6 @@
             "value": "margin-bottom-3xl"
           }
         ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "inner-block-marker",
-        "label": "REQUIRED: Initialising the js of a nested component",
-        "readOnly": true,
-        "hidden": true,
-        "value": "inner-block-hubspot-form"
       }
     ]
   },
