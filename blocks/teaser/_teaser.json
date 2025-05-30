@@ -161,6 +161,25 @@
             "value": "tertiary"
           }
           ]
+        },
+        {
+          "component": "select",
+          "name": "classes_paddings",
+          "label": "Paddings",
+          "options": [
+            {
+              "name": "None",
+              "value": "no-paddings"
+            },
+            {
+              "name": "Normal",
+              "value": ""
+            },
+            {
+              "name": "Large",
+              "value": "large-paddings"
+            }
+          ]
         }
       ]
     }
