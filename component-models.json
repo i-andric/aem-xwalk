@@ -212,7 +212,7 @@
       },
       {
         "component": "select",
-        "name": "classes",
+        "name": "classes_button",
         "label": "Style",
         "options": [
           {
