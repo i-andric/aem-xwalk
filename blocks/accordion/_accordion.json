@@ -65,13 +65,6 @@
           "condition": { "===": [{"var" : "accordionitem-component"}, "accordionitem-component-quote"] }
         },
         {
-          "component": "text-input",
-          "label": "This text is shown when clicked text",
-          "name": "hidden-text",
-          "valueType": "string",
-          "condition": { "===": [{"var" : "accordionitem-component"}, "accordionitem-component-text"] }
-        },
-        {
           "component": "richtext",
           "name": "accordionItem_quote",
           "label": "Answer",
