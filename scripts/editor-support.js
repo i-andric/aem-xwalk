@@ -93,13 +93,40 @@ async function applyChanges(event) {
   return false;
 }
 
+/**
+ * Fetches current user and their group memberships
+ * @returns {Promise<Object>} User data including group memberships
+ */
+async function getCurrentUser() {
+  try {
+    const response = await fetch('/libs/granite/security/currentuser.json?props=memberOf');
+    if (!response.ok) throw new Error('Failed to fetch user data');
+    return await response.json();
+  } catch (error) {
+    // console.error('Error fetching user data:', error);
+    return null;
+  }
+}
+
 // set the filter for an UE editable
 function setUEFilter(element, filter) {
   element.dataset.aueFilter = filter;
 }
 
-function updateUEInstrumentation() {
+async function updateUEInstrumentation() {
   const main = document.querySelector('main');
+
+  const userData = await getCurrentUser();
+
+  if (!userData?.memberOf) return;
+
+  const userGroups = userData.memberOf;
+  console.log('userGroups', userGroups);
+
+  if (userGroups.some((group) => group.authorizableId === 'contributor')) {
+    console.log('contributor');
+    setUEFilter(document.querySelector('.section'), 'subssection');
+  }
 
   // if there is already a editable browse rail on the page
   const browseRailBlock = main.querySelector('div.block[data-aue-resource]');
