@@ -93,6 +93,44 @@ async function applyChanges(event) {
   return false;
 }
 
+// set the filter for an UE editable
+function setUEFilter(element, filter) {
+  element.dataset.aueFilter = filter;
+}
+
+function updateUEInstrumentation() {
+  const main = document.querySelector('main');
+
+  // ----- if browse page, identified by theme
+  if (document.querySelector('body[class^=one-column]')) {
+    // if there is already a editable browse rail on the page
+    const browseRailBlock = main.querySelector('div.one-column.block[data-aue-resource]');
+    if (browseRailBlock) {
+      // only more default sections can be added
+      setUEFilter(main, 'main');
+      // no more browse rails can be added
+      setUEFilter(document.querySelector('.section.one-column-section'), 'empty');
+    } else {
+      // allow adding default sections and browse rail section
+      setUEFilter(main, 'main-browse');
+    }
+    // Update available blocks for tab sections
+    const tabSections = main.querySelectorAll('div[data-aue-model^="teaser"]');
+    if (tabSections) {
+      tabSections.forEach((elem) => {
+        setUEFilter(elem, 'teaser');
+      });
+    }
+
+    // Update available blocks for default sections excluding browse-rail-section and tab-section
+    main.querySelectorAll('.section:not(.one-column-section):not([data-aue-model^="teaser"])').forEach((elem) => {
+      setUEFilter(elem, 'section-browse');
+    });
+
+    return;
+  }
+}
+
 function attachEventListners(main) {
   [
     'aue:content-patch',
@@ -104,7 +142,11 @@ function attachEventListners(main) {
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
     const applied = await applyChanges(event);
-    if (!applied) window.location.reload();
+    if (applied) {
+      updateUEInstrumentation();
+    } else {
+      window.location.reload();
+    }
   }));
 }
 
