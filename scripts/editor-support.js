@@ -153,3 +153,6 @@ function attachEventListners(main) {
 }
 
 attachEventListners(document.querySelector('main'));
+
+// update UE component filters on page load
+updateUEInstrumentation();
