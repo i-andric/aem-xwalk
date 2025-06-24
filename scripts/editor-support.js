@@ -125,7 +125,10 @@ async function updateUEInstrumentation() {
 
   if (userGroups.some((group) => group.authorizableId === 'contributor')) {
     console.log('contributor');
-    setUEFilter(document.querySelector('.section'), 'subssection');
+    const sections = document.querySelectorAll('.section');
+    sections.forEach((section) => {
+      setUEFilter(section, 'subssection');
+    });
   }
 
   // if there is already a editable browse rail on the page
