@@ -105,7 +105,7 @@ function updateUEInstrumentation() {
   const browseRailBlock = main.querySelector('div.block[data-aue-resource]');
   if (browseRailBlock) {
     // only more default sections can be added
-    setUEFilter(main, 'main');
+    setUEFilter(main, 'main-test');
     // no more browse rails can be added
     setUEFilter(document.querySelector('.section'), 'empty');
   } else {
