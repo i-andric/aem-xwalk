@@ -12,6 +12,9 @@
     "...": "./_section.json#/filters"
   },
   {
+    "...": "./_subssection.json#/filters"
+  },
+  {
     "...": "./_nav.json#/filters"
   },
   {

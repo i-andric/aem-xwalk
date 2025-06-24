@@ -1,0 +1,182 @@
+{
+    "definitions": [
+      {
+        "title": "Section",
+        "id": "section",
+        "plugins": {
+          "xwalk": {
+            "page": {
+              "resourceType": "core/franklin/components/section/v1/section",
+              "template": {
+                "model": "section"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "models": [
+      {
+        "id": "subssection",
+        "fields": [
+          {
+            "component": "text",
+            "name": "id",
+            "label": "Id"
+          },
+          {
+            "component": "multiselect",
+            "name": "style",
+            "label": "Style",
+            "options": [
+              {
+                "name": "Highlight",
+                "value": "highlight"
+              },
+              {
+                "name": "Dark",
+                "value": "dark"
+              },
+              {
+                "name": "Light",
+                "value": "light"
+              },          
+              {
+                "name": "Two columns",
+                "value": "grid-layout-two-columns"
+              },
+              {
+                "name": "Three columns",
+                "value": "grid-layout-three-columns"
+              },
+              {
+                "name": "Four columns",
+                "value": "grid-layout-four-columns"
+              }
+            ]
+          },
+          {
+            "component": "multiselect",
+            "name": "classes",
+            "label": "Style variation",
+            "valueType": "string",
+            "maxSize": 3,
+            "options": [
+              {
+                "name": "Background Color",
+                "children": [
+                  {
+                    "name": "Grey",
+                    "value": "bg-grey"
+                  },
+                  {
+                    "name": "Light Blue",
+                    "value": "bg-blue-light"
+                  }
+                ]
+              },
+              {
+                "name": "Margin Top",
+                "children": [
+                  {
+                    "name": "3XS - Triple Extra Small",
+                    "value": "margin-top-3xs"
+                  },
+                  {
+                    "name": "2XS - Double Extra Small",
+                    "value": "margin-top-2xs"
+                  },
+                  {
+                    "name": "XS - Extra Small",
+                    "value": "margin-top-xs"
+                  },
+                  {
+                    "name": "S - Small",
+                    "value": "margin-top-s"
+                  },
+                  {
+                    "name": "M - Medium",
+                    "value": "margin-top-m"
+                  },
+                  {
+                    "name": "L - Large",
+                    "value": "margin-top-l"
+                  },
+                  {
+                    "name": "XL - Extra Large",
+                    "value": "margin-top-xl"
+                  },
+                  {
+                    "name": "2XL - Double Extra large",
+                    "value": "margin-top-2xl"
+                  },
+                  {
+                    "name": "3XL - Triple Extra large",
+                    "value": "margin-top-3xl"
+                  }
+                ]
+              },
+              {
+                "name": "Margin Bottom",
+                "children": [
+                  {
+                    "name": "3XS - Triple Extra Small",
+                    "value": "margin-bottom-3xs"
+                  },
+                  {
+                    "name": "2XS - Double Extra Small",
+                    "value": "margin-bottom-2xs"
+                  },
+                  {
+                    "name": "XS - Extra Small",
+                    "value": "margin-bottom-xs"
+                  },
+                  {
+                    "name": "S - Small",
+                    "value": "margin-bottom-s"
+                  },
+                  {
+                    "name": "M - Medium",
+                    "value": "margin-bottom-m"
+                  },
+                  {
+                    "name": "L - Large",
+                    "value": "margin-bottom-l"
+                  },
+                  {
+                    "name": "XL - Extra Large",
+                    "value": "margin-bottom-xl"
+                  },
+                  {
+                    "name": "2XL - Double Extra large",
+                    "value": "margin-bottom-2xl"
+                  },
+                  {
+                    "name": "3XL - Triple Extra large",
+                    "value": "margin-bottom-3xl"
+                  }
+                ]
+              }
+            ]
+          }
+      ]
+    }
+  ],
+    "filters": [
+      {
+        "id": "subssection",
+        "components": [
+          "text",
+          "image",
+          "button",
+          "title",
+          "hero",
+          "cards",
+          "columns",
+          "fragment",
+          "accordion"
+        ]
+      }
+    ]
+  }
+  
