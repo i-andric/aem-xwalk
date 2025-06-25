@@ -108,6 +108,27 @@ async function getCurrentUser() {
   }
 }
 
+/**
+ * Removes authoring instrumentation from specified components
+ * @param {HTMLElement} element - The component element to lock
+ */
+function lockComponent(element) {
+  if (!element) return;
+
+  // Remove all data-aue-* attributes
+  const aueAttributes = Array.from(element.attributes)
+    .filter((attr) => attr.name.startsWith('data-aue-'));
+
+  aueAttributes.forEach((attr) => {
+    element.removeAttribute(attr.name);
+  });
+
+  // Also remove from child elements
+  element.querySelectorAll('[data-aue-resource]').forEach((child) => {
+    lockComponent(child);
+  });
+}
+
 // set the filter for an UE editable
 function setUEFilter(element, filter) {
   element.dataset.aueFilter = filter;
@@ -131,6 +152,11 @@ async function updateUEInstrumentation() {
       setUEFilter(section, 'subssection');
     });
   }
+
+  const teaserTextTitles = main.querySelectorAll('.teaserText_title');
+  teaserTextTitles.forEach((teaserTextTitle) => {
+    lockComponent(teaserTextTitle);
+  });
 }
 
 function attachEventListners(main) {
