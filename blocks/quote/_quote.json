@@ -35,7 +35,15 @@
          "name": "author",
          "label": "Author",
          "value": ""
-       }
+       },
+       {
+        "component": "aem-tag",
+        "name": "tags",
+        "value": "transactions",
+        "label": "Tag",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/aem-xwalk"
+      }
     ]
     }
 ],
