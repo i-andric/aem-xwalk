@@ -108,27 +108,6 @@ async function getCurrentUser() {
   }
 }
 
-/**
- * Removes authoring instrumentation from specified components
- * @param {HTMLElement} element - The component element to lock
- */
-function lockComponent(element) {
-  if (!element) return;
-
-  // Remove all data-aue-* attributes
-  const aueAttributes = Array.from(element.attributes)
-    .filter((attr) => attr.name.startsWith('data-aue-'));
-
-  aueAttributes.forEach((attr) => {
-    element.removeAttribute(attr.name);
-  });
-
-  // Also remove from child elements
-  element.querySelectorAll('[data-aue-resource]').forEach((child) => {
-    lockComponent(child);
-  });
-}
-
 // set the filter for an UE editable
 function setUEFilter(element, filter) {
   element.dataset.aueFilter = filter;
@@ -137,25 +116,28 @@ function setUEFilter(element, filter) {
 async function updateUEInstrumentation() {
   const main = document.querySelector('main');
 
-  const userData = await getCurrentUser();
-
-  if (!userData?.memberOf) return;
-
-  const userGroups = userData.memberOf;
-  console.log('userGroups', userGroups);
-
-  if (userGroups.some((group) => group.authorizableId === 'contributor')) {
-    console.log('contributor');
-    const sections = main.querySelectorAll('.section');
-    sections.forEach((section) => {
-      console.log('section', section);
-      setUEFilter(section, 'subssection');
+  // if there is already a editable browse rail on the page
+  const browseRailBlock = main.querySelector('div.block[data-aue-resource]');
+  if (browseRailBlock) {
+    // only more default sections can be added
+    setUEFilter(main, 'main-test');
+    // no more browse rails can be added
+    setUEFilter(document.querySelector('.section'), 'empty');
+  } else {
+    // allow adding default sections and browse rail section
+    setUEFilter(main, 'main-browse');
+  }
+  // Update available blocks for tab sections
+  const teaserBlocks = main.querySelectorAll('div[data-aue-model^="teaser"]');
+  if (teaserBlocks) {
+    teaserBlocks.forEach((elem) => {
+      setUEFilter(elem, 'teaser');
     });
   }
 
-  const teaserTextTitles = main.querySelectorAll('.teaserText_title');
-  teaserTextTitles.forEach((teaserTextTitle) => {
-    lockComponent(teaserTextTitle);
+  // Update available blocks for default sections excluding browse-rail-section and tab-section
+  main.querySelectorAll('.section:not(.one-column-section):not([data-aue-model^="teaser"])').forEach((elem) => {
+    setUEFilter(elem, 'section-browse');
   });
 }
 
@@ -179,6 +161,3 @@ function attachEventListners(main) {
 }
 
 attachEventListners(document.querySelector('main'));
-
-// update UE component filters on page load
-updateUEInstrumentation();
