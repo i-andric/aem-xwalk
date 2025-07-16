@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/adobe/aem-boilerplate#readme",
   "dependencies": {
+    "@adobe/aem-cli": "^16.10.35",
     "sass": "^1.78.0"
   },
   "devDependencies": {
@@ -40,8 +41,8 @@
     "eslint-plugin-json": "3.1.0",
     "eslint-plugin-stylelint": "^0.1.1",
     "eslint-plugin-xwalk": "github:adobe-rnd/eslint-plugin-xwalk#v0.1.1",
-    "merge-json-cli": "1.0.4",
     "husky": "9.1.1",
+    "merge-json-cli": "1.0.4",
     "npm-run-all": "4.1.5",
     "stylelint": "16.8.2",
     "stylelint-config-standard": "^36.0.1"

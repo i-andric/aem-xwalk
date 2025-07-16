@@ -159,9 +159,9 @@
             }
           ]
         }
-    ]
-  }
-],
+      ]
+    }
+  ],
   "filters": [
     {
       "id": "section",
@@ -194,7 +194,9 @@
         "custom-asset",
         "landing-page-header",
         "landing-page-logo-overview",
-        "test"
+        "test",
+        "custom-image",
+        "copyright-text"
       ]
     }
   ]

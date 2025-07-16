@@ -703,6 +703,18 @@
     ]
   },
   {
+    "id": "copyright-text",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "copyrightText_text",
+        "label": "Copyright Text",
+        "value": "<p>© 2024 Company Name. All rights reserved.</p>",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "custom-asset",
     "fields": [
       {

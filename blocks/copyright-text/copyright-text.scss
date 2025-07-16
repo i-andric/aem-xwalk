@@ -1,0 +1,29 @@
+.copyright-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 0;
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+
+  &-content {
+    margin: 0;
+    font-size: 0.875rem;
+    color: rgba(var(--text-color), 0.7);
+    line-height: 1.4;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 1.5rem 0;
+
+    &-content {
+      font-size: 1rem;
+    }
+  }
+} 
