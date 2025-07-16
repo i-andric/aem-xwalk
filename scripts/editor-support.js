@@ -93,20 +93,20 @@ async function applyChanges(event) {
   return false;
 }
 
-/**
- * Fetches current user and their group memberships
- * @returns {Promise<Object>} User data including group memberships
- */
-async function getCurrentUser() {
-  try {
-    const response = await fetch('/libs/granite/security/currentuser.json?props=memberOf');
-    if (!response.ok) throw new Error('Failed to fetch user data');
-    return await response.json();
-  } catch (error) {
-    // console.error('Error fetching user data:', error);
-    return null;
-  }
-}
+// /**
+//  * Fetches current user and their group memberships
+//  * @returns {Promise<Object>} User data including group memberships
+//  */
+// async function getCurrentUser() {
+//   try {
+//     const response = await fetch('/libs/granite/security/currentuser.json?props=memberOf');
+//     if (!response.ok) throw new Error('Failed to fetch user data');
+//     return await response.json();
+//   } catch (error) {
+//     // console.error('Error fetching user data:', error);
+//     return null;
+//   }
+// }
 
 // set the filter for an UE editable
 function setUEFilter(element, filter) {
@@ -115,14 +115,14 @@ function setUEFilter(element, filter) {
 
 async function updateUEInstrumentation() {
   const main = document.querySelector('main');
-   // ----- if browse page, identified by theme
-   if (document.querySelector('body[class^=browse-]')) {
+  // ----- if browse page, identified by theme
+  if (document.querySelector('body[class^=browse-]')) {
     // if there is already a editable browse rail on the page
     const copyrightTextBlock = main.querySelector('div.copyright-text.block[data-aue-resource]');
     if (copyrightTextBlock) {
       // no more browse rails can be added
       setUEFilter(document.querySelector('.copyright-text'), 'empty');
-    } 
+    }
 
     // Update available blocks for tab sections
     const tabSections = main.querySelectorAll('div[data-aue-model^="tab-section"]');
@@ -131,19 +131,12 @@ async function updateUEInstrumentation() {
         setUEFilter(elem, 'tab-section');
       });
     }
-    
-  // Update available blocks for tab sections
-  const teaserBlocks = main.querySelectorAll('div[data-aue-model^="teaser"]');
-  if (teaserBlocks) {
-    teaserBlocks.forEach((elem) => {
-      setUEFilter(elem, 'teaser');
+
+    // Update available blocks for default sections excluding browse-rail-section and tab-section
+    main.querySelectorAll('.section:not(.one-column-section):not([data-aue-model^="teaser"])').forEach((elem) => {
+      setUEFilter(elem, 'section-browse');
     });
   }
-
-  // Update available blocks for default sections excluding browse-rail-section and tab-section
-  main.querySelectorAll('.section:not(.one-column-section):not([data-aue-model^="teaser"])').forEach((elem) => {
-    setUEFilter(elem, 'section-browse');
-  });
 }
 
 function attachEventListners(main) {
