@@ -115,18 +115,23 @@ function setUEFilter(element, filter) {
 
 async function updateUEInstrumentation() {
   const main = document.querySelector('main');
+   // ----- if browse page, identified by theme
+   if (document.querySelector('body[class^=browse-]')) {
+    // if there is already a editable browse rail on the page
+    const copyrightTextBlock = main.querySelector('div.copyright-text.block[data-aue-resource]');
+    if (copyrightTextBlock) {
+      // no more browse rails can be added
+      setUEFilter(document.querySelector('.copyright-text'), 'empty');
+    } 
 
-  // if there is already a editable browse rail on the page
-  const browseRailBlock = main.querySelector('div.block[data-aue-resource]');
-  if (browseRailBlock) {
-    // only more default sections can be added
-    setUEFilter(main, 'main-test');
-    // no more browse rails can be added
-    setUEFilter(document.querySelector('.section'), 'empty');
-  } else {
-    // allow adding default sections and browse rail section
-    setUEFilter(main, 'main-browse');
-  }
+    // Update available blocks for tab sections
+    const tabSections = main.querySelectorAll('div[data-aue-model^="tab-section"]');
+    if (tabSections) {
+      tabSections.forEach((elem) => {
+        setUEFilter(elem, 'tab-section');
+      });
+    }
+    
   // Update available blocks for tab sections
   const teaserBlocks = main.querySelectorAll('div[data-aue-model^="teaser"]');
   if (teaserBlocks) {
