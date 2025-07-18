@@ -43,6 +43,20 @@
     ]
   },
   {
+    "id": "subssection",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero",
+      "cards",
+      "columns",
+      "fragment",
+      "accordion"
+    ]
+  },
+  {
     "id": "nav",
     "components": [
       "title",
