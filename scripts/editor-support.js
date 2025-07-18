@@ -114,8 +114,6 @@ function setUEFilter(element, filter) {
 }
 
 async function updateUEInstrumentation() {
-  const main = document.querySelector('main');
-
   const userData = await getCurrentUser();
 
   if (!userData?.memberOf) return;
@@ -127,30 +125,6 @@ async function updateUEInstrumentation() {
     console.log('contributor');
     setUEFilter(document.querySelector('.section'), 'subssection');
   }
-
-  // if there is already a editable browse rail on the page
-  const browseRailBlock = main.querySelector('div.block[data-aue-resource]');
-  if (browseRailBlock) {
-    // only more default sections can be added
-    setUEFilter(main, 'main-test');
-    // no more browse rails can be added
-    setUEFilter(document.querySelector('.section'), 'empty');
-  } else {
-    // allow adding default sections and browse rail section
-    setUEFilter(main, 'main-browse');
-  }
-  // Update available blocks for tab sections
-  const teaserBlocks = main.querySelectorAll('div[data-aue-model^="teaser"]');
-  if (teaserBlocks) {
-    teaserBlocks.forEach((elem) => {
-      setUEFilter(elem, 'teaser');
-    });
-  }
-
-  // Update available blocks for default sections excluding browse-rail-section and tab-section
-  main.querySelectorAll('.section:not(.one-column-section):not([data-aue-model^="teaser"])').forEach((elem) => {
-    setUEFilter(elem, 'section-browse');
-  });
 }
 
 function attachEventListners(main) {
@@ -173,3 +147,4 @@ function attachEventListners(main) {
 }
 
 attachEventListners(document.querySelector('main'));
+updateUEInstrumentation();
