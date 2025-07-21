@@ -126,7 +126,6 @@ async function updateUEInstrumentation() {
     sections.forEach((section) => {
       setUEFilter(section, 'subssection');
     });
-  } else {
     accordionItems.forEach((accordionItem) => {
       accordionItem.removeAttribute('data-aue-resource');
       accordionItem.removeAttribute('data-aue-model');
