@@ -119,11 +119,12 @@ async function updateUEInstrumentation() {
   if (!userData?.memberOf) return;
 
   const userGroups = userData.memberOf;
-  console.log('userGroups', userGroups);
+  const sections = document.querySelectorAll('.section');
 
   if (userGroups.some((group) => group.authorizableId === 'contributor')) {
-    console.log('contributor');
-    setUEFilter(document.querySelector('.section'), 'subssection');
+    sections.forEach((section) => {
+      setUEFilter(section, 'subssection');
+    });
   }
 }
 
