@@ -120,10 +120,17 @@ async function updateUEInstrumentation() {
 
   const userGroups = userData.memberOf;
   const sections = document.querySelectorAll('.section');
+  const accordionItems = document.querySelectorAll('[data-aue-model="accordionitem"]');
 
   if (userGroups.some((group) => group.authorizableId === 'contributor')) {
     sections.forEach((section) => {
       setUEFilter(section, 'subssection');
+    });
+    accordionItems.forEach((accordionItem) => {
+      accordionItem.removeAttribute('data-aue-resource');
+      accordionItem.removeAttribute('data-aue-model');
+      accordionItem.removeAttribute('data-aue-type');
+      accordionItem.removeAttribute('data-aue-label');
     });
   }
 }
