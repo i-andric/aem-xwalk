@@ -126,11 +126,11 @@ async function updateUEInstrumentation() {
     sections.forEach((section) => {
       setUEFilter(section, 'subssection');
     });
+  } else {
     accordionItems.forEach((accordionItem) => {
       accordionItem.removeAttribute('data-aue-resource');
       accordionItem.removeAttribute('data-aue-model');
       accordionItem.removeAttribute('data-aue-type');
-      accordionItem.removeAttribute('data-aue-label');
     });
   }
 }
