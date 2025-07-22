@@ -223,6 +223,15 @@
     ]
   },
   {
+    "id": "test-block",
+    "components": [
+      "title",
+      "text",
+      "button",
+      "image"
+    ]
+  },
+  {
     "id": "test",
     "components": []
   }

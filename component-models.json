@@ -2127,6 +2127,67 @@
     ]
   },
   {
+    "id": "test-block",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "link",
+        "label": "Link",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "city",
+        "label": "City",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "date-time",
+        "name": "begin",
+        "label": "Begin",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "date-time",
+        "name": "end",
+        "label": "End",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "hall",
+        "label": "Hall",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "cityNumber",
+        "label": "City Number",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "land",
+        "label": "Land",
+        "valueType": "string",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "test",
     "fields": [
       {
