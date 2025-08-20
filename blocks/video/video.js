@@ -6,6 +6,30 @@ function decorateTeaserPicture(teaserPicture, target) {
   target.appendChild(teaserPicture.parentElement);
 }
 
+function isAemDeliveryPlayUrl(url) {
+  try {
+    const u = new URL(url);
+    return /adobeaemcloud\.com$/.test(u.hostname)
+      && u.pathname.includes('/adobe/assets/')
+      && u.pathname.endsWith('/play');
+  } catch (e) {
+    return false;
+  }
+}
+
+function createAemDeliveryIframe(src) {
+  const iframe = document.createElement('iframe');
+  iframe.src = src;
+  iframe.setAttribute('title', 'Adobe video player');
+  iframe.setAttribute('frameborder', '0');
+  iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+  iframe.setAttribute('allowfullscreen', 'true');
+  // iframe.style.width = '100%';
+  // iframe.style.height = '100%';
+  iframe.classList.add('video-cover');
+  return iframe;
+}
+
 function playVideoAnimation(e) {
   const [playIcon] = e.target
     .closest('.hero-video')
@@ -31,6 +55,19 @@ function pauseVideoAnimation(e) {
 function decorateTeaser(video, teaserPicture, target) {
   if (!video && !teaserPicture) {
     // nothing to decorate
+    return;
+  }
+
+  // If author provided an Adobe AEM delivery play URL, render via iframe player
+  if (video && isAemDeliveryPlayUrl(video.href)) {
+    const iframe = createAemDeliveryIframe(video.href);
+    if (teaserPicture) {
+      decorateTeaserPicture(teaserPicture, target);
+    } else {
+      iframe.style.setProperty('display', 'block', 'important');
+    }
+    target.prepend(iframe);
+    video.remove();
     return;
   }
 
@@ -122,34 +159,42 @@ async function decorateFullScreenVideo(fullScreenVideoLink, teaserPicture, targe
   const fullVideoContainer = document.createElement('div');
   fullVideoContainer.classList.add('full-video-container');
 
-  const video = document.createElement('video');
-  video.classList.add('video-cover');
-  video.innerHTML = `<source src="${fullScreenVideoLink}" type="video/mp4">`;
-  video.setAttribute('preload', 'metadata');
-  video.setAttribute('poster', teaserPicture.currentSrc);
-
-  video.addEventListener('click', () => { toggleVideoPlay(video); });
+  const isAemUrl = isAemDeliveryPlayUrl(fullScreenVideoLink);
+  const video = isAemUrl ? null : document.createElement('video');
+  if (!isAemUrl) {
+    video.classList.add('video-cover');
+    video.innerHTML = `<source src="${fullScreenVideoLink}" type="video/mp4">`;
+    video.setAttribute('preload', 'metadata');
+    video.setAttribute('poster', teaserPicture.currentSrc);
+    video.addEventListener('click', () => { toggleVideoPlay(video); });
+  }
+  const iframe = isAemUrl ? createAemDeliveryIframe(fullScreenVideoLink) : null;
 
   const closeVideoButton = document.createElement('div');
   closeVideoButton.classList.add('close-video');
   createIcons(closeVideoButton, ['close-video']);
   closeVideoButton.addEventListener('click', () => {
-    video.removeEventListener('pause', pauseVideoAnimation);
-    video.removeEventListener('play', playVideoAnimation);
-    video.pause();
-    video.currentTime = 0;
-    video.load();
+    if (video) {
+      video.removeEventListener('pause', pauseVideoAnimation);
+      video.removeEventListener('play', playVideoAnimation);
+      video.pause();
+      video.currentTime = 0;
+      video.load();
+    }
     fullVideoContainer.style.display = 'none';
   });
 
-  const playPauseVideoButton = document.createElement('div');
-  playPauseVideoButton.classList.add('play-pause-fullscreen-button');
-  createIcons(playPauseVideoButton, ['full-screen-play', 'full-screen-pause']);
-  playPauseVideoButton.addEventListener('click', () => { toggleVideoPlay(video); });
+  const playPauseVideoButton = isAemUrl ? null : document.createElement('div');
+  if (playPauseVideoButton) {
+    playPauseVideoButton.classList.add('play-pause-fullscreen-button');
+    createIcons(playPauseVideoButton, ['full-screen-play', 'full-screen-pause']);
+    playPauseVideoButton.addEventListener('click', () => { toggleVideoPlay(video); });
+  }
 
   fullVideoContainer.appendChild(closeVideoButton);
-  fullVideoContainer.appendChild(playPauseVideoButton);
-  fullVideoContainer.appendChild(video);
+  if (playPauseVideoButton) fullVideoContainer.appendChild(playPauseVideoButton);
+  if (iframe) fullVideoContainer.appendChild(iframe);
+  if (video) fullVideoContainer.appendChild(video);
   target.appendChild(fullVideoContainer);
 }
 
