@@ -62,7 +62,7 @@ indices:
         value: |
           path
       name:
-        select: head > meta[name="author"]
+        select: head > meta[name="authorName"]
         value: |
           attribute(el, 'content')
       image:
