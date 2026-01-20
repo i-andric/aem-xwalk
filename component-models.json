@@ -60,6 +60,12 @@
             ]
           },
           {
+            "component": "author-list",
+            "valueType": "string",
+            "name": "authors",
+            "label": "Author List"
+          },
+          {
             "component": "text",
             "valueType": "string",
             "name": "authorName",
