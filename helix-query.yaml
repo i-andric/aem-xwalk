@@ -53,9 +53,9 @@ indices:
         value: |
           textContent(el)
       blogimage:
-        select: main .carousel img
+        select: main .carousel img:first-child
         value: |
-          match(attribute(el, 'src'), 'https:\/\/[^/]+(\/.*)')
+          attribute(el, 'src')
   author:
     include:
       - '/authors/**'
