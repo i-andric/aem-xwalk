@@ -53,7 +53,7 @@ indices:
         value: |
           textContent(el)
       blogimage:
-        select: main .carousel-slide-image img
+        select: main .carousel img
         value: |
           attribute(el, 'src')
   author:
