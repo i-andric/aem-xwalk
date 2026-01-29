@@ -55,7 +55,7 @@ indices:
       blogimage:
         select: main .carousel img
         value: |
-          attribute(el, 'src')
+          match(attribute(el, 'src'), 'https:\/\/[^/]+(\/.*)')
   author:
     include:
       - '/authors/**'
