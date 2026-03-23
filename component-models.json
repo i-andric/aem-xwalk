@@ -118,7 +118,7 @@
         "multi": false
       },
       {
-        "component": "text",
+        "component": "image-alt",
         "name": "imageAlt",
         "label": "Alt Text"
       },
