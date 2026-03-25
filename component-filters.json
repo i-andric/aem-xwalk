@@ -129,7 +129,9 @@
   },
   {
     "id": "hero",
-    "components": [],
+    "components": [
+      "richtext"
+    ],
     "rte": {
       "toolbar": {
         "format": [

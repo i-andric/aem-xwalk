@@ -55,7 +55,9 @@
   "filters": [
     {
     "id": "hero",
-    "components": [],
+   "components": [
+      "richtext"
+    ],
     "rte": {
       "toolbar": {
           "format": ["bold", "italic", "underline", "strike"],
